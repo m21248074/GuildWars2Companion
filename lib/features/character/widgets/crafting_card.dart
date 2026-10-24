@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/utils/guild_wars.dart';
 import 'package:guildwars2_companion/features/character/models/crafting.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class CharacterCraftingCard extends StatelessWidget {
   final List<Crafting> craftingList;
@@ -21,7 +22,7 @@ class CharacterCraftingCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(
-            'Crafting disciplines',
+            AppStrings.craftingDisciplines,
             style: TextStyle(
               color: Colors.white,
               fontSize: 12.0

@@ -5,6 +5,7 @@ import 'package:guildwars2_companion/core/widgets/coin.dart';
 import 'package:guildwars2_companion/features/item/enums/item_section.dart';
 import 'package:guildwars2_companion/features/item/widgets/item_box.dart';
 import 'package:guildwars2_companion/features/trading_post/models/delivery.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class TradingPostExpandableDelivery extends StatefulWidget {
   final TradingPostDelivery tradingPostDelivery;
@@ -98,7 +99,7 @@ class _TradingPostExpandableDeliveryState extends State<TradingPostExpandableDel
                           children: <Widget>[
                             RichText(
                               text: TextSpan(
-                                text: 'Items: ',
+                                text: AppStrings.deliveryItems,
                                 style: Theme.of(context).textTheme.bodyText1.copyWith(
                                   fontWeight: FontWeight.w500
                                 ),
@@ -115,7 +116,7 @@ class _TradingPostExpandableDeliveryState extends State<TradingPostExpandableDel
                             Row(
                               children: <Widget>[
                                 Text(
-                                  'Funds: ',
+                                  AppStrings.deliveryFunds,
                                   style: Theme.of(context).textTheme.bodyText1.copyWith(
                                     fontWeight: FontWeight.w500
                                   ),
@@ -146,7 +147,7 @@ class _TradingPostExpandableDeliveryState extends State<TradingPostExpandableDel
                   return Expanded(
                     child: Center(
                       child: Text(
-                        'No items found',
+                        AppStrings.noItemsFound,
                         style: Theme.of(context).textTheme.headline2,
                       ),
                     ),

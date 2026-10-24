@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/features/bank/bloc/bank_bloc.dart';
 import 'package:guildwars2_companion/features/bank/pages/build_selection.dart';
 import 'package:guildwars2_companion/features/bank/pages/generic_bank.dart';
 import 'package:guildwars2_companion/features/bank/pages/material.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class BankPage extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class BankPage extends StatelessWidget {
       lightColor: Colors.indigo,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Bank',
+          title: AppStrings.bank,
           color: Colors.indigo,
         ),
         body: BlocBuilder<BankBloc, BankState>(
@@ -27,7 +28,7 @@ class BankPage extends StatelessWidget {
             if (state is ErrorBankState) {
               return Center(
                 child: CompanionError(
-                  title: 'the bank',
+                  title: AppStrings.theBank,
                   onTryAgain: () =>
                     BlocProvider.of<BankBloc>(context).add(LoadBankEvent()),
                 ),
@@ -52,7 +53,7 @@ class BankPage extends StatelessWidget {
                             builder: (context) => GenericBankPage(BankType.BANK),
                           ));
                         },
-                        title: 'Bank',
+                        title: AppStrings.bank,
                         leading: Icon(
                           FontAwesomeIcons.archive,
                           size: 36.0,
@@ -67,7 +68,7 @@ class BankPage extends StatelessWidget {
                             builder: (context) => MaterialBankPage(),
                           ));
                         },
-                        title: 'Materials',
+                        title: AppStrings.materials,
                         leading: Icon(
                           FontAwesomeIcons.th,
                           size: 36.0,
@@ -82,7 +83,7 @@ class BankPage extends StatelessWidget {
                             builder: (context) => GenericBankPage(BankType.INVENTORY),
                           ));
                         },
-                        title: 'Shared inventory',
+                        title: AppStrings.sharedInventory,
                         leading: Icon(
                           GuildWarsIcons.inventory,
                           size: 48.0,
@@ -97,7 +98,7 @@ class BankPage extends StatelessWidget {
                             builder: (context) => BankBuildSelectionPage(),
                           ));
                         },
-                        title: 'Build storage',
+                        title: AppStrings.buildStorage,
                         leading: Icon(
                           FontAwesomeIcons.hammer,
                           size: 36.0,

@@ -10,6 +10,7 @@ import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/character/bloc/character_bloc.dart';
 import 'package:guildwars2_companion/features/character/models/character.dart';
 import 'package:guildwars2_companion/features/character/pages/character.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class CharactersPage extends StatelessWidget {
   @override
@@ -18,7 +19,7 @@ class CharactersPage extends StatelessWidget {
       lightColor: Colors.blue,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Characters',
+          title: AppStrings.characters,
           color: Colors.blue,
         ),
         body: BlocBuilder<CharacterBloc, CharacterState>(
@@ -26,7 +27,7 @@ class CharactersPage extends StatelessWidget {
             if (state is ErrorCharactersState) {
               return Center(
                 child: CompanionError(
-                  title: 'the characters',
+                  title: AppStrings.theCharacters,
                   onTryAgain: () =>
                     BlocProvider.of<CharacterBloc>(context).add(LoadCharactersEvent()),
                 ),
@@ -82,8 +83,8 @@ class _CharacterButton extends StatelessWidget {
         tag: character.name,
       ),
       subtitles: [
-        'Level ${character.level} ${character.race} ${character.professionInfo.name}',
-        '${GuildWarsUtil.calculatePlayTime(character.age)} hours of playtime'
+        AppStrings.characterSummary(character.level, AppStrings.raceName(character.race), character.professionInfo.name),
+        AppStrings.hoursOfPlaytime(GuildWarsUtil.calculatePlayTime(character.age))
       ],
       onTap: () => Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => CharacterPage(character)

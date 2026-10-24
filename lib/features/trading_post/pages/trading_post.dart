@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/features/trading_post/bloc/bloc.dart';
 import 'package:guildwars2_companion/features/trading_post/models/transaction.dart';
 import 'package:guildwars2_companion/features/trading_post/pages/trading_post_item.dart';
 import 'package:guildwars2_companion/features/trading_post/widgets/delivery.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class TradingPostPage extends StatefulWidget {
   @override
@@ -28,7 +29,7 @@ class _TradingPostPageState extends State<TradingPostPage> {
         length: 4,
         child: Scaffold(
           appBar: CompanionAppBar(
-            title: 'Trading Post',
+            title: AppStrings.tradingPost,
             color: Colors.green,
             elevation: 0.0,
           ),
@@ -42,7 +43,7 @@ class _TradingPostPageState extends State<TradingPostPage> {
                   tabs: [
                     Tab(
                       child: Text(
-                        'Buying',
+                        AppStrings.buying,
                         style: TextStyle(
                           fontSize: 14.0
                         ),
@@ -52,7 +53,7 @@ class _TradingPostPageState extends State<TradingPostPage> {
                     ),
                     Tab(
                       child: Text(
-                        'Selling',
+                        AppStrings.selling,
                         style: TextStyle(
                           fontSize: 14.0
                         ),
@@ -62,7 +63,7 @@ class _TradingPostPageState extends State<TradingPostPage> {
                     ),
                     Tab(
                       child: Text(
-                        'Bought',
+                        AppStrings.bought,
                         style: TextStyle(
                           fontSize: 14.0
                         ),
@@ -72,7 +73,7 @@ class _TradingPostPageState extends State<TradingPostPage> {
                     ),
                     Tab(
                       child: Text(
-                        'Sold',
+                        AppStrings.sold,
                         style: TextStyle(
                           fontSize: 14.0
                         ),
@@ -89,7 +90,7 @@ class _TradingPostPageState extends State<TradingPostPage> {
                     if (state is ErrorTradingPostState) {
                       return Center(
                         child: CompanionError(
-                          title: 'the trading post',
+                          title: AppStrings.theTradingPost,
                           onTryAgain: () =>
                             BlocProvider.of<TradingPostBloc>(context).add(LoadTradingPostEvent()),
                         ),
@@ -169,7 +170,7 @@ class _TransactionTab extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text(
-                  'No items found',
+                  AppStrings.noItemsFound,
                   style: Theme.of(context).textTheme.headline2,
                 ),
               ),

@@ -19,6 +19,7 @@ import 'package:guildwars2_companion/features/character/pages/equipment.dart';
 import 'package:guildwars2_companion/features/character/pages/equipment_selection.dart';
 import 'package:guildwars2_companion/features/character/pages/inventory.dart';
 import 'package:guildwars2_companion/features/character/widgets/crafting_card.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class CharacterPage extends StatelessWidget {
   final Character _character;
@@ -79,17 +80,17 @@ class CharacterPage extends StatelessWidget {
                       runSpacing: 16.0,
                       children: <Widget>[
                         CompanionInfoBox(
-                          header: 'Level',
+                          header: AppStrings.level,
                           text: _character.level.toString(),
                           loading: false,
                         ),
                         CompanionInfoBox(
-                          header: 'Playtime',
-                          text: GuildWarsUtil.calculatePlayTime(_character.age).toString() + 'h',
+                          header: AppStrings.playtime,
+                          text: AppStrings.playtimeShort(GuildWarsUtil.calculatePlayTime(_character.age)),
                           loading: false,
                         ),
                         CompanionInfoBox(
-                          header: 'Deaths',
+                          header: AppStrings.deaths,
                           text: _character.deaths.toString(),
                           loading: false,
                         ),
@@ -107,7 +108,7 @@ class CharacterPage extends StatelessWidget {
                   return Expanded(
                     child: Center(
                       child: CompanionError(
-                        title: 'the character',
+                        title: AppStrings.theCharacter,
                         onTryAgain: () =>
                           BlocProvider.of<CharacterBloc>(context).add(LoadCharactersEvent()),
                       ),
@@ -177,7 +178,7 @@ class _CharacterButtons extends StatelessWidget {
                               character.equipmentTabs
                                 .where((e) => e.equipment != null && e.equipment.length > 0)
                                 .first
-                                ..name = 'Equipment',
+                                ..name = AppStrings.equipment,
                               singular: true,
                             ),
                           ));
@@ -189,7 +190,7 @@ class _CharacterButtons extends StatelessWidget {
                           builder: (context) => EquipmentSelectionPage(character),
                         ));
                       },
-                      title: 'Equipment',
+                      title: AppStrings.equipment,
                       leading: Icon(
                         GuildWarsIcons.equipment,
                         size: 48.0,
@@ -216,7 +217,7 @@ class _CharacterButtons extends StatelessWidget {
                           builder: (context) => CharacterBuildSelectionPage(character),
                         ));
                       },
-                      title: 'Builds',
+                      title: AppStrings.builds,
                       leading: Icon(
                         FontAwesomeIcons.hammer,
                         size: 35.0,
@@ -235,7 +236,7 @@ class _CharacterButtons extends StatelessWidget {
                           builder: (context) => InventoryPage(character),
                         ));
                       },
-                      title: 'Inventory',
+                      title: AppStrings.inventory,
                       leading: Icon(
                         GuildWarsIcons.inventory,
                         size: 48.0,

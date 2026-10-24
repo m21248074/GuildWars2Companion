@@ -209,4 +209,63 @@ class AppStrings {
   static String get pathOfFire => _t('Path of Fire', '火焰之路');
   static String get icebroodSaga => _t('Icebrood Saga', '冰巢傳說');
   static String get endOfDragons => _t('End of Dragons', '巨龍絕境');
+
+  // Characters
+  static String get characters => _t('Characters', '角色');
+  static String characterSummary(int level, String race, String profession) =>
+    _t('Level $level $race $profession', '$level 級$race$profession');
+  static String hoursOfPlaytime(int hours) => _t('$hours hours of playtime', '遊玩 $hours 小時');
+  static String playtimeShort(int hours) => _t('${hours}h', '$hours 小時');
+  // Race names follow the game data (Human, Asura, Sylvari, Charr, Norn)
+  static String raceName(String race) {
+    switch (race) {
+      case 'Human': return _t(race, '人類');
+      case 'Asura': return _t(race, '阿蘇拉');
+      case 'Sylvari': return _t(race, '希爾瓦里');
+      case 'Charr': return _t(race, '夏爾');
+      case 'Norn': return _t(race, '諾恩');
+      default: return race;
+    }
+  }
+  static String get level => _t('Level', '等級');
+  static String get deaths => _t('Deaths', '死亡次數');
+  static String get equipment => _t('Equipment', '裝備');
+  static String get builds => _t('Builds', '配置');
+  static String get inventory => _t('Inventory', '物品欄');
+  static String get namelessBuild => _t('Nameless build', '未命名的配置');
+  static String get namelessEquipmentBuild => _t('Nameless equipment build', '未命名的裝備配置');
+  static String get active => _t('Active', '使用中');
+  static String get craftingDisciplines => _t('Crafting disciplines', '製作專業');
+  static String get theCharacters => _t('the characters', '角色');
+  static String get theCharacter => _t('the character', '這個角色');
+  static String get theCharacterBuilds => _t('the character builds', '這個角色的配置');
+  static String get theCharacterItems => _t('the character items', '這個角色的物品');
+
+  // Bank
+  static String get bank => _t('Bank', '銀行');
+  static String get materials => _t('Materials', '材料');
+  static String get sharedInventory => _t('Shared inventory', '共用物品欄');
+  static String get buildStorage => _t('Build storage', '配置儲存');
+  static String slotsUsed(int used, int total) => _t('$used / $total slots', '$used / $total 格');
+  static String get theBank => _t('the bank', '銀行');
+  static String get theSharedInventory => _t('the shared inventory', '共用物品欄');
+  static String get theBuildStorage => _t('the build storage', '配置儲存');
+  static String get theMaterialStorage => _t('the material storage', '材料');
+
+  // Trading post
+  static String get tradingPost => _t('Trading Post', '交易所');
+  static String get buying => _t('Buying', '購買中');
+  static String get selling => _t('Selling', '出售中');
+  static String get bought => _t('Bought', '已購買');
+  static String get sold => _t('Sold', '已售出');
+  static String get noItemsFound => _t('No items found', '找不到任何物品');
+  static String get noOrdersFound => _t('No orders found', '找不到任何訂單');
+  static String get buyers => _t('Buyers', '買家');
+  static String get sellers => _t('Sellers', '賣家');
+  static String quantityOrdered(String quantity) => _t('$quantity Ordered', '$quantity 個訂購中');
+  static String quantityAvailable(String quantity) => _t('$quantity Available', '$quantity 個可購買');
+  static String get deliveryItems => _t('Items: ', '物品：');
+  static String get deliveryFunds => _t('Funds: ', '款項：');
+  static String get theTradingPost => _t('the trading post', '交易所');
+  static String get theListings => _t('the listings', '掛單');
 }

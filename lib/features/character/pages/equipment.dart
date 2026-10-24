@@ -9,6 +9,7 @@ import 'package:guildwars2_companion/features/character/models/character.dart';
 import 'package:guildwars2_companion/features/character/models/equipment.dart';
 import 'package:guildwars2_companion/features/item/enums/item_section.dart';
 import 'package:guildwars2_companion/features/item/widgets/item_box.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class EquipmentPage extends StatelessWidget {
   final Character _character;
@@ -23,7 +24,7 @@ class EquipmentPage extends StatelessWidget {
       lightColor: singular ? Colors.teal : _character.professionColor,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: _equipmentTab.name != null && _equipmentTab.name.isNotEmpty ? _equipmentTab.name : 'Nameless equipment build',
+          title: _equipmentTab.name != null && _equipmentTab.name.isNotEmpty ? _equipmentTab.name : AppStrings.namelessEquipmentBuild,
           color: singular ? Colors.teal : _character.professionColor,
         ),
         body: BlocConsumer<CharacterBloc, CharacterState>(
@@ -33,7 +34,7 @@ class EquipmentPage extends StatelessWidget {
             if (state is ErrorCharactersState) {
               return Center(
                 child: CompanionError(
-                  title: 'the character',
+                  title: AppStrings.theCharacter,
                   onTryAgain: () =>
                     BlocProvider.of<CharacterBloc>(context).add(RefreshCharacterDetailsEvent()),
                 ),
@@ -43,7 +44,7 @@ class EquipmentPage extends StatelessWidget {
             if ((state is LoadedCharactersState && state.detailsError)) {
               return Center(
                 child: CompanionError(
-                  title: 'the character builds',
+                  title: AppStrings.theCharacterBuilds,
                   onTryAgain: () =>
                     BlocProvider.of<CharacterBloc>(context).add(LoadCharacterDetailsEvent()),
                 ),
@@ -56,7 +57,7 @@ class EquipmentPage extends StatelessWidget {
               if (character == null) {
                 return Center(
                   child: CompanionError(
-                    title: 'the character',
+                    title: AppStrings.theCharacter,
                     onTryAgain: () =>
                       BlocProvider.of<CharacterBloc>(context).add(RefreshCharacterDetailsEvent()),
                   ),

@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/features/character/models/character.dart';
 import 'package:guildwars2_companion/features/item/enums/item_section.dart';
 import 'package:guildwars2_companion/features/item/models/inventory.dart';
 import 'package:guildwars2_companion/features/item/widgets/item_box.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class InventoryPage extends StatelessWidget {
   final Character _character;
@@ -23,7 +24,7 @@ class InventoryPage extends StatelessWidget {
       lightColor: Colors.indigo,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Inventory',
+          title: AppStrings.inventory,
           color: Colors.indigo,
         ),
         body: BlocConsumer<CharacterBloc, CharacterState>(
@@ -33,7 +34,7 @@ class InventoryPage extends StatelessWidget {
             if (state is ErrorCharactersState) {
               return Center(
                 child: CompanionError(
-                  title: 'the character',
+                  title: AppStrings.theCharacter,
                   onTryAgain: () =>
                     BlocProvider.of<CharacterBloc>(context).add(RefreshCharacterDetailsEvent()),
                 ),
@@ -43,7 +44,7 @@ class InventoryPage extends StatelessWidget {
             if (state is LoadedCharactersState && state.detailsError) {
               return Center(
                 child: CompanionError(
-                  title: 'the character items',
+                  title: AppStrings.theCharacterItems,
                   onTryAgain: () =>
                     BlocProvider.of<CharacterBloc>(context).add(LoadCharacterDetailsEvent()),
                 ),
@@ -56,7 +57,7 @@ class InventoryPage extends StatelessWidget {
               if (character == null) {
                 return Center(
                   child: CompanionError(
-                    title: 'the character',
+                    title: AppStrings.theCharacter,
                     onTryAgain: () =>
                       BlocProvider.of<CharacterBloc>(context).add(RefreshCharacterDetailsEvent()),
                   ),

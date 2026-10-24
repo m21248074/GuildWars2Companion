@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/features/item/pages/item.dart';
 import 'package:guildwars2_companion/features/trading_post/bloc/bloc.dart';
 import 'package:guildwars2_companion/features/trading_post/models/listing_offer.dart';
 import 'package:guildwars2_companion/features/trading_post/models/transaction.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class TradingPostItemPage extends StatelessWidget {
   final Item item;
@@ -82,7 +83,7 @@ class TradingPostItemPage extends StatelessWidget {
                 tabs: [
                   Tab(
                     child: Text(
-                      'Buyers',
+                      AppStrings.buyers,
                       style: TextStyle(
                         fontSize: 16.0
                       ),
@@ -90,7 +91,7 @@ class TradingPostItemPage extends StatelessWidget {
                   ),
                   Tab(
                     child: Text(
-                      'Sellers',
+                      AppStrings.sellers,
                       style: TextStyle(
                         fontSize: 16.0
                       ),
@@ -105,7 +106,7 @@ class TradingPostItemPage extends StatelessWidget {
                   if (state is ErrorTradingPostState) {
                     return Center(
                       child: CompanionError(
-                        title: 'the listings',
+                        title: AppStrings.theListings,
                         onTryAgain: () =>
                           BlocProvider.of<TradingPostBloc>(context).add(LoadTradingPostEvent()),
                       ),
@@ -115,7 +116,7 @@ class TradingPostItemPage extends StatelessWidget {
                   if (state is LoadedTradingPostState && state.hasError) {
                     return Center(
                       child: CompanionError(
-                        title: 'the listings',
+                        title: AppStrings.theListings,
                         onTryAgain: () =>
                           BlocProvider.of<TradingPostBloc>(context).add(LoadTradingPostListingsEvent(
                             itemId: item.id,
@@ -133,14 +134,14 @@ class TradingPostItemPage extends StatelessWidget {
                           _ListingTab(
                             offers: tradingPostTransaction.listing.buys,
                             type: 'Ordered',
-                            errorMessage: 'No orders found',
+                            errorMessage: AppStrings.noOrdersFound,
                             item: item,
                             orderValue: orderValue,
                           ),
                           _ListingTab(
                             offers: tradingPostTransaction.listing.sells,
                             type: 'Available',
-                            errorMessage: 'No items found',
+                            errorMessage: AppStrings.noItemsFound,
                             item: item,
                             orderValue: orderValue,
                           ),
@@ -238,7 +239,9 @@ class _ListingTab extends StatelessWidget {
           ) : null,
           padding: EdgeInsets.symmetric(horizontal: 8.0),
           child: CompanionInfoRow(
-            header: '${GuildWarsUtil.intToString(o.quantity)} $type',
+            header: type == 'Ordered'
+              ? AppStrings.quantityOrdered(GuildWarsUtil.intToString(o.quantity))
+              : AppStrings.quantityAvailable(GuildWarsUtil.intToString(o.quantity)),
             widget: CompanionCoin(o.unitPrice),
           ),
         ))

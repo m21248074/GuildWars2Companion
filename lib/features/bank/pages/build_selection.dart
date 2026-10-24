@@ -9,6 +9,7 @@ import 'package:guildwars2_companion/features/error/widgets/error.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/bank/bloc/bank_bloc.dart';
 import 'package:guildwars2_companion/features/build/pages/build.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class BankBuildSelectionPage extends StatelessWidget {
   @override
@@ -17,7 +18,7 @@ class BankBuildSelectionPage extends StatelessWidget {
       lightColor: Colors.purple,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Build storage',
+          title: AppStrings.buildStorage,
           color: Colors.purple,
         ),
         body: BlocBuilder<BankBloc, BankState>(
@@ -25,7 +26,7 @@ class BankBuildSelectionPage extends StatelessWidget {
             if (state is ErrorBankState) {
               return Center(
                 child: CompanionError(
-                  title: 'the build storage',
+                  title: AppStrings.theBuildStorage,
                   onTryAgain: () => BlocProvider.of<BankBloc>(context).add(LoadBankEvent()),
                 ),
               );
@@ -43,7 +44,7 @@ class BankBuildSelectionPage extends StatelessWidget {
                   children: state.builds
                     .map((b) => CompanionButton(
                       color: GuildWarsUtil.getProfessionColor(b.profession),
-                      title: b.name != null && b.name.isNotEmpty ? b.name : 'Nameless build',
+                      title: b.name != null && b.name.isNotEmpty ? b.name : AppStrings.namelessBuild,
                       height: 64,
                       onTap: () => Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => BuildPage(b)

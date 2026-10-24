@@ -9,6 +9,7 @@ import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/build/pages/build.dart';
 import 'package:guildwars2_companion/features/character/bloc/character_bloc.dart';
 import 'package:guildwars2_companion/features/character/models/character.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class CharacterBuildSelectionPage extends StatelessWidget {
   final Character _character;
@@ -21,7 +22,7 @@ class CharacterBuildSelectionPage extends StatelessWidget {
       lightColor: Colors.purple,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Builds',
+          title: AppStrings.builds,
           color: Colors.purple,
         ),
         body: BlocConsumer<CharacterBloc, CharacterState>(
@@ -31,7 +32,7 @@ class CharacterBuildSelectionPage extends StatelessWidget {
             if (state is ErrorCharactersState) {
               return Center(
                 child: CompanionError(
-                  title: 'the character',
+                  title: AppStrings.theCharacter,
                   onTryAgain: () =>
                     BlocProvider.of<CharacterBloc>(context).add(RefreshCharacterDetailsEvent()),
                 ),
@@ -41,7 +42,7 @@ class CharacterBuildSelectionPage extends StatelessWidget {
             if ((state is LoadedCharactersState && state.detailsError)) {
               return Center(
                 child: CompanionError(
-                  title: 'the character builds',
+                  title: AppStrings.theCharacterBuilds,
                   onTryAgain: () =>
                     BlocProvider.of<CharacterBloc>(context).add(LoadCharacterDetailsEvent()),
                 ),
@@ -54,7 +55,7 @@ class CharacterBuildSelectionPage extends StatelessWidget {
               if (character == null) {
                 return Center(
                   child: CompanionError(
-                    title: 'the character',
+                    title: AppStrings.theCharacter,
                     onTryAgain: () =>
                       BlocProvider.of<CharacterBloc>(context).add(RefreshCharacterDetailsEvent()),
                   ),
@@ -72,11 +73,11 @@ class CharacterBuildSelectionPage extends StatelessWidget {
                   children: character.buildTabs
                     .map((b) => CompanionButton(
                       color: character.professionColor,
-                      title: b.build.name != null && b.build.name.isNotEmpty ? b.build.name : 'Nameless build',
+                      title: b.build.name != null && b.build.name.isNotEmpty ? b.build.name : AppStrings.namelessBuild,
                       height: 64,
                       subtitles: [
                         if (b.isActive)
-                          'Active'
+                          AppStrings.active
                       ],
                       leading: ColorFiltered(
                         child: CompanionCachedImage(

@@ -13,7 +13,7 @@
 | {n} hours of playtime | 遊玩 {n} 小時 | characters.dart:86 | |
 | Level | 等級 | character/pages/character.dart:82 | |
 | Playtime | 遊玩時間 | character.dart:87 | 詞表已有 |
-| h(遊玩時間的單位) | 小時 | character.dart:88 | ? 首頁已經用 `5114h`,要保留 h 還是改「小時」 |
+| h(遊玩時間的單位) | 小時 | character.dart:88 | 改小時看看 |
 | Deaths | 死亡次數 | character.dart:92 | |
 | Equipment | 裝備 | character.dart:192、equipment_selection.dart:24 | 詞表已有 |
 | Builds | 配置 | character.dart:219、build_selection.dart:24 | ? 遊戲內多叫「配置」或「建置」 |
@@ -21,7 +21,7 @@
 | Nameless build | 未命名的配置 | build_selection.dart:75、bank/pages/build_selection.dart:46 | |
 | Nameless equipment build | 未命名的裝備配置 | equipment.dart:26、equipment_selection.dart:76 | |
 | Active | 使用中 | build_selection.dart:79、equipment_selection.dart:80 | |
-| Crafting disciplines | 製作專長 | character/widgets/crafting_card.dart:24 | ? 也可用「製作職業」 |
+| Crafting disciplines | 製作專長 | character/widgets/crafting_card.dart:24 | 製作專業 |
 
 ## 銀行
 
@@ -46,8 +46,8 @@
 | No orders found | 找不到任何訂單 | trading_post_item.dart:136 | |
 | Buyers | 買家 | trading_post_item.dart:85 | |
 | Sellers | 賣家 | trading_post_item.dart:93 | |
-| {qty} Ordered | {qty} 個訂購中 | trading_post_item.dart:135、241 | ? 買家那一頁每列的數量 |
-| {qty} Available | {qty} 個可購買 | trading_post_item.dart:142、241 | ? 賣家那一頁每列的數量 |
+| {qty} Ordered | {qty} 個訂購中 | trading_post_item.dart:135、241 |  |
+| {qty} Available | {qty} 個可購買 | trading_post_item.dart:142、241 |  |
 | Items: | 物品： | trading_post/widgets/delivery.dart:101 | 領取箱 |
 | Funds: | 款項： | delivery.dart:118 | |
 
@@ -67,7 +67,7 @@
 | Trading Post Buy | 交易所買價 | value_card.dart:29 | |
 | Trading Post Sell | 交易所賣價 | value_card.dart:34 | |
 | Type | 類型 | item/services/item.dart:88 等 | |
-| Weight Class | 護甲類別 | item.dart:89 | ? 輕、中、重 |
+| Weight Class | 護甲類別 | item.dart:89 | 輕、中、重 |
 | Defense | 防禦 | item.dart | |
 | Weapon Strength | 武器強度 | item.dart | |
 | Size | 大小 | item.dart | 背包的格數 |

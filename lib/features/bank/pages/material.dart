@@ -8,6 +8,7 @@ import 'package:guildwars2_companion/features/bank/bloc/bank_bloc.dart';
 import 'package:guildwars2_companion/features/bank/models/material_category.dart';
 import 'package:guildwars2_companion/features/item/enums/item_section.dart';
 import 'package:guildwars2_companion/features/item/widgets/item_box.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class MaterialBankPage extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class MaterialBankPage extends StatelessWidget {
       lightColor: Colors.deepOrange,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Materials',
+          title: AppStrings.materials,
           color: Colors.deepOrange,
         ),
         body: BlocBuilder<BankBloc, BankState>(
@@ -24,7 +25,7 @@ class MaterialBankPage extends StatelessWidget {
             if (state is ErrorBankState) {
               return Center(
                 child: CompanionError(
-                  title: 'the material storage',
+                  title: AppStrings.theMaterialStorage,
                   onTryAgain: () =>
                     BlocProvider.of<BankBloc>(context).add(LoadBankEvent()),
                 ),

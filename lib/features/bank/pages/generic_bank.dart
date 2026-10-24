@@ -8,6 +8,7 @@ import 'package:guildwars2_companion/features/bank/bloc/bank_bloc.dart';
 import 'package:guildwars2_companion/features/item/enums/item_section.dart';
 import 'package:guildwars2_companion/features/item/models/inventory.dart';
 import 'package:guildwars2_companion/features/item/widgets/item_box.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 enum BankType {
   BANK,
@@ -25,7 +26,7 @@ class GenericBankPage extends StatelessWidget {
       lightColor: bankType == BankType.BANK ? Colors.green : Colors.blue,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: bankType == BankType.BANK ? 'Bank' : 'Shared inventory',
+          title: bankType == BankType.BANK ? AppStrings.bank : AppStrings.sharedInventory,
           color: bankType == BankType.BANK ? Colors.green : Colors.blue,
         ),
         body: BlocBuilder<BankBloc, BankState>(
@@ -33,7 +34,7 @@ class GenericBankPage extends StatelessWidget {
             if (state is ErrorBankState) {
               return Center(
                 child: CompanionError(
-                  title: bankType == BankType.BANK ? 'the bank' : 'the shared inventory',
+                  title: bankType == BankType.BANK ? AppStrings.theBank : AppStrings.theSharedInventory,
                   onTryAgain: () =>
                     BlocProvider.of<BankBloc>(context).add(LoadBankEvent()),
                 ),
@@ -87,7 +88,7 @@ class _BankListView extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    "${bankTab.where((i) => i.id != -1).length} / ${bankTab.length} slots",
+                    AppStrings.slotsUsed(bankTab.where((i) => i.id != -1).length, bankTab.length),
                     style: Theme.of(context).textTheme.headline2,
                   ),
                 ),
