@@ -49,6 +49,7 @@ class Urls {
 
   static final String achievementsUrl = '/achievements?ids=';
   static final String achievementProgressUrl = '/account/achievements';
+  static final String achievementProgressByIdsUrl = '/account/achievements?ids=';
   static final String achievementCategoriesUrl = '/achievements/categories?ids=all';
   static final String achievementGroupsUrl = '/achievements/groups?ids=all';
   static final String dailiesUrl = '/achievements/daily';

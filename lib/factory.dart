@@ -44,6 +44,9 @@ import 'package:guildwars2_companion/features/pvp/services/pvp.dart';
 import 'package:guildwars2_companion/features/raid/bloc/raid_bloc.dart';
 import 'package:guildwars2_companion/features/raid/repositories/raid.dart';
 import 'package:guildwars2_companion/features/raid/services/raid.dart';
+import 'package:guildwars2_companion/features/strike_mission/bloc/bloc.dart';
+import 'package:guildwars2_companion/features/strike_mission/repositories/strike_mission.dart';
+import 'package:guildwars2_companion/features/strike_mission/services/strike_mission.dart';
 import 'package:guildwars2_companion/features/tabs/bloc/tab_bloc.dart';
 import 'package:guildwars2_companion/features/tabs/repositories/tab.dart';
 import 'package:guildwars2_companion/features/tabs/services/tab.dart';
@@ -76,6 +79,7 @@ class CompanionFactory {
   PermissionService permissionService;
   PvpService pvpService;
   RaidService raidService;
+  StrikeMissionService strikeMissionService;
   TabService tabService;
   TokenService tokenService;
   TradingPostService tradingPostService;
@@ -123,6 +127,7 @@ class CompanionFactory {
     dungeonService = DungeonService(dio: dioUtil.getDioInstance());
     eventService = EventService();
     raidService = RaidService(dio: dioUtil.getDioInstance());
+    strikeMissionService = StrikeMissionService(dio: dioUtil.getDioInstance());
     mapService = MapService(dio: dioUtil.getDioInstance());
     permissionService = PermissionService();
     pvpService = PvpService(dio: dioUtil.getDioInstance());
@@ -233,6 +238,11 @@ class _RepositoryProviders extends StatelessWidget {
             pvpService: companionFactory.pvpService,
           ),
         ),
+        RepositoryProvider<StrikeMissionRepository>(
+          create: (BuildContext context) => StrikeMissionRepository(
+            strikeMissionService: companionFactory.strikeMissionService,
+          ),
+        ),
         RepositoryProvider<RaidRepository>(
           create: (BuildContext context) => RaidRepository(
             raidService: companionFactory.raidService,
@@ -330,6 +340,11 @@ class _BlocProviders extends StatelessWidget {
         BlocProvider<PvpBloc>(
           create: (BuildContext context) => PvpBloc(
             pvpRepository: RepositoryProvider.of<PvpRepository>(context),
+          ),
+        ),
+        BlocProvider<StrikeMissionBloc>(
+          create: (BuildContext context) => StrikeMissionBloc(
+            strikeMissionRepository: RepositoryProvider.of<StrikeMissionRepository>(context),
           ),
         ),
         BlocProvider<RaidBloc>(

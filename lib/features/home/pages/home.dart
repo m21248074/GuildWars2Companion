@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/features/meta_event/widgets/button.dart';
 import 'package:guildwars2_companion/features/pvp/bloc/pvp_bloc.dart';
 import 'package:guildwars2_companion/features/pvp/widgets/button.dart';
 import 'package:guildwars2_companion/features/raid/widgets/button.dart';
+import 'package:guildwars2_companion/features/strike_mission/widgets/button.dart';
 import 'package:guildwars2_companion/features/tabs/bloc/tab_bloc.dart';
 import 'package:guildwars2_companion/features/wallet/widgets/button.dart';
 import 'package:guildwars2_companion/features/error/widgets/error.dart';
@@ -106,6 +107,8 @@ class HomePage extends StatelessWidget {
                       if (state.tokenInfo.permissions.contains('pvp'))
                         PvpButton(),
                       RaidButton(hasPermission: state.tokenInfo.permissions.contains('progression')),
+                      if (state.tokenInfo.permissions.contains('progression'))
+                        StrikeMissionButton(),
                       DungeonButton(hasPermission: state.tokenInfo.permissions.contains('progression'))
                     ],
                   ),

@@ -11,6 +11,7 @@ class Assets {
   static final String changelog = '$data/changelog.json';
   static final String dungeons = '$data/dungeons.json';
   static final String raids = '$data/raids.json';
+  static final String strikeMissions = '$data/strike_missions.json';
   static final String worldBosses = '$data/world_bosses.json';
 
   static final String eventTimersMetaEvents = '$data/event_timers/meta_events.json';

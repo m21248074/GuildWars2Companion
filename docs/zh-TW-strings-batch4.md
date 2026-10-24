@@ -270,6 +270,20 @@
 | Greer, the Blightbringer | 瘟疫使者格里爾 | 社群 |
 | Decima, the Stormsinger | 風暴歌手迪西瑪 | 社群 |
 | Ura | 厄拉 | 社群 |
+| Shiverpeaks Pass | 席瓦雪山小徑 | 資料 |
+| Fraenir of Jormag | 卓瑪爪牙法蘭涅爾 | 資料 |
+| Voice of the Fallen and Claw of the Fallen | 亡者之音和亡者之爪 | 資料 |
+| Whisper of Jormag | 卓瑪低語 | 資料 |
+| Boneskinner | 骸骨剝皮怪 | 資料 |
+| Cold War | 冷戰 | 資料 |
+| Aetherblade Hideout | 以太之刃藏身處 | 資料 |
+| Xunlai Jade Junkyard | 桑萊廢料場 | 資料 |
+| Kaineng Overlook | 凱寧瞭望臺 | 資料 |
+| Harvest Temple | 豐收神殿 | 資料 |
+| Cosmic Observatory | 宇宙觀測臺 | 資料 |
+| Temple of Febe | 菲勃神殿 | 資料 |
+| Old Lion's Court | 舊雄獅廣場 | 資料 |
+| Guardian's Glade | 守護者林地 | 資料 |
 
 ## 名稱:地下城路線
 

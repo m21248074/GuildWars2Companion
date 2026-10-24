@@ -1,0 +1,114 @@
+[
+    {
+        "id": "shiverpeaks_pass",
+        "name": "Shiverpeaks Pass",
+        "region": "Icebrood",
+        "weeklyBit": 0,
+        "achievementId": 4979,
+        "challengeAchievementId": null
+    },
+    {
+        "id": "fraenir_of_jormag",
+        "name": "Fraenir of Jormag",
+        "region": "Icebrood",
+        "weeklyBit": 1,
+        "achievementId": null,
+        "challengeAchievementId": null
+    },
+    {
+        "id": "voice_and_claw_of_the_fallen",
+        "name": "Voice of the Fallen and Claw of the Fallen",
+        "region": "Icebrood",
+        "weeklyBit": 2,
+        "achievementId": null,
+        "challengeAchievementId": 5023
+    },
+    {
+        "id": "whisper_of_jormag",
+        "name": "Whisper of Jormag",
+        "region": "Icebrood",
+        "weeklyBit": 3,
+        "achievementId": 5879,
+        "challengeAchievementId": 5118
+    },
+    {
+        "id": "boneskinner",
+        "name": "Boneskinner",
+        "region": "Icebrood",
+        "weeklyBit": 4,
+        "achievementId": null,
+        "challengeAchievementId": 5040
+    },
+    {
+        "id": "cold_war",
+        "name": "Cold War",
+        "region": "Icebrood",
+        "weeklyBit": 5,
+        "achievementId": 5925,
+        "challengeAchievementId": null
+    },
+    {
+        "id": "aetherblade_hideout",
+        "name": "Aetherblade Hideout",
+        "region": "Jade",
+        "weeklyBit": 6,
+        "achievementId": 6354,
+        "challengeAchievementId": 6433
+    },
+    {
+        "id": "xunlai_jade_junkyard",
+        "name": "Xunlai Jade Junkyard",
+        "region": "Jade",
+        "weeklyBit": 7,
+        "achievementId": 6084,
+        "challengeAchievementId": 6411
+    },
+    {
+        "id": "kaineng_overlook",
+        "name": "Kaineng Overlook",
+        "region": "Jade",
+        "weeklyBit": 8,
+        "achievementId": 6243,
+        "challengeAchievementId": 6431
+    },
+    {
+        "id": "harvest_temple",
+        "name": "Harvest Temple",
+        "region": "Jade",
+        "weeklyBit": 9,
+        "achievementId": 6513,
+        "challengeAchievementId": 6115
+    },
+    {
+        "id": "old_lions_court",
+        "name": "Old Lion's Court",
+        "region": "Jade",
+        "weeklyBit": 12,
+        "achievementId": 6797,
+        "challengeAchievementId": 6804
+    },
+    {
+        "id": "cosmic_observatory",
+        "name": "Cosmic Observatory",
+        "region": "Sky",
+        "weeklyBit": 10,
+        "achievementId": 7163,
+        "challengeAchievementId": 7678
+    },
+    {
+        "id": "temple_of_febe",
+        "name": "Temple of Febe",
+        "region": "Sky",
+        "weeklyBit": 11,
+        "achievementId": 7116,
+        "challengeAchievementId": 7790
+    },
+    {
+        "id": "guardians_glade",
+        "name": "Guardian's Glade",
+        "region": "Magic",
+        "weeklyBit": 13,
+        "achievementId": 9218,
+        "challengeAchievementId": null
+    }
+]
