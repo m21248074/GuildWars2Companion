@@ -95,7 +95,7 @@
 
 下面三節的名稱不是介面文字,而是 App 內附的資料檔(`assets/data/*.json`)裡寫死的英文。
 來源欄:**資料** = 遊戲 API 的地圖、傳送點名稱(簡體轉繁體,和遊戲資料畫面一致);
-**成就** = 取自遊戲 API 的成就名稱;**自擬** = 我自己譯的,多半是人名、音譯,不確定和遊戲一致,**請特別審**。
+**社群** = 台灣玩家社群的 Blish HUD 事件模組中文翻譯(m21248074 的 fork),其中玩家綽號(例如「戰場惡犬」「焦油」)我沒採用;**成就** = 取自遊戲 API 的成就名稱;**自擬** = 我自己譯的,多半是人名、音譯,不確定和遊戲一致,**請特別審**。
 不想翻的(例如人名首領)直接把繁體欄改回英文就好。
 
 | 英文 | 繁體中文 | 來源 |
@@ -180,6 +180,29 @@
 
 | 英文 | 繁體中文 | 來源 |
 |---|---|---|
+| Admiral Taidha Covington | 泰達·科文頓 | 社群 |
+| Modniir Ulgoth | 莫迪爾·沃爾格斯 | 社群 |
+| Svanir Shaman Chief | 斯瓦尼亞薩滿 | 社群 |
+| Tequatl the Sunless | 吞噬托 | 社群 |
+| Sandstorm | 沙塵暴 | 社群 |
+| Junundu Rising | 巨努多崛起 | 社群 |
+| Maws of Torment | 磨難血口 | 社群 |
+| Serpents' Ire | 巨蛇之怒 | 社群 |
+| Palawadan | 帕拉瓦 | 社群 |
+| Preparations | 準備階段 | 社群 |
+| Prep | 準備階段 | 社群 |
+| Kaineng Blackout | 凱寧城斷電 | 社群 |
+| The Battle for the Jade Sea | 翠玉之海之戰 | 社群 |
+| Aetherblade Assault | 以太之刃突襲 | 社群 |
+| Drakkar and Spirits of the Wild | 德拉克與荒野之靈 | 社群 |
+| Ley-Line Anomaly | 魔徑異常體 | 社群 |
+| Ooze Pits | 軟泥鬥坑試煉 | 社群 |
+| The Path to Ascension: Augury Rock | 晉升之路：占卜岩 | 社群 |
+| Pinata/Reset | 彩罐丘牙獸／重置 | 社群 |
+| Cantha: Day and Night | 凱珊的日夜 | 社群 |
+| Night Bosses | 夜晚首領 | 社群 |
+| Gang War | 幫派戰爭 | 社群 |
+| Dragonstorm (Public) | 巨龍風暴（公開） | 社群 |
 | Claw of Jormag | 卓瑪之爪 | 成就 |
 | Fire Elemental | 火焰元素 | 成就 |
 | Great Jungle Wurm | 巨型叢林地蟲 | 成就 |
@@ -187,7 +210,6 @@
 | Karka Queen | 喀殼蟲女王 | 成就 |
 | Megadestroyer | 超能毀滅者 | 成就 |
 | Shadow Behemoth | 暗影巨獸 | 成就 |
-| Tequatl the Sunless | 陰鬼「吞噬托」 | 成就 |
 | The Shatterer | 碎裂巨獸 | 成就 |
 | Vale Guardian | 山谷守護者 | 成就 |
 | Slothasor | 斯洛薩索 | 成就 |
@@ -208,15 +230,9 @@
 | Chak Gerent | 查克蟲王 | 成就 |
 | Death-Branded Shatterer | 死亡烙印碎裂巨獸 | 成就 |
 | Octovine | 八爪藤 | 成就 |
-| Kaineng Blackout | 凱寧斷電 | 成就 |
 | Crash Site | 墜毀點 | 成就 |
-| Palawadan | 帕拉瓦之城 | 成就 |
 | Pylons | 能量塔 | 成就 |
-| Sandstorm | 沙塵風暴 | 成就 |
 | Buried Treasure | 埋藏的寶藏 | 成就 |
-| Admiral Taidha Covington | 泰達·科文頓海軍上將 | 自擬 |
-| Modniir Ulgoth | 莫德尼爾·烏戈斯 | 自擬 |
-| Svanir Shaman Chief | 斯瓦尼爾薩滿首領 | 自擬 |
 | Triple Trouble Wurm | 三頭地蟲 | 自擬 |
 | Spirit Woods | 靈魂森林 | 自擬 |
 | Gorseval the Multifarious | 千變萬化的戈瑟瓦 | 自擬 |
@@ -227,8 +243,6 @@
 | Front Gate | 前門 | 自擬 |
 | Statues of Grenth | 格林斯雕像 | 自擬 |
 | Story | 故事 | 自擬 |
-| Aetherblade Assault | 以太之刃襲擊 | 自擬 |
-| Cantha: Day and Night | 坎特拉的日夜 | 自擬 |
 | Challenges | 挑戰 | 自擬 |
 | Dawn | 黎明 | 自擬 |
 | Day | 白天 | 自擬 |
@@ -236,32 +250,19 @@
 | Daytime | 白天 | 自擬 |
 | Defend Jora's Keep | 防守焦拉要塞 | 自擬 |
 | Doppelganger | 分身 | 自擬 |
-| Drakkar and Spirits of the Wild | 德拉卡與荒野之靈 | 自擬 |
 | Dusk | 黃昏 | 自擬 |
 | Effigy | 雕像 | 自擬 |
 | Escorts | 護送 | 自擬 |
 | Forged with Fire | 烈火鍛造 | 自擬 |
-| Gang War | 幫派戰爭 | 自擬 |
 | Help the Outposts | 協助前哨 | 自擬 |
 | Icebrood Champions | 冰巢勇者 | 自擬 |
-| Junundu Rising | 朱努杜崛起 | 自擬 |
-| Ley-Line Anomaly | 地脈異常 | 自擬 |
-| Maws of Torment | 折磨之喉 | 自擬 |
 | Metal Concert | 金屬演唱會 | 自擬 |
 | Night | 夜晚 | 自擬 |
-| Night Bosses | 夜晚首領 | 自擬 |
-| Ooze Pits | 軟泥坑 | 自擬 |
-| Pinata/Reset | 皮納塔／重置 | 自擬 |
-| Prep | 準備 | 自擬 |
-| Preparations | 準備 | 自擬 |
 | Reset | 重置 | 自擬 |
 | Rounds 1 to 3 | 第 1 到 3 回合 | 自擬 |
-| Serpents' Ire | 蛇之怒 | 自擬 |
 | Shards and Construct | 碎片與構造體 | 自擬 |
 | Start | 開始 | 自擬 |
-| The Battle for the Jade Sea | 翡翠海之戰 | 自擬 |
 | The Oil Floes | 浮油冰原 | 自擬 |
-| The Path to Ascension: Augury Rock | 昇華之路：占卜岩 | 自擬 |
 | Hard World Bosses | 困難世界王 | 自擬 |
 | World Bosses | 世界王 | 自擬 |
 
