@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class CompanionTip extends StatelessWidget {
   final String tip;
@@ -25,7 +26,7 @@ class CompanionTip extends StatelessWidget {
           Expanded(
             child: RichText(
               text: TextSpan(
-                text: 'Tip: ',
+                text: AppStrings.tipLabel,
                 style: Theme.of(context).textTheme.bodyText1.copyWith(
                   fontWeight: FontWeight.w500
                 ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:guildwars2_companion/core/widgets/info_card.dart';
 import 'package:guildwars2_companion/core/widgets/info_row.dart';
 import 'package:guildwars2_companion/features/world_boss/models/world_boss.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class WorldBossStatsCard extends StatelessWidget {
   final WorldBoss worldBoss;
@@ -14,19 +15,19 @@ class WorldBossStatsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CompanionInfoCard(
-      title: 'Stats',
+      title: AppStrings.stats,
       child: Column(
         children: [
           CompanionInfoRow(
-            header: 'Level',
+            header: AppStrings.level,
             text: worldBoss.level.toString()
           ),
           CompanionInfoRow(
-            header: 'Map',
+            header: AppStrings.map,
             text: worldBoss.location
           ),
           CompanionInfoRow(
-            header: 'Waypoint',
+            header: AppStrings.waypoint,
             text: worldBoss.waypoint
           ),
         ],

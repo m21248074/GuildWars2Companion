@@ -237,18 +237,18 @@
 | Crash Site | 墜毀點 | 成就 |
 | Pylons | 能量塔 | 成就 |
 | Buried Treasure | 埋藏的寶藏 | 成就 |
-| Triple Trouble Wurm | 三頭地蟲 | 自擬 |
+| Triple Trouble Wurm | 三重麻煩 | 自擬 |
 | Spirit Woods | 靈魂森林 | 自擬 |
 | Protect the caged prisoners | 保護被關押的囚犯 | 自擬 |
 | Front Gate | 前門 | 自擬 |
-| Statues of Grenth | 格林斯雕像 | 自擬 |
+| Statues of Grenth | 古蘭斯雕像 | 自擬 |
 | Story | 故事 | 自擬 |
 | Challenges | 挑戰 | 自擬 |
 | Dawn | 黎明 | 自擬 |
 | Day | 白天 | 自擬 |
 | Day and Night | 日夜 | 自擬 |
 | Daytime | 白天 | 自擬 |
-| Defend Jora's Keep | 防守焦拉要塞 | 自擬 |
+| Defend Jora's Keep | 防守卓拉要塞 | 自擬 |
 | Doppelganger | 分身 | 自擬 |
 | Dusk | 黃昏 | 自擬 |
 | Effigy | 雕像 | 自擬 |

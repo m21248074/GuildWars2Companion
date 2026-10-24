@@ -16,6 +16,7 @@ import 'package:guildwars2_companion/features/world_boss/bloc/world_boss_bloc.da
 import 'package:guildwars2_companion/features/world_boss/models/world_boss.dart';
 import 'package:intl/intl.dart';
 import 'package:timer_builder/timer_builder.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class WorldBossesPage extends StatefulWidget {
   @override
@@ -38,7 +39,7 @@ class _WorldBossesPageState extends State<WorldBossesPage> {
       lightColor: Colors.deepPurple,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'World Bosses',
+          title: AppStrings.worldBosses,
           color: Colors.deepPurple,
         ),
         body: BlocBuilder<ConfigurationBloc, ConfigurationState>(
@@ -50,7 +51,7 @@ class _WorldBossesPageState extends State<WorldBossesPage> {
                 if (state is ErrorWorldbossesState) {
                   return Center(
                     child: CompanionError(
-                      title: 'the world bosses',
+                      title: AppStrings.theWorldBosses,
                       onTryAgain: () =>
                         BlocProvider.of<WorldBossBloc>(context).add(LoadWorldbossesEvent(true, null)),
                     ),
@@ -158,7 +159,7 @@ class _Row extends StatelessWidget {
 
                 if (isActive) {
                   return Text(
-                    'Active',
+                    AppStrings.eventActive,
                     style: Theme.of(context).textTheme.headline2.copyWith(
                       color: Colors.white
                     ),

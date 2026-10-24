@@ -15,6 +15,7 @@ import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:timer_builder/timer_builder.dart';
 
 import 'meta_event.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class MetaEventsPage extends StatefulWidget {
   @override
@@ -37,7 +38,7 @@ class _MetaEventsPageState extends State<MetaEventsPage> {
       lightColor: Colors.green,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Meta Events',
+          title: AppStrings.metaEvents,
           color: Colors.green,
         ),
         body: BlocBuilder<MetaEventBloc, MetaEventState>(
@@ -45,7 +46,7 @@ class _MetaEventsPageState extends State<MetaEventsPage> {
             if (state is ErrorMetaEventsState) {
               return Center(
                 child: CompanionError(
-                  title: 'the meta events',
+                  title: AppStrings.theMetaEvents,
                   onTryAgain: () =>
                     BlocProvider.of<MetaEventBloc>(context).add(LoadMetaEventsEvent()),
                 ),
@@ -63,31 +64,31 @@ class _MetaEventsPageState extends State<MetaEventsPage> {
                 child: CompanionListView(
                   children: <Widget>[
                     _MasteryCategoryButton(
-                      name: 'Tyria',
+                      name: AppStrings.tyria,
                       region: 'Tyria',
                       sequences: state.events,
                       onRequiresRefresh: () => refreshMetaEvents(),
                     ),
                     _MasteryCategoryButton(
-                      name: 'Heart of Thorns',
+                      name: AppStrings.heartOfThorns,
                       region: 'Maguuma',
                       sequences: state.events,
                       onRequiresRefresh: () => refreshMetaEvents(),
                     ),
                     _MasteryCategoryButton(
-                      name: 'Path of Fire',
+                      name: AppStrings.pathOfFire,
                       region: 'Desert',
                       sequences: state.events,
                       onRequiresRefresh: () => refreshMetaEvents(),
                     ),
                     _MasteryCategoryButton(
-                      name: 'Icebrood Saga',
+                      name: AppStrings.icebroodSaga,
                       region: 'Icebrood',
                       sequences: state.events,
                       onRequiresRefresh: () => refreshMetaEvents(),
                     ),
                     _MasteryCategoryButton(
-                      name: 'End of Dragons',
+                      name: AppStrings.endOfDragons,
                       region: 'Cantha',
                       sequences: state.events,
                       onRequiresRefresh: () => refreshMetaEvents(),
@@ -180,7 +181,7 @@ class _MasteryCategoryButton extends StatelessWidget {
                         Container(width: 8),
                         if (segment.time.isBefore(now))
                           Text(
-                            'Active',
+                            AppStrings.eventActive,
                             style: TextStyle(
                               color: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
                               fontSize: 16.0,

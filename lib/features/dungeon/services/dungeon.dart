@@ -25,7 +25,7 @@ class DungeonService {
 
   Future<List<Dungeon>> getDungeons() async {
     if (_dungeons == null) {
-      List dungeonData = await Assets.loadDataAsset(Assets.dungeons);
+      List dungeonData = await Assets.loadDataAsset(Assets.dungeons, translateNames: true);
       _dungeons = dungeonData
         .map((d) => Dungeon.fromJson(d))
         .toList();

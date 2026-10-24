@@ -1,6 +1,7 @@
 import 'dart:convert' show json;
 
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class Assets {
   static final String base = 'assets';
@@ -115,8 +116,29 @@ class Assets {
   static final String worldBossesTheShatterer = '$images/world_bosses/the_shatterer.jpg';
   static final String worldBossesTripleTroubleWurm = '$images/world_bosses/triple_trouble_wurm.jpg';
 
-  static Future<dynamic> loadDataAsset(String asset) async {
-    return json.decode(await rootBundle.loadString(asset));
+  /// [translateNames] translates the names in the data (world bosses, raids,
+  /// dungeons, meta events) through AppStrings.gameName.
+  static Future<dynamic> loadDataAsset(String asset, {bool translateNames = false}) async {
+    final data = json.decode(await rootBundle.loadString(asset));
+    return translateNames ? _translateNames(data) : data;
+  }
+
+  static dynamic _translateNames(dynamic data) {
+    if (data is List) {
+      return data.map(_translateNames).toList();
+    }
+
+    if (data is Map) {
+      // fromJson expects Map<String, dynamic>
+      return Map<String, dynamic>.fromEntries(data.entries.map((entry) => MapEntry<String, dynamic>(
+        entry.key as String,
+        ['name', 'location', 'waypoint'].contains(entry.key) && entry.value is String
+          ? AppStrings.gameName(entry.value as String)
+          : _translateNames(entry.value)
+      )));
+    }
+
+    return data;
   }
 
   static String getCraftingDisciplineAsset(String disciplineId) {

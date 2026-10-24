@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:guildwars2_companion/features/changelog/bloc/changelog_bloc.dart';
 import 'package:guildwars2_companion/features/changelog/repositories/changelog.dart';
 import 'package:guildwars2_companion/core/widgets/simple_button.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ChangelogPopup extends StatefulWidget {
   @override
@@ -89,7 +90,7 @@ class _ChangelogLayout extends StatelessWidget {
                         color: Colors.white,
                       ),
                       Text(
-                        'Welcome back!',
+                        AppStrings.welcomeBack,
                         style: Theme.of(context).textTheme.headline1.copyWith(
                           fontSize: 28,
                           fontWeight: FontWeight.w500
@@ -100,7 +101,7 @@ class _ChangelogLayout extends StatelessWidget {
                   Column(
                     children: <Widget>[
                       Text(
-                        'Since your last visit, the following new features have been added to the app:',
+                        AppStrings.sinceLastVisit,
                         style: Theme.of(context).textTheme.headline2.copyWith(
                           color: Colors.white
                         ),
@@ -136,7 +137,7 @@ class _ChangelogLayout extends StatelessWidget {
                     ],
                   ),
                   CompanionSimpleButton(
-                    text: 'Continue',
+                    text: AppStrings.continueText,
                     onPressed: onDismiss,
                   )
                 ],

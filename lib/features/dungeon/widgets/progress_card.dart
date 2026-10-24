@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:guildwars2_companion/core/widgets/info_card.dart';
 import 'package:guildwars2_companion/features/dungeon/models/dungeon.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class DungeonProgressCard extends StatelessWidget {
   final Dungeon dungeon;
@@ -15,7 +16,7 @@ class DungeonProgressCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CompanionInfoCard(
-      title: includeProgress ? 'Daily Progress' : 'Paths',
+      title: includeProgress ? AppStrings.dailyProgress : AppStrings.paths,
       child: Column(
       children: dungeon.paths
         .map((p) => Row(

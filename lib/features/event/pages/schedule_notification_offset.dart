@@ -6,6 +6,7 @@ import 'package:guildwars2_companion/core/widgets/accent.dart';
 import 'package:guildwars2_companion/core/widgets/appbar.dart';
 import 'package:guildwars2_companion/features/event/bloc/notification_bloc.dart';
 import 'package:guildwars2_companion/features/event/models/notification.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ScheduleNotificationOffsetPage extends StatefulWidget {
   final MetaEventSegment segment;
@@ -50,7 +51,7 @@ class _ScheduleNotificationOffsetPageState extends State<ScheduleNotificationOff
       lightColor: Colors.red,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Choose a notification time',
+          title: AppStrings.chooseNotificationTime,
           color: Colors.red,
         ),
         body: Center(
@@ -65,7 +66,7 @@ class _ScheduleNotificationOffsetPageState extends State<ScheduleNotificationOff
                     groupValue: _offset,
                     value: d,
                     title: Text(
-                      d.inMinutes == 0 ? 'At spawn time' : '${d.inMinutes} minutes before spawning',
+                      d.inMinutes == 0 ? AppStrings.atSpawnTime : AppStrings.minutesBeforeSpawning(d.inMinutes),
                       style: Theme.of(context).textTheme.headline2,
                     ),
                     onChanged: (d) => setState(() => _offset = d),
@@ -89,7 +90,7 @@ class _ScheduleNotificationOffsetPageState extends State<ScheduleNotificationOff
             Navigator.of(context).popUntil(ModalRoute.withName("/event"));
           },
           label: Text(
-            'Add notification'
+            AppStrings.addNotification
           ),
           icon: Icon(
             FontAwesomeIcons.plus,

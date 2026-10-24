@@ -8,6 +8,7 @@ import 'package:guildwars2_companion/core/widgets/appbar.dart';
 import 'package:guildwars2_companion/features/event/models/notification.dart';
 import 'package:guildwars2_companion/features/event/pages/schedule_notification_offset.dart';
 import 'package:intl/intl.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ScheduleNotificationTimePage extends StatefulWidget {
   final MetaEventSegment segment;
@@ -52,7 +53,7 @@ class _ScheduleNotificationTimePageState extends State<ScheduleNotificationTimeP
       lightColor: Colors.red,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Choose a${widget.notificationType == NotificationType.SINGLE ? " date and" : ""} spawn time',
+          title: widget.notificationType == NotificationType.SINGLE ? AppStrings.chooseDateAndSpawnTime : AppStrings.chooseSpawnTime,
           color: Colors.red,
         ),
         body: Center(
@@ -98,7 +99,7 @@ class _ScheduleNotificationTimePageState extends State<ScheduleNotificationTimeP
           onPressed: () {
             if (widget.notificationType == NotificationType.SINGLE && _time.isBefore(DateTime.now())) {
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Text('Please select a date or time.')
+                content: Text(AppStrings.selectDateOrTime)
               ));
               return;
             }
@@ -112,7 +113,7 @@ class _ScheduleNotificationTimePageState extends State<ScheduleNotificationTimeP
             ));
           },
           label: Text(
-            'Next'
+            AppStrings.next
           ),
           icon: Icon(
             FontAwesomeIcons.arrowRight,
@@ -158,7 +159,7 @@ class _DateSelector extends StatelessWidget {
             Expanded(
               child: RichText(
                 text: TextSpan(
-                  text: 'Date: ',
+                  text: AppStrings.dateLabel,
                   style: Theme.of(context).textTheme.headline2.copyWith(
                     fontWeight: FontWeight.w500
                   ),
@@ -219,7 +220,7 @@ class _TimeSelector extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
                   child: Text(
-                    'Time:',
+                    AppStrings.timeLabel,
                     style: Theme.of(context).textTheme.headline2
                   ),
                 ),

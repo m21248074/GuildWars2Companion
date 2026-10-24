@@ -9,6 +9,7 @@ import 'package:guildwars2_companion/features/dungeon/widgets/progress_card.dart
 import 'package:guildwars2_companion/features/error/widgets/error.dart';
 import 'package:guildwars2_companion/core/widgets/header.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class DungeonPage extends StatelessWidget {
   final Dungeon dungeon;
@@ -29,7 +30,7 @@ class DungeonPage extends StatelessWidget {
                   if (state is ErrorDungeonsState) {
                     return Center(
                       child: CompanionError(
-                        title: 'the dungeon',
+                        title: AppStrings.theDungeon,
                         onTryAgain: () =>
                           BlocProvider.of<DungeonBloc>(context).add(LoadDungeonsEvent(state.includeProgress)),
                       ),

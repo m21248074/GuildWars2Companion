@@ -4,6 +4,7 @@ import 'package:guildwars2_companion/features/event/models/event_segment.dart';
 import 'package:guildwars2_companion/core/widgets/info_card.dart';
 import 'package:guildwars2_companion/features/configuration/bloc/configuration_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class EventTimesCard extends StatelessWidget {
   final MetaEventSegment segment;
@@ -24,7 +25,7 @@ class EventTimesCard extends StatelessWidget {
         final DateFormat timeFormat = state.configuration.timeNotation24Hours ? DateFormat.Hm() : DateFormat.jm();
 
         return CompanionInfoCard(
-          title: 'Spawn Times',
+          title: AppStrings.spawnTimes,
           child: Wrap(
             alignment: WrapAlignment.spaceEvenly,
             spacing: 16.0,

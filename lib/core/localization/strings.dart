@@ -1,3 +1,5 @@
+import 'package:guildwars2_companion/core/localization/game_names.dart';
+
 /// Texts of the interface. English is the source language.
 ///
 /// Changing the language restarts the app, so the language is set once at
@@ -347,4 +349,118 @@ class AppStrings {
     'Soul bound on acquire': '獲得後靈魂綁定',
     'Soul bound on use': '使用後靈魂綁定',
   };
+
+  // Events and world bosses
+  static String get theMetaEvents => _t('the meta events', '大型事件');
+  static String get theMetaEvent => _t('the meta event', '這個大型事件');
+  static String get theWorldBosses => _t('the world bosses', '世界王');
+  static String get eventActive => _t('Active', '進行中');
+  static String get spawnTimes => _t('Spawn Times', '出現時間');
+  static String get map => _t('Map', '地圖');
+  static String get waypoint => _t('Waypoint', '傳送點');
+
+  // Scheduled notifications
+  static String get next => _t('Next', '下一步');
+  static String get chooseNotificationType => _t('Choose a notification type', '選擇通知類型');
+  static String get dailyNotification => _t('Daily notification', '每日通知');
+  static String get oneTimeNotification => _t('One-time notification', '單次通知');
+  static String get dailyNotificationExplanation => _t(
+    'Receive a daily notification at the selected time',
+    '每天在選定的時間通知'
+  );
+  static String get oneTimeNotificationExplanation => _t(
+    'Receive a single notification at the selected date and time',
+    '在選定的日期與時間通知一次'
+  );
+  static String get multipleNotificationsTip => _t(
+    'You can plan multiple notifications for a single event or world boss.',
+    '同一個事件或世界王可以排定多個通知。'
+  );
+  static String get oneTimeNotificationWarning => _t(
+    "If you're experiencing issues with not receiving the one-time notifications, please disable battery management for this app.",
+    '如果收不到單次通知，請關閉這個 App 的電池管理。'
+  );
+  static String get dailyNotificationWarning => _t(
+    "If you're experiencing significantly delayed daily notifications, please use the one-time option.",
+    '如果每日通知延遲嚴重，請改用單次通知。'
+  );
+  static String get chooseDateAndSpawnTime => _t('Choose a date and spawn time', '選擇日期與出現時間');
+  static String get chooseSpawnTime => _t('Choose a spawn time', '選擇出現時間');
+  static String get selectDateOrTime => _t('Please select a date or time.', '請選擇日期或時間。');
+  static String get dateLabel => _t('Date: ', '日期：');
+  static String get timeLabel => _t('Time:', '時間：');
+  static String get chooseNotificationTime => _t('Choose a notification time', '選擇通知時間');
+  static String get atSpawnTime => _t('At spawn time', '出現時');
+  static String minutesBeforeSpawning(int minutes) =>
+    _t('$minutes minutes before spawning', '出現前 $minutes 分鐘');
+  static String get addNotification => _t('Add notification', '新增通知');
+
+  // PvP
+  static String get pvpStatistics => _t('PvP Statistics', 'PvP 統計');
+  static String pvpRank(int rank) => _t('Rank $rank', '$rank 級');
+  static String get unrankedWinrate => _t('Unranked\nwinrate', '非排名賽\n勝率');
+  static String get rankedWinrate => _t('Ranked\nwinrate', '排名賽\n勝率');
+  static String get rankedSeasons => _t('Ranked seasons', '排名賽季');
+  static String get gameHistory => _t('Game history', '對戰紀錄');
+  static String get theGameHistory => _t('game history', '對戰紀錄');
+  static String get thePvpSeasons => _t('PvP Seasons', 'PvP 賽季');
+  static String get noPvpGamesFound => _t('No pvp games found', '找不到任何 PvP 對戰');
+  static String get noRankedSeasonsFound => _t(
+    'No ranked seasons with participation found',
+    '找不到有參與的排名賽季'
+  );
+  static String pvpResult(String result) {
+    switch (result) {
+      case 'Victory': return _t(result, '勝利');
+      case 'Defeat': return _t(result, '敗北');
+      default: return result;
+    }
+  }
+  static String pvpRatingType(String ratingType) {
+    switch (ratingType) {
+      case 'Ranked': return _t(ratingType, '排名賽');
+      case 'Unranked': return _t(ratingType, '非排名賽');
+      case 'None': return _t(ratingType, '無評級');
+      default: return ratingType;
+    }
+  }
+
+  // Raids, dungeons, wallet
+  static String get theRaids => _t('the raids', '大型地下城');
+  static String get theRaid => _t('the raid', '這個大型地下城');
+  static String get weeklyProgress => _t('Weekly Progress', '本週進度');
+  static String get bosses => _t('Bosses', '首領');
+  static String get theDungeons => _t('the dungeons', '地下城');
+  static String get theDungeon => _t('the dungeon', '這個地下城');
+  static String get dailyProgress => _t('Daily Progress', '今日進度');
+  static String get paths => _t('Paths', '路線');
+  static String get theWallet => _t('the wallet', '錢包');
+
+  // Changelog dialog
+  static String get welcomeBack => _t('Welcome back!', '歡迎回來！');
+  static String get sinceLastVisit => _t(
+    'Since your last visit, the following new features have been added to the app:',
+    '自上次使用以來，App 新增了以下功能：'
+  );
+  static String get continueText => _t('Continue', '繼續');
+
+  // Names in the data files (see game_names.dart). Dungeon paths are written
+  // as 'Path 1 - Hodgins'.
+  static String gameName(String english) {
+    if (!_traditionalChinese || english == null) return english;
+
+    final direct = gameNamesTraditionalChinese[english];
+    if (direct != null) return direct;
+
+    final path = RegExp(r'^Path (\d) - (.+)$').firstMatch(english);
+    if (path != null) {
+      final name = dungeonPathNamesTraditionalChinese[path.group(2)];
+      if (name != null) return '路線 ${path.group(1)} - $name';
+    }
+
+    return english;
+  }
+
+  static String get tipLabel => _t('Tip: ', '提示：');
+  static String get warningLabel => _t('Warning: ', '警告：');
 }

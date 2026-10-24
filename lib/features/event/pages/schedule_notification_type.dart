@@ -7,6 +7,7 @@ import 'package:guildwars2_companion/core/widgets/tip.dart';
 import 'package:guildwars2_companion/core/widgets/warning.dart';
 import 'package:guildwars2_companion/features/event/models/notification.dart';
 import 'package:guildwars2_companion/features/event/pages/schedule_notification_time.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ScheduleNotificationTypePage extends StatefulWidget {
   final MetaEventSegment segment;
@@ -28,7 +29,7 @@ class _ScheduleNotificationTypePageState extends State<ScheduleNotificationTypeP
       lightColor: Colors.red,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Choose a notification type',
+          title: AppStrings.chooseNotificationType,
           color: Colors.red,
         ),
         body: Center(
@@ -40,11 +41,11 @@ class _ScheduleNotificationTypePageState extends State<ScheduleNotificationTypeP
                     groupValue: _notificationType,
                     value: e,
                     title: Text(
-                      e == NotificationType.DAILY ? 'Daily notification' : 'One-time notification',
+                      e == NotificationType.DAILY ? AppStrings.dailyNotification : AppStrings.oneTimeNotification,
                       style: Theme.of(context).textTheme.headline2,
                     ),
                     subtitle: Text(
-                      e == NotificationType.DAILY ? 'Receive a daily notification at the selected time' : 'Receive a single notification at the selected date and time',
+                      e == NotificationType.DAILY ? AppStrings.dailyNotificationExplanation : AppStrings.oneTimeNotificationExplanation,
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                     onChanged: (t) => setState(() => _notificationType = t),
@@ -52,14 +53,14 @@ class _ScheduleNotificationTypePageState extends State<ScheduleNotificationTypeP
                   .toList(),
                 Container(height: 8.0,),
                 CompanionTip(
-                  tip: 'You can plan multiple notifications for a single event or world boss.',
+                  tip: AppStrings.multipleNotificationsTip,
                 ),
                 CompanionWarning(
-                  warning: "If you're experiencing issues with not receiving the one-time notifications, please disable battery management for this app.",
+                  warning: AppStrings.oneTimeNotificationWarning,
                   ios: false,
                 ),
                 CompanionWarning(
-                  warning: "If you're experiencing significantly delayed daily notifications, please use the one-time option.",
+                  warning: AppStrings.dailyNotificationWarning,
                   ios: false,
                 )
               ],
@@ -74,7 +75,7 @@ class _ScheduleNotificationTypePageState extends State<ScheduleNotificationTypeP
             )
           )),
           label: Text(
-            'Next'
+            AppStrings.next
           ),
           icon: Icon(
             FontAwesomeIcons.arrowRight,

@@ -9,6 +9,7 @@ import 'package:guildwars2_companion/features/error/widgets/error.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/wallet/bloc/bloc.dart';
 import 'package:guildwars2_companion/features/wallet/models/currency.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class WalletPage extends StatelessWidget {
   @override
@@ -17,7 +18,7 @@ class WalletPage extends StatelessWidget {
       lightColor: Colors.orange,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Wallet',
+          title: AppStrings.wallet,
           color: Colors.orange,
         ),
         body: BlocBuilder<WalletBloc, WalletState>(
@@ -25,7 +26,7 @@ class WalletPage extends StatelessWidget {
             if (state is ErrorWalletState) {
               return Center(
                 child: CompanionError(
-                  title: 'the wallet',
+                  title: AppStrings.theWallet,
                   onTryAgain: () =>
                     BlocProvider.of<WalletBloc>(context).add(LoadWalletEvent()),
                 ),

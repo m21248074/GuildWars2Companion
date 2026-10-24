@@ -16,6 +16,7 @@ import 'package:guildwars2_companion/features/meta_event/bloc/event_bloc.dart';
 import 'package:guildwars2_companion/features/meta_event/models/meta_event.dart';
 import 'package:intl/intl.dart';
 import 'package:timer_builder/timer_builder.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class MetaEventPage extends StatelessWidget {
   final MetaEventSequence metaEventSequence;
@@ -40,7 +41,7 @@ class MetaEventPage extends StatelessWidget {
                 if (state is ErrorMetaEventsState) {
                   return Center(
                     child: CompanionError(
-                      title: 'the meta event',
+                      title: AppStrings.theMetaEvent,
                       onTryAgain: () =>
                         BlocProvider.of<MetaEventBloc>(context).add(LoadMetaEventsEvent()),
                     ),
@@ -117,7 +118,7 @@ class _EventButton extends StatelessWidget {
 
                 if (segment.time.isBefore(now)) {
                   return Text(
-                    'Active',
+                    AppStrings.eventActive,
                     style: Theme.of(context).textTheme.headline2.copyWith(
                       color: Colors.white,
                     ),

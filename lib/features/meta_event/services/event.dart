@@ -6,7 +6,7 @@ class EventService {
 
   Future<List<MetaEventSequence>> getMetaEvents() async {
     if (_metaEvents == null) {
-      List metaEventData = await Assets.loadDataAsset(Assets.eventTimersMetaEvents);
+      List metaEventData = await Assets.loadDataAsset(Assets.eventTimersMetaEvents, translateNames: true);
       _metaEvents = metaEventData
         .map((r) => MetaEventSequence.fromJson(r))
         .toList();

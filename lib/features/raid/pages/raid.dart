@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/core/widgets/accent.dart';
 import 'package:guildwars2_companion/features/error/widgets/error.dart';
 import 'package:guildwars2_companion/core/widgets/header.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class RaidPage extends StatelessWidget {
   final Raid raid;
@@ -65,7 +66,7 @@ class RaidPage extends StatelessWidget {
                   if (state is ErrorRaidsState) {
                     return Center(
                       child: CompanionError(
-                        title: 'the raid',
+                        title: AppStrings.theRaid,
                         onTryAgain: () =>
                           BlocProvider.of<RaidBloc>(context).add(LoadRaidsEvent(state.includeProgress)),
                       ),
@@ -120,7 +121,7 @@ class _ProgressCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CompanionInfoCard(
-      title: includeProgress ? 'Weekly Progress' : 'Bosses',
+      title: includeProgress ? AppStrings.weeklyProgress : AppStrings.bosses,
       child: Column(
         children: raid.checkpoints
           .map((p) => Row(

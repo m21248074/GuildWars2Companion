@@ -12,6 +12,7 @@ import 'package:guildwars2_companion/core/widgets/button.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 
 import 'raid.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class RaidsPage extends StatelessWidget {
   @override
@@ -20,7 +21,7 @@ class RaidsPage extends StatelessWidget {
       lightColor: Colors.blue,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Raids',
+          title: AppStrings.raids,
           color: Colors.blue,
         ),
         body: BlocBuilder<RaidBloc, RaidState>(
@@ -28,7 +29,7 @@ class RaidsPage extends StatelessWidget {
             if (state is ErrorRaidsState) {
               return Center(
                 child: CompanionError(
-                  title: 'the raids',
+                  title: AppStrings.theRaids,
                   onTryAgain: () =>
                     BlocProvider.of<RaidBloc>(context).add(LoadRaidsEvent(state.includeProgress)),
                 ),

@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/features/pvp/widgets/pvp_season_rank.dart';
 import 'package:intl/intl.dart';
 
 import 'season.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class SeasonsPage extends StatelessWidget {
   final DateFormat _dateFormat = DateFormat('yyyy-MM-dd');
@@ -22,14 +23,14 @@ class SeasonsPage extends StatelessWidget {
       child: Scaffold(
         appBar: CompanionAppBar(
           color: Colors.orange,
-          title: 'Ranked seasons',
+          title: AppStrings.rankedSeasons,
         ),
         body: BlocBuilder<PvpBloc, PvpState>(
           builder: (context, state) {
             if (state is ErrorPvpState) {
               return Center(
                 child: CompanionError(
-                  title: 'PvP Seasons',
+                  title: AppStrings.thePvpSeasons,
                   onTryAgain: () =>
                     BlocProvider.of<PvpBloc>(context).add(LoadPvpEvent()),
                 ),
@@ -39,7 +40,7 @@ class SeasonsPage extends StatelessWidget {
             if (state is LoadedPvpState && state.pvpStandings.isEmpty) {
               return Center(
                 child: Text(
-                  'No ranked seasons with participation found',
+                  AppStrings.noRankedSeasonsFound,
                   style: Theme.of(context).textTheme.headline2,
                 ),
               );

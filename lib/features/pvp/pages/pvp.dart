@@ -16,6 +16,7 @@ import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/pvp/pages/seasons.dart';
 
 import 'games.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class PvpPage extends StatelessWidget {
   @override
@@ -28,7 +29,7 @@ class PvpPage extends StatelessWidget {
             return _Placeholder(
               child: Center(
                 child: CompanionError(
-                  title: 'PvP Statistics',
+                  title: AppStrings.pvpStatistics,
                   onTryAgain: () =>
                     BlocProvider.of<PvpBloc>(context).add(LoadPvpEvent()),
                 ),
@@ -64,7 +65,7 @@ class _Placeholder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CompanionAppBar(
-        title: 'PvP',
+        title: AppStrings.pvp,
         color: Color(0xFF678A9E),
       ),
       body: child,
@@ -107,7 +108,7 @@ class _Body extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Rank ${pvpStats.pvpRank}',
+                  AppStrings.pvpRank(pvpStats.pvpRank),
                   style: Theme.of(context).textTheme.headline1,
                 ),
                 if (pvpStats.pvpRankPointsNeeded != null && pvpStats.pvpRank < 80)
@@ -134,13 +135,13 @@ class _Body extends StatelessWidget {
                       if (pvpStats.ladders != null && pvpStats.ladders.unranked != null
                         && pvpStats.ladders.unranked.wins + pvpStats.ladders.unranked.losses != 0)
                         _WinRateInfoBox(
-                          header: 'Unranked\nwinrate',
+                          header: AppStrings.unrankedWinrate,
                           winLoss: pvpStats.ladders.unranked,
                         ),
                       if (pvpStats.ladders != null && pvpStats.ladders.ranked != null
                         && pvpStats.ladders.ranked.wins + pvpStats.ladders.ranked.losses != 0)
                         _WinRateInfoBox(
-                          header: 'Ranked\nwinrate',
+                          header: AppStrings.rankedWinrate,
                           winLoss: pvpStats.ladders.ranked,
                         ),
                     ],
@@ -161,7 +162,7 @@ class _Body extends StatelessWidget {
                 children: <Widget>[
                   CompanionButton(
                     color: Colors.orange,
-                    title: 'Ranked seasons',
+                    title: AppStrings.rankedSeasons,
                     onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => SeasonsPage()
                     )),
@@ -173,7 +174,7 @@ class _Body extends StatelessWidget {
                   ),
                   CompanionButton(
                     color: Colors.blue,
-                    title: 'Game history',
+                    title: AppStrings.gameHistory,
                     onTap: () => Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => PvpGamesPage()
                     )),

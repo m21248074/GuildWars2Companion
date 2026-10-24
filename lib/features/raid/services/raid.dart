@@ -25,7 +25,7 @@ class RaidService {
 
   Future<List<Raid>> getRaids() async {
     if (_raids == null) {
-      List raidData = await Assets.loadDataAsset(Assets.raids);
+      List raidData = await Assets.loadDataAsset(Assets.raids, translateNames: true);
       _raids = raidData
         .map((r) => Raid.fromJson(r))
         .toList();

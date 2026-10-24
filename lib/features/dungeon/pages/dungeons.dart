@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/core/widgets/button.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 
 import 'dungeon.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class DungeonsPage extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class DungeonsPage extends StatelessWidget {
       lightColor: Colors.deepOrange,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Dungeons',
+          title: AppStrings.dungeons,
           color: Colors.deepOrange,
         ),
         body: BlocBuilder<DungeonBloc, DungeonState>(
@@ -27,7 +28,7 @@ class DungeonsPage extends StatelessWidget {
             if (state is ErrorDungeonsState) {
               return Center(
                 child: CompanionError(
-                  title: 'the dungeons',
+                  title: AppStrings.theDungeons,
                   onTryAgain: () =>
                     BlocProvider.of<DungeonBloc>(context).add(LoadDungeonsEvent(state.includeProgress)),
                 ),

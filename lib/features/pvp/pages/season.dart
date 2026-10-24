@@ -9,6 +9,7 @@ import 'package:guildwars2_companion/core/widgets/header.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/pvp/widgets/pvp_season_rank.dart';
 import 'package:intl/intl.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class SeasonPage extends StatelessWidget {
   final DateFormat _dateFormat = DateFormat('yyyy-MM-dd');
@@ -60,7 +61,7 @@ class SeasonPage extends StatelessWidget {
               child: CompanionListView(
                 children: <Widget>[
                   CompanionInfoCard(
-                    title: 'Rewards',
+                    title: AppStrings.rewards,
                     child: Container(
                       width: double.infinity,
                       margin: EdgeInsets.only(top: 8.0),

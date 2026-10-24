@@ -27,7 +27,7 @@ class WorldBossService {
 
   Future<List<WorldBoss>> getWorldBosses() async {
     if (_worldBoss == null) {
-      List worldBossData = await Assets.loadDataAsset(Assets.worldBosses);
+      List worldBossData = await Assets.loadDataAsset(Assets.worldBosses, translateNames: true);
       _worldBoss = worldBossData
         .map((w) => WorldBoss.fromJson(w))
         .toList();
@@ -38,7 +38,7 @@ class WorldBossService {
 
   Future<List<MetaEventSequence>> getWorldBossSequences() async {
     if (_worldBossSequences == null) {
-      List worldBossSequenceData = await Assets.loadDataAsset(Assets.eventTimersWorldBosses);
+      List worldBossSequenceData = await Assets.loadDataAsset(Assets.eventTimersWorldBosses, translateNames: true);
       _worldBossSequences = worldBossSequenceData
         .map((w) => MetaEventSequence.fromJson(w))
         .toList();

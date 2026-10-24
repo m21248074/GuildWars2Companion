@@ -7,6 +7,7 @@ import 'package:guildwars2_companion/features/error/widgets/error.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/pvp/bloc/pvp_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class PvpGamesPage extends StatelessWidget {
   final DateFormat _dateFormat = DateFormat('yyyy-MM-dd');
@@ -18,14 +19,14 @@ class PvpGamesPage extends StatelessWidget {
       child: Scaffold(
         appBar: CompanionAppBar(
           color: Colors.blue,
-          title: 'Game history',
+          title: AppStrings.gameHistory,
         ),
         body: BlocBuilder<PvpBloc, PvpState>(
           builder: (context, state) {
             if (state is ErrorPvpState) {
               return Center(
                 child: CompanionError(
-                  title: 'game history',
+                  title: AppStrings.theGameHistory,
                   onTryAgain: () =>
                     BlocProvider.of<PvpBloc>(context).add(LoadPvpEvent()),
                 ),
@@ -35,7 +36,7 @@ class PvpGamesPage extends StatelessWidget {
             if (state is LoadedPvpState && state.pvpGames.isEmpty) {
               return Center(
                 child: Text(
-                  'No pvp games found',
+                  AppStrings.noPvpGamesFound,
                   style: Theme.of(context).textTheme.headline2,
                 ),
               );
@@ -72,14 +73,14 @@ class PvpGamesPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: <Widget>[
                               Text(
-                                g.result,
+                                AppStrings.pvpResult(g.result),
                                 style: Theme.of(context).textTheme.bodyText1.copyWith(
                                   fontWeight: FontWeight.w500,
                                   color: _getGameResultColor(g.result)
                                 ),
                               ),
                               Text(
-                                g.ratingType,
+                                AppStrings.pvpRatingType(g.ratingType),
                                 style: Theme.of(context).textTheme.bodyText1.copyWith(
                                   fontWeight: FontWeight.w500,
                                 ),
