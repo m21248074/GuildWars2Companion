@@ -209,29 +209,21 @@ class GuildWarsUtil {
   }
 
   static String durationToTextString(Duration duration) {
-    String output = '';
+    List<String> parts = [];
 
     if (duration.inHours > 0) {
-      output += "${duration.inHours} hour${duration.inHours > 1 ? 's' : ''}";
+      parts.add(AppStrings.hoursText(duration.inHours));
     }
 
     if (duration.inMinutes.remainder(60) > 0) {
-      if (output.isNotEmpty) {
-        output += ' ';
-      }
-
-      output += "${duration.inMinutes.remainder(60)} minute${duration.inMinutes > 1 ? 's' : ''}";
+      parts.add(AppStrings.minutesText(duration.inMinutes.remainder(60), duration.inMinutes));
     }
 
     if (duration.inSeconds.remainder(60) > 0) {
-      if (output.isNotEmpty) {
-        output += ' ';
-      }
-
-      output += "${duration.inSeconds.remainder(60)} second${duration.inSeconds > 1 ? 's' : ''}";
+      parts.add(AppStrings.secondsText(duration.inSeconds.remainder(60), duration.inSeconds));
     }
 
-    return output;
+    return parts.join(' ');
   }
 
   static String intToString(int value) {

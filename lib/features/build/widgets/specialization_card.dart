@@ -6,6 +6,7 @@ import 'package:guildwars2_companion/features/build/models/build.dart';
 import 'package:guildwars2_companion/features/build/models/skill_trait.dart';
 import 'package:guildwars2_companion/features/build/models/specialization.dart';
 import 'package:guildwars2_companion/features/build/widgets/skill_trait_box.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class BuildSpecializationCard extends StatelessWidget {
   final Build characterBuild;
@@ -17,7 +18,7 @@ class BuildSpecializationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CompanionInfoCard(
-      title: 'Skills',
+      title: AppStrings.specializationsCard,
       child: Column(
         children: Iterable.generate(
           characterBuild.specializations.length,
@@ -52,7 +53,7 @@ class _SpecializationRow extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(4.0),
             child: Text(
-              specialization != null ? specialization.name : 'No specialization chosen',
+              specialization != null ? specialization.name : AppStrings.noSpecializationChosen,
               style: Theme.of(context).textTheme.bodyText1,
             ),
           ),

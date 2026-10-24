@@ -6,6 +6,7 @@ import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/build/models/skill_trait.dart';
 import 'package:guildwars2_companion/features/build/widgets/skill_trait_box.dart';
 import 'package:guildwars2_companion/features/build/widgets/skill_trait_facts_card.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class SkillTraitPage extends StatelessWidget {
   final SkillTrait skillTrait;
@@ -32,7 +33,7 @@ class SkillTraitPage extends StatelessWidget {
             child: CompanionListView(
               children: <Widget>[
                 if (skillTrait.description != null)
-                  CompanionInfoCard(title: 'Description', text: GuildWarsUtil.removeOnlyHtml(skillTrait.description)),
+                  CompanionInfoCard(title: AppStrings.description, text: GuildWarsUtil.removeOnlyHtml(skillTrait.description)),
                 BuildSkillTraitFactsCard(
                   facts: _getNonBuffFacts(),
                   type: FactsType.STATS
@@ -95,7 +96,7 @@ class _SkillTraitHeader extends StatelessWidget {
           ),
           if (skillTrait.type != null || slotType != null)
             Text(
-              skillTrait.type ?? slotType,
+              AppStrings.buildText(skillTrait.type ?? slotType),
               style: Theme.of(context).textTheme.bodyText1.copyWith(
                 color: Colors.white
               ),

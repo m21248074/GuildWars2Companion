@@ -6,6 +6,7 @@ import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/build/models/build.dart';
 import 'package:guildwars2_companion/features/build/widgets/skill_card.dart';
 import 'package:guildwars2_companion/features/build/widgets/specialization_card.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class BuildPage extends StatelessWidget {
   final Build _build;
@@ -19,7 +20,7 @@ class BuildPage extends StatelessWidget {
       lightColor: singular ? Colors.purple : GuildWarsUtil.getProfessionColor(_build.profession),
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: _build.name != null && _build.name.isNotEmpty ? _build.name : 'Nameless build',
+          title: _build.name != null && _build.name.isNotEmpty ? _build.name : AppStrings.namelessBuild,
           color: singular ? Colors.purple : GuildWarsUtil.getProfessionColor(_build.profession),
         ),
         body: CompanionListView(

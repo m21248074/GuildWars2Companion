@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/utils/urls.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ErrorPage extends StatelessWidget {
   final String exception;
@@ -31,19 +32,19 @@ class ErrorPage extends StatelessWidget {
                     ),
                     Container(height: 16),
                     Text(
-                      'There was an error while loading GW2 Companion',
+                      AppStrings.errorLoadingApp,
                       style: Theme.of(context).textTheme.headline1,
                       textAlign: TextAlign.center,
                     ),
                     Container(height: MediaQuery.of(context).size.height / 7),
                     Text(
-                      'You can send the error log to the developer to get the issue fixed.',
+                      AppStrings.errorSendLogHint,
                       style: Theme.of(context).textTheme.headline2.copyWith(color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
                     Container(height: 16),
                     Text(
-                      'You will be contacted shortly afterwards with an estimation on when the issue will be fixed.',
+                      AppStrings.errorContactHint,
                       style: Theme.of(context).textTheme.headline2.copyWith(color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
@@ -91,7 +92,7 @@ class _SendLogsButton extends StatelessWidget {
             width: double.infinity,
             alignment: Alignment.center,
             child: Text(
-              'Send error log by mail',
+              AppStrings.sendErrorLogByMail,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Theme.of(context).primaryColor,
@@ -130,7 +131,7 @@ class _CopyLogsButton extends StatelessWidget {
             await Clipboard.setData(ClipboardData(text: exception));
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(
-                'Error log copied to clipboard',
+                AppStrings.errorLogCopied,
                 style: Theme.of(context).textTheme.headline2.copyWith(color: Colors.white)
               ),
               backgroundColor: Colors.green,
@@ -141,7 +142,7 @@ class _CopyLogsButton extends StatelessWidget {
             width: double.infinity,
             alignment: Alignment.center,
             child: Text(
-              'Copy error log to clipboard',
+              AppStrings.copyErrorLog,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,

@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:guildwars2_companion/core/widgets/info_card.dart';
 import 'package:guildwars2_companion/features/build/models/build.dart';
 import 'package:guildwars2_companion/features/build/widgets/skill_trait_box.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class BuildSkillCard extends StatelessWidget {
   final Build characterBuild;
@@ -14,7 +15,7 @@ class BuildSkillCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CompanionInfoCard(
-      title: 'Skills',
+      title: AppStrings.skills,
       child: Column(
         children: [
           if (characterBuild.skills != null)

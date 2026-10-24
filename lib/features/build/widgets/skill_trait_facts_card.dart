@@ -4,6 +4,7 @@ import 'package:guildwars2_companion/core/widgets/cached_image.dart';
 import 'package:guildwars2_companion/core/widgets/info_card.dart';
 import 'package:guildwars2_companion/core/widgets/info_row.dart';
 import 'package:guildwars2_companion/features/build/models/skill_trait.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 enum FactsType {
   STATS,
@@ -23,7 +24,7 @@ class BuildSkillTraitFactsCard extends StatelessWidget {
     }
 
     return CompanionInfoCard(
-      title: type == FactsType.EFFECTS ? 'Effects': 'Stats',
+      title: type == FactsType.EFFECTS ? AppStrings.effects : AppStrings.stats,
       child: Column(
         children: facts
           .map((f) => _FactRow(fact: f))  
@@ -44,13 +45,13 @@ class _FactRow extends StatelessWidget {
       case 'AttributeAdjust':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.target,
+          header: AppStrings.buildText(fact.target),
           text: '+${fact.value}',
         );
       case 'BuffConversion':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.target,
+          header: AppStrings.buildText(fact.target),
           text: '+${fact.percent}%',
         );
       case 'Buff':
@@ -59,58 +60,58 @@ class _FactRow extends StatelessWidget {
           leadingWidget: _FactRowLeading(fact: fact),
           header: '${fact.status ?? ''}'
             + (fact.applyCount != null && fact.applyCount > 1 ? ' x${fact.applyCount}' : '')
-            + (fact.duration != null && fact.duration > 0 ? ' (${fact.duration}s)' : ''),
+            + (fact.duration != null && fact.duration > 0 ? ' (${AppStrings.secondsShort(fact.duration)})' : ''),
           text: GuildWarsUtil.removeOnlyHtml(fact.description),
         );
       case 'ComboField':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.text,
-          text: fact.fieldType,
+          header: AppStrings.buildText(fact.text),
+          text: AppStrings.buildText(fact.fieldType),
         );
       case 'ComboFinisher':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.text,
-          text: fact.finisherType,
+          header: AppStrings.buildText(fact.text),
+          text: AppStrings.buildText(fact.finisherType),
         );
       case 'Distance':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.text,
+          header: AppStrings.buildText(fact.text),
           text: fact.distance.toString(),
         );
       case 'Duration':
       case 'Time':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.text,
-          text: '${fact.duration}s',
+          header: AppStrings.buildText(fact.text),
+          text: AppStrings.secondsShort(fact.duration),
         );
       case 'NoData':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.text,
+          header: AppStrings.buildText(fact.text),
           text: '',
         );
       case 'Range':
       case 'Number':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.text,
+          header: AppStrings.buildText(fact.text),
           text: fact.value.toString(),
         );
       case 'Percent':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.text,
+          header: AppStrings.buildText(fact.text),
           text: '${fact.percent}%',
         );
       case 'Recharge':
         return CompanionInfoRow(
           leadingWidget: _FactRowLeading(fact: fact),
-          header: fact.text,
-          text: '${fact.value}s',
+          header: AppStrings.buildText(fact.text),
+          text: AppStrings.secondsShort(fact.value),
         );
       default: return Container();
     }

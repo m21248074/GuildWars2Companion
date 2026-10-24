@@ -463,4 +463,87 @@ class AppStrings {
 
   static String get tipLabel => _t('Tip: ', '提示：');
   static String get warningLabel => _t('Warning: ', '警告：');
+
+  // Builds, skills and traits
+  static String get skills => _t('Skills', '技能');
+  static String get specializationsCard => _t('Skills', '特長');
+  static String get effects => _t('Effects', '效果');
+  static String get noSpecializationChosen => _t('No specialization chosen', '尚未選擇特長');
+
+  // Codes from the game data that are shown as they are: attributes of a
+  // trait, combo fields and finishers, skill types and the slot of a trait.
+  static String buildText(String english) {
+    if (!_traditionalChinese || english == null) return english;
+    return _buildTexts[english] ?? english;
+  }
+
+  static const Map<String, String> _buildTexts = {
+    'Power': '力量',
+    'Precision': '精準',
+    'Toughness': '強韌',
+    'Vitality': '活力',
+    'ConditionDamage': '狀態傷害',
+    'ConditionDuration': '狀態持續時間',
+    'BoonDuration': '增益持續時間',
+    'CritDamage': '暴擊傷害',
+    'Healing': '治療',
+    'Dark': '暗黑',
+    'Ethereal': '虛幻',
+    'Fire': '火焰',
+    'Ice': '冰霜',
+    'Light': '光明',
+    'Lightning': '閃電',
+    'Poison': '毒',
+    'Smoke': '煙霧',
+    'Water': '水',
+    'Blast': '爆破',
+    'Leap': '躍擊',
+    'Projectile': '投射物',
+    'Whirl': '旋風',
+    'Bundle': '持握物',
+    'Elite': '精英',
+    'Heal': '治療',
+    'Monster': '怪物',
+    'Pet': '寵物',
+    'Profession': '職業',
+    'Toolbelt': '工具腰帶',
+    'Utility': '實用',
+    'Weapon': '武器',
+    'Range': '射程',
+    'Recharge': '冷卻時間',
+    'Combo Finisher': '組合終結技',
+    'Combo Field': '組合場',
+    'Unblockable': '無法格擋',
+    'StunBreak': '解除控制',
+    'Minor trait': '次要特性',
+    'Major trait': '主要特性',
+  };
+
+  // Error page
+  static String get errorLoadingApp => _t(
+    'There was an error while loading GW2 Companion',
+    '載入 GW2 Companion 時發生錯誤'
+  );
+  static String get errorSendLogHint => _t(
+    'You can send the error log to the developer to get the issue fixed.',
+    '可以把錯誤記錄寄給開發者，協助修正問題。'
+  );
+  static String get errorContactHint => _t(
+    'You will be contacted shortly afterwards with an estimation on when the issue will be fixed.',
+    '之後會盡快通知預計的修正時間。'
+  );
+  static String get sendErrorLogByMail => _t('Send error log by mail', '以電子郵件寄送錯誤記錄');
+  static String get errorLogCopied => _t('Error log copied to clipboard', '錯誤記錄已複製到剪貼簿');
+  static String get copyErrorLog => _t('Copy error log to clipboard', '複製錯誤記錄到剪貼簿');
+
+  // Durations, for example '1 hour 5 minutes'. [total] is the length of the
+  // whole duration in that unit, English uses it for the plural.
+  static String hoursText(int hours) => _t('$hours hour${hours > 1 ? 's' : ''}', '$hours 小時');
+  static String minutesText(int minutes, int total) =>
+    _t('$minutes minute${total > 1 ? 's' : ''}', '$minutes 分鐘');
+  static String secondsText(int seconds, int total) =>
+    _t('$seconds second${total > 1 ? 's' : ''}', '$seconds 秒');
+
+  // Seconds of a fact, for example '30s'
+  static String secondsShort(num seconds) => _t('${seconds}s', '$seconds 秒');
 }
