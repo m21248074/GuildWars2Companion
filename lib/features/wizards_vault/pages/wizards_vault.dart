@@ -403,7 +403,15 @@ class _ListingCard extends StatelessWidget {
                       fontWeight: FontWeight.w500
                     ),
                   ),
-                  if (listing.purchased > 0 || listing.purchaseLimit != null)
+                  // The API gives 0 for what has been bought of the normal
+                  // rewards (checked with a real account), so only the limit
+                  // is shown there
+                  if (listing.type == 'Normal' && listing.purchaseLimit != null)
+                    Text(
+                      AppStrings.vaultPurchaseLimit(listing.purchaseLimit),
+                      style: Theme.of(context).textTheme.bodyText1,
+                    )
+                  else if (listing.type != 'Normal' && (listing.purchased > 0 || listing.purchaseLimit != null))
                     Text(
                       AppStrings.vaultPurchased(listing.purchased, listing.purchaseLimit),
                       style: Theme.of(context).textTheme.bodyText1,

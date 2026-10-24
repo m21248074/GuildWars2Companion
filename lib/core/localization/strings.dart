@@ -572,5 +572,6 @@ class AppStrings {
   static String vaultPurchased(int count, int limit) => limit != null
     ? _t('Bought $count / $limit', '已購買 $count / $limit')
     : _t('Bought $count times', '已購買 $count 次');
+  static String vaultPurchaseLimit(int limit) => _t('Purchase limit: $limit', '購買上限：$limit');
   static String vaultCost(int cost) => _t('$cost Astral Acclaim', '$cost 星界讚譽');
 }
