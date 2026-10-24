@@ -145,7 +145,9 @@ class _ObjectivesTab extends StatelessWidget {
       child: CompanionListView(
         children: <Widget>[
           _SeasonCard(season: season),
-          _MetaCard(group: group),
+          // The special objectives have no reward for completing all of them
+          if (group.metaProgressComplete > 0)
+            _MetaCard(group: group),
           ...group.objectives.map((o) => _ObjectiveCard(objective: o)),
         ],
       ),
@@ -236,16 +238,18 @@ class _ObjectiveCard extends StatelessWidget {
                 ),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 6.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(4.0),
-              child: LinearProgressIndicator(
-                value: _progress(objective.progressCurrent, objective.progressComplete),
-                minHeight: 8.0,
+          // Some objectives have no amount to count
+          if (objective.progressComplete > 0)
+            Padding(
+              padding: EdgeInsets.only(top: 6.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(4.0),
+                child: LinearProgressIndicator(
+                  value: _progress(objective.progressCurrent, objective.progressComplete),
+                  minHeight: 8.0,
+                ),
               ),
             ),
-          ),
           Padding(
             padding: EdgeInsets.only(top: 6.0),
             child: Row(
@@ -260,10 +264,11 @@ class _ObjectiveCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
-                  '${GuildWarsUtil.intToString(objective.progressCurrent)} / ${GuildWarsUtil.intToString(objective.progressComplete)}',
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
+                if (objective.progressComplete > 0)
+                  Text(
+                    '${GuildWarsUtil.intToString(objective.progressCurrent)} / ${GuildWarsUtil.intToString(objective.progressComplete)}',
+                    style: Theme.of(context).textTheme.bodyText1,
+                  ),
               ],
             ),
           ),
@@ -337,7 +342,11 @@ class _ShopTab extends StatelessWidget {
   }
 
   List<Widget> _section(BuildContext context, String type, String title) {
-    final List<WizardsVaultListing> section = listings.where((l) => l.type == type).toList();
+    // What can still be bought comes first
+    final List<WizardsVaultListing> section = [
+      ...listings.where((l) => l.type == type && !l.soldOut),
+      ...listings.where((l) => l.type == type && l.soldOut),
+    ];
 
     if (section.isEmpty) {
       return [];
@@ -365,7 +374,9 @@ class _ListingCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final String name = listing.item != null ? listing.item.name : '#${listing.itemId}';
 
-    return CompanionCard(
+    return Opacity(
+      opacity: listing.soldOut ? 0.5 : 1.0,
+      child: CompanionCard(
       child: Row(
         children: <Widget>[
           Container(
@@ -392,9 +403,9 @@ class _ListingCard extends StatelessWidget {
                       fontWeight: FontWeight.w500
                     ),
                   ),
-                  if (listing.purchased > 0)
+                  if (listing.purchased > 0 || listing.purchaseLimit != null)
                     Text(
-                      AppStrings.vaultPurchased(listing.purchased),
+                      AppStrings.vaultPurchased(listing.purchased, listing.purchaseLimit),
                       style: Theme.of(context).textTheme.bodyText1,
                     ),
                 ],
@@ -408,6 +419,7 @@ class _ListingCard extends StatelessWidget {
             ),
           ),
         ],
+      ),
       ),
     );
   }

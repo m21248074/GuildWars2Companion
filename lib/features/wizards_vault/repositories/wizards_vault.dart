@@ -19,15 +19,11 @@ class WizardsVaultRepository {
       wizardsVaultService.getObjectives('daily'),
       wizardsVaultService.getObjectives('weekly'),
       wizardsVaultService.getObjectives('special'),
-      wizardsVaultService.getListings(),
-      // What has been bought is nice to have, the rest still works without it
-      wizardsVaultService.getPurchasedListings().catchError((_) => <int, int>{}),
+      // What has been bought is nice to have, the shop works without it
+      wizardsVaultService.getAccountListings().catchError((_) => wizardsVaultService.getListings()),
     ]);
 
     List<WizardsVaultListing> listings = networkResults[4];
-    Map<int, int> purchased = networkResults[5];
-
-    listings.forEach((l) => l.purchased = purchased[l.id] ?? 0);
 
     await _loadItems(listings);
 

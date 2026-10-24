@@ -89,8 +89,10 @@ class WizardsVaultListing {
   String type;
   int cost;
 
-  /// How many times the account has bought it.
+  /// How many times the account has bought it and how often it can be
+  /// bought (null: no limit), both only known for the account.
   int purchased = 0;
+  int purchaseLimit;
 
   /// Filled in after the items have been loaded.
   Item item;
@@ -103,7 +105,11 @@ class WizardsVaultListing {
     itemCount = json['item_count'] ?? 1;
     type = json['type'];
     cost = json['cost'] ?? 0;
+    purchased = json['purchased'] ?? 0;
+    purchaseLimit = json['purchase_limit'];
   }
+
+  bool get soldOut => purchaseLimit != null && purchased >= purchaseLimit;
 }
 
 class WizardsVaultData {

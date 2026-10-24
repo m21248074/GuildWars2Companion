@@ -569,6 +569,8 @@ class AppStrings {
   static String get vaultFeatured => _t('Featured', '精選');
   static String get vaultNormal => _t('Rewards', '一般');
   static String get vaultLegacy => _t('Legacy', '傳承');
-  static String vaultPurchased(int count) => _t('Bought $count times', '已購買 $count 次');
+  static String vaultPurchased(int count, int limit) => limit != null
+    ? _t('Bought $count / $limit', '已購買 $count / $limit')
+    : _t('Bought $count times', '已購買 $count 次');
   static String vaultCost(int cost) => _t('$cost Astral Acclaim', '$cost 星界讚譽');
 }

@@ -42,16 +42,14 @@ class WizardsVaultService {
     throw Exception();
   }
 
-  /// The number of times the account has bought every listing, by id.
-  Future<Map<int, int>> getPurchasedListings() async {
+  /// All listings, with how often the account bought them (purchased) and
+  /// how often it can (purchase_limit).
+  Future<List<WizardsVaultListing>> getAccountListings() async {
     final response = await dio.get(Urls.accountWizardsVaultListingsUrl);
 
     if (response.statusCode == 200) {
-      List purchases = response.data;
-      return Map<int, int>.fromEntries(purchases.map((p) => MapEntry<int, int>(
-        p['id'] as int,
-        (p['count'] ?? 0) as int
-      )));
+      List listings = response.data;
+      return listings.map((l) => WizardsVaultListing.fromJson(l)).toList();
     }
 
     throw Exception();
