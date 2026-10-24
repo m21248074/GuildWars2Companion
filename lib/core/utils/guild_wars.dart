@@ -46,11 +46,11 @@ class GuildWarsUtil {
       case 'Icebrood':
         return Colors.blueAccent;
       case 'Sky':
-        return Colors.indigo;
+        return Colors.amber[700];
       case 'Wild':
-        return Colors.deepOrange;
+        return Color(0xFF2845C9);
       case 'Magic':
-        return Colors.amber[800];
+        return Colors.deepOrange;
       default:
         return Color(0xFF118E8A);
     }
