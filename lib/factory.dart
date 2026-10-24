@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guildwars2_companion/core/utils/dio.dart';
+import 'package:guildwars2_companion/core/utils/stats_cache.dart';
 import 'package:guildwars2_companion/features/account/bloc/account_bloc.dart';
 import 'package:guildwars2_companion/features/account/repositories/account.dart';
 import 'package:guildwars2_companion/features/permissions/repositories/permission.dart';
@@ -82,6 +83,7 @@ class CompanionFactory {
 
     configurationService = ConfigurationService();
     await configurationService.loadConfiguration();
+    await StatsCache.load();
 
     changelogService = ChangelogService();
     await changelogService.loadChangelogData();

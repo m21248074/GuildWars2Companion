@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:guildwars2_companion/core/utils/stats_cache.dart';
 import 'package:guildwars2_companion/features/account/exceptions/api.dart';
 import 'package:guildwars2_companion/features/account/models/account.dart';
 import 'package:guildwars2_companion/features/account/models/token_entry.dart';
@@ -25,6 +26,8 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
   ) async* {
     if (event is AuthenticateEvent) {
       yield LoadingAccountState();
+      // Possibly a different account than the one the cached stats belong to
+      await StatsCache.clear();
       yield* _authenticate(event.token);
     } else if (event is SetupAccountEvent) {
       yield LoadingAccountState();
@@ -40,6 +43,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
       yield LoadingAccountState();
       yield* _removeToken(event.tokenId);
     } else if (event is UnauthenticateEvent) {
+      await StatsCache.clear();
       await accountRepository.removeCurrentToken();
       yield await _getUnauthenticated(null);
     }
