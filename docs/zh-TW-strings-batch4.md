@@ -95,7 +95,7 @@
 
 下面三節的名稱不是介面文字,而是 App 內附的資料檔(`assets/data/*.json`)裡寫死的英文。
 來源欄:**資料** = 遊戲 API 的地圖、傳送點名稱(簡體轉繁體,和遊戲資料畫面一致);
-**社群** = 台灣玩家社群的 Blish HUD 事件模組中文翻譯(m21248074 的 fork),其中玩家綽號(例如「戰場惡犬」「焦油」)我沒採用;**成就** = 取自遊戲 API 的成就名稱;**自擬** = 我自己譯的,多半是人名、音譯,不確定和遊戲一致,**請特別審**。
+**社群** = 台灣玩家社群的 Blish HUD 事件模組中文翻譯(m21248074 的 fork;大型地下城首領另參考同一人 fork 的 KillProof.me 外掛中文),其中玩家綽號(例如「戰場惡犬」「焦油」)我沒採用;**成就** = 取自遊戲 API 的成就名稱;**自擬** = 我自己譯的,多半是人名、音譯,不確定和遊戲一致,**請特別審**。
 不想翻的(例如人名首領)直接把繁體欄改回英文就好。
 
 | 英文 | 繁體中文 | 來源 |
@@ -203,6 +203,13 @@
 | Night Bosses | 夜晚首領 | 社群 |
 | Gang War | 幫派戰爭 | 社群 |
 | Dragonstorm (Public) | 巨龍風暴（公開） | 社群 |
+| Gorseval the Multifarious | 多變藤 戈瑟瓦爾 | 社群 |
+| Sabetha the Saboteur | 破壞者 薩蓓莎 | 社群 |
+| Matthias Gabrel | 馬蒂亞斯·加布瑞爾 | 社群 |
+| Cairn the Indomitable | 不屈的凱玲 | 社群 |
+| Samarog | 薩瑪洛格 | 社群 |
+| Cardinal Adina | 基石守護者 艾迪娜 | 社群 |
+| Cardinal Sabir | 基石守護者 薩比爾 | 社群 |
 | Claw of Jormag | 卓瑪之爪 | 成就 |
 | Fire Elemental | 火焰元素 | 成就 |
 | Great Jungle Wurm | 巨型叢林地蟲 | 成就 |
@@ -216,7 +223,6 @@
 | Keep Construct | 要塞構造體 | 成就 |
 | Xera | 琦拉 | 成就 |
 | Mursaat Overseer | 末世魔監工 | 成就 |
-| Samarog | 薩瑪洛格 | 成就 |
 | Deimos | 戴莫斯 | 成就 |
 | Soulless Horror | 無魂懼魔 | 成就 |
 | Dhuum | 德姆 | 成就 |
@@ -224,8 +230,6 @@
 | Twin Largos | 孿生蝶翼人 | 成就 |
 | Qadim | 卡迪姆 | 成就 |
 | Qadim the Peerless | 無可匹敵的卡迪姆 | 成就 |
-| Cardinal Adina | 基石守護者艾迪娜 | 成就 |
-| Cardinal Sabir | 基石守護者薩比爾 | 成就 |
 | Siege the Stronghold | 要塞圍攻 | 成就 |
 | Chak Gerent | 查克蟲王 | 成就 |
 | Death-Branded Shatterer | 死亡烙印碎裂巨獸 | 成就 |
@@ -235,11 +239,7 @@
 | Buried Treasure | 埋藏的寶藏 | 成就 |
 | Triple Trouble Wurm | 三頭地蟲 | 自擬 |
 | Spirit Woods | 靈魂森林 | 自擬 |
-| Gorseval the Multifarious | 千變萬化的戈瑟瓦 | 自擬 |
-| Sabetha the Saboteur | 破壞者薩貝莎 | 自擬 |
 | Protect the caged prisoners | 保護被關押的囚犯 | 自擬 |
-| Matthias Gabrel | 馬蒂亞斯·蓋布瑞 | 自擬 |
-| Cairn the Indomitable | 不屈的凱恩 | 自擬 |
 | Front Gate | 前門 | 自擬 |
 | Statues of Grenth | 格林斯雕像 | 自擬 |
 | Story | 故事 | 自擬 |
