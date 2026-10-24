@@ -33,8 +33,8 @@ class AchievementRepository {
     List networkResults = await Future.wait([
       achievementService.getAchievementGroups(),
       achievementService.getAchievementCategories(),
-      achievementService.getDailies(),
-      achievementService.getDailies(tomorrow: true)
+      _getDailiesOrEmpty(),
+      _getDailiesOrEmpty(tomorrow: true)
     ]);
 
     List<AchievementGroup> achievementGroups = networkResults[0];
@@ -138,6 +138,16 @@ class AchievementRepository {
       dailies: dailies,
       dailiesTomorrow: dailiesTomorrow
     );
+  }
+
+  // The daily achievement endpoints of the API are sometimes unavailable (503).
+  // That must not prevent the rest of the achievements from loading.
+  Future<DailyGroup> _getDailiesOrEmpty({bool tomorrow = false}) async {
+    try {
+      return await achievementService.getDailies(tomorrow: tomorrow);
+    } catch (_) {
+      return DailyGroup(pve: [], pvp: [], wvw: [], fractals: [], special: []);
+    }
   }
 
   Future<List<Achievement>> getFavoriteAchievements(List<Achievement> achievements) async {

@@ -21,7 +21,7 @@ class DioUtil {
         baseUrl: Urls.baseUrl,
         followRedirects: false,
         validateStatus: (status) => status < 500,
-        connectTimeout: 7500,
+        connectTimeout: 20000,
       ),
     );
 
