@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/widgets/header.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class TokenLayout extends StatelessWidget {
+  static const String defaultTitle = 'Api Keys';
+
   final String darkThemeTitle;
   final Widget child;
 
   TokenLayout({
     @required this.child,
-    this.darkThemeTitle = 'Api Keys'
+    this.darkThemeTitle = defaultTitle
   });
 
   @override
@@ -67,7 +70,7 @@ class _Header extends StatelessWidget {
                 ),
                 if (darkThemeTitle != null)
                   Text(
-                    darkThemeTitle,
+                    darkThemeTitle == TokenLayout.defaultTitle ? AppStrings.apiKeys : darkThemeTitle,
                     style: Theme.of(context).textTheme.headline1.copyWith(
                       fontWeight: FontWeight.w300
                     ),

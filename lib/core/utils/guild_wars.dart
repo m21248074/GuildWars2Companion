@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class GuildWarsUtil {
   static int calculatePlayTime(int playTime) {
@@ -11,14 +12,16 @@ class GuildWarsUtil {
   static String masteryName(String mastery) {
     switch (mastery) {
       case 'Maguuma':
-        return 'Heart of Thorns';
+        return AppStrings.heartOfThorns;
       case 'Desert':
-        return 'Path of Fire';
+        return AppStrings.pathOfFire;
       case 'Tundra':
       case 'Icebrood':
-        return 'Icebrood Saga';
+        return AppStrings.icebroodSaga;
+      case 'Tyria':
+        return AppStrings.tyria;
       case 'Unknown':
-        return 'End of Dragons';
+        return AppStrings.endOfDragons;
       default:
         return mastery;
     }

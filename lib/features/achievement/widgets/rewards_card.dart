@@ -5,6 +5,7 @@ import 'package:guildwars2_companion/core/widgets/card.dart';
 import 'package:guildwars2_companion/core/widgets/coin.dart';
 import 'package:guildwars2_companion/features/achievement/models/achievement.dart';
 import 'package:guildwars2_companion/features/item/widgets/item_box.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class AchievementRewardsCard extends StatelessWidget {
   final Achievement achievement;
@@ -19,7 +20,7 @@ class AchievementRewardsCard extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(bottom: 8.0),
             child: Text(
-              'Rewards',
+              AppStrings.rewards,
               style: Theme.of(context).textTheme.headline2,
             ),
           ),
@@ -71,7 +72,7 @@ class AchievementRewardsCard extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(4.0),
                           child: Text(
-                            GuildWarsUtil.masteryName(r.region) + ' Mastery point',
+                            AppStrings.masteryPoint(GuildWarsUtil.masteryName(r.region)),
                             style: Theme.of(context).textTheme.bodyText1,
                             textAlign: TextAlign.center,
                           ),

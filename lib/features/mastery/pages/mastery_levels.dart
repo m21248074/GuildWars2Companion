@@ -13,6 +13,7 @@ import 'package:guildwars2_companion/features/achievement/bloc/achievement_bloc.
 import 'package:guildwars2_companion/features/mastery/models/mastery.dart';
 
 import 'mastery_level.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class MasteryLevelsPage extends StatelessWidget {
   final Mastery mastery;
@@ -33,7 +34,7 @@ class MasteryLevelsPage extends StatelessWidget {
             if (state is ErrorAchievementsState) {
               return Center(
                 child: CompanionError(
-                  title: 'the masteries',
+                  title: AppStrings.theMasteries,
                   onTryAgain: () =>
                     BlocProvider.of<AchievementBloc>(context).add(LoadAchievementsEvent(
                       includeProgress: state.includesProgress
@@ -118,7 +119,7 @@ class MasteryLevelsPage extends StatelessWidget {
               if (state is ErrorAchievementsState) {
                 return Center(
                   child: CompanionError(
-                    title: 'the masteries',
+                    title: AppStrings.theMasteries,
                     onTryAgain: () =>
                       BlocProvider.of<AchievementBloc>(context).add(LoadAchievementsEvent(
                         includeProgress: state.includesProgress

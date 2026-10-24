@@ -5,6 +5,7 @@ import 'package:guildwars2_companion/features/account/bloc/account_bloc.dart';
 import 'package:guildwars2_companion/features/account/models/token_entry.dart';
 import 'package:guildwars2_companion/features/account/widgets/dismissible_button.dart';
 import 'package:intl/intl.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class AccountTokenButton extends StatelessWidget {
   final TokenEntry token;
@@ -25,7 +26,7 @@ class AccountTokenButton extends StatelessWidget {
       ),
       title: token.name,
       subtitles: added != null ? [
-        'Added: ${DateFormat('yyyy-MM-dd').format(added)}'
+        AppStrings.addedOn(DateFormat('yyyy-MM-dd').format(added))
       ] : null,
       onTap: () => BlocProvider.of<AccountBloc>(context).add(AuthenticateEvent(token.token)),
     );

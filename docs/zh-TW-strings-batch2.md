@@ -37,7 +37,7 @@
 | 英文 | 繁體中文 | 位置 | 備註 |
 |---|---|---|---|
 | Scan your Qr Code | 掃描 QR Code | account/pages/qr_code.dart:24 | |
-| Taking too long? The app might not have permission to use the camera. | 等太久了嗎？App 可能沒有使用相機的權限。 | qr_code.dart:56 | |
+| Taking too long? The app might not have permission to use the camera. | 等太久了嗎？ App 可能沒有使用相機的權限。 | qr_code.dart:56 | |
 | Checking Api Key... | 正在檢查 API 金鑰… | qr_code.dart:97 | |
 
 ## 帳號:如何取得 API 金鑰
@@ -132,7 +132,7 @@
 | Tyria | 泰瑞亞 | |
 | Heart of Thorns | 決戰邁古瑪 | ? 資料用詞;也可用「荊棘之心」 |
 | Path of Fire | 火焰之路 | 與資料一致 |
-| Icebrood Saga | 冰霜傳說 | ? 我不確定資料裡的正式名稱,資料沒有這一組 |
+| Icebrood Saga | 冰霜傳說 | 冰巢傳說 |
 | End of Dragons | 巨龍絕境 | 與資料一致 |
 
 ## 這批沒有翻譯的(程式用來辨識的值,不是顯示文字)

@@ -8,6 +8,7 @@ import 'package:guildwars2_companion/features/account/models/account.dart';
 import 'package:guildwars2_companion/features/account/models/token_entry.dart';
 import 'package:guildwars2_companion/features/account/models/token_info.dart';
 import 'package:guildwars2_companion/features/account/repositories/account.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 part 'account_event.dart';
 part 'account_state.dart';
@@ -72,10 +73,10 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
     } catch (exception) {
       switch (exception.runtimeType) {
         case ApiException:
-          yield await _getUnauthenticated("Api error: " + (exception as ApiException).apiMessage);
+          yield await _getUnauthenticated(AppStrings.apiError((exception as ApiException).apiMessage));
           break;
         default:
-          yield await _getUnauthenticated("Network error");
+          yield await _getUnauthenticated(AppStrings.networkError);
       }
     }
   }
@@ -93,7 +94,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
       if (exception is ApiException) {
         // The api key was rejected, the cached account is no longer valid
         await AccountCache.clear();
-        yield await _getUnauthenticated("Api error: " + exception.apiMessage);
+        yield await _getUnauthenticated(AppStrings.apiError(exception.apiMessage));
       }
 
       // On a network error keep showing the cached account
@@ -109,21 +110,21 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
         date: DateTime.now().toIso8601String(),
         token: token,
       ));
-      yield await _getUnauthenticated("Api Key added", tokenAdded: true);
+      yield await _getUnauthenticated(AppStrings.apiKeyAdded, tokenAdded: true);
     } catch (exception) {
       switch (exception.runtimeType) {
         case ApiException:
-          yield await _getUnauthenticated("Api error: " + (exception as ApiException).apiMessage);
+          yield await _getUnauthenticated(AppStrings.apiError((exception as ApiException).apiMessage));
           break;
         default:
-          yield await _getUnauthenticated("Network error");
+          yield await _getUnauthenticated(AppStrings.networkError);
       }
     }
   }
 
   Stream<AccountState> _removeToken(int tokenId) async* {
     await accountRepository.removeToken(tokenId);
-    yield await _getUnauthenticated("Api Key removed", tokenRemoved: true);
+    yield await _getUnauthenticated(AppStrings.apiKeyRemoved, tokenRemoved: true);
   }  
 
   Future<UnauthenticatedState> _getUnauthenticated(String message, { bool tokenAdded = false, bool tokenRemoved = false }) async {

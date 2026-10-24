@@ -4,6 +4,7 @@ import 'package:guildwars2_companion/core/widgets/cached_image.dart';
 import 'package:guildwars2_companion/core/widgets/card.dart';
 import 'package:guildwars2_companion/features/achievement/models/achievement.dart';
 import 'package:guildwars2_companion/features/item/widgets/item_box.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class AchievementBitsCard extends StatelessWidget {
   final Achievement achievement;
@@ -23,7 +24,7 @@ class AchievementBitsCard extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 8.0),
               child: Text(
-                'Objectives',
+                AppStrings.objectives,
                 style: Theme.of(context).textTheme.headline2,
               ),
             ),
@@ -74,7 +75,7 @@ class AchievementBitsCard extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(bottom: 8.0),
             child: Text(
-              'Collection',
+              AppStrings.collection,
               style: Theme.of(context).textTheme.headline2,
             ),
           ),
@@ -127,7 +128,7 @@ class _ItemBit extends StatelessWidget {
       return Row(
         children: <Widget>[
           Text(
-            'Unknown item',
+            AppStrings.unknownItem,
             style: Theme.of(context).textTheme.bodyText1,
           ),
         ],

@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/features/achievement/pages/achievement_cate
 import 'package:guildwars2_companion/features/achievement/pages/daily_categories.dart';
 import 'package:guildwars2_companion/features/achievement/pages/favorite_achievements.dart';
 import 'package:guildwars2_companion/features/mastery/pages/masteries.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ProgressionPage extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class ProgressionPage extends StatelessWidget {
       lightColor: Colors.orange,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Progression',
+          title: AppStrings.progression,
           color: Colors.orange,
         ),
         body: BlocBuilder<AchievementBloc, AchievementState>(
@@ -27,7 +28,7 @@ class ProgressionPage extends StatelessWidget {
             if (state is ErrorAchievementsState) {
               return Center(
                 child: CompanionError(
-                  title: 'the progression',
+                  title: AppStrings.theProgression,
                   onTryAgain: () =>
                     BlocProvider.of<AchievementBloc>(context).add(LoadAchievementsEvent(
                       includeProgress: state.includesProgress
@@ -70,7 +71,7 @@ class _ProgressionButtonList extends StatelessWidget {
           onTap: () => Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => AchievementCategoriesPage()
           )),
-          title: 'Achievements',
+          title: AppStrings.achievements,
           leading: Icon(
             GuildWarsIcons.achievement,
             size: 42.0,
@@ -82,7 +83,7 @@ class _ProgressionButtonList extends StatelessWidget {
           onTap: () => Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => FavoriteAchievementsPage()
           )),
-          title: 'Favorite achievements',
+          title: AppStrings.favoriteAchievements,
           leading: Icon(
             Icons.star,
             size: 42.0,
@@ -106,7 +107,7 @@ class _ProgressionButtonList extends StatelessWidget {
           onTap: () => Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => MasteriesPage()
           )),
-          title: 'Masteries',
+          title: AppStrings.masteries,
           leading: Icon(
             GuildWarsIcons.mastery,
             size: 42.0,

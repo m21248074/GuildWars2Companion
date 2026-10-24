@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:guildwars2_companion/core/widgets/button.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class DismissibleButton extends StatelessWidget {
   final Key key;
@@ -69,7 +70,7 @@ class _Background extends StatelessWidget {
               ),
             ),
           Text(
-            'Delete Api Key',
+            AppStrings.deleteApiKey,
             style: TextStyle(
               color: Colors.white,
               fontSize: 18.0

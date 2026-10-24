@@ -8,6 +8,7 @@ import 'package:guildwars2_companion/core/widgets/info_card.dart';
 import 'package:guildwars2_companion/core/widgets/info_row.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/mastery/models/mastery.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class MasteryLevelPage extends StatelessWidget {
   final Mastery mastery;
@@ -52,7 +53,7 @@ class MasteryLevelPage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.only(top: 4.0),
                       child: Text(
-                        'Completed',
+                        AppStrings.completed,
                         style: Theme.of(context).textTheme.bodyText1.copyWith(
                           color: Colors.white
                         )
@@ -83,23 +84,23 @@ class MasteryLevelPage extends StatelessWidget {
               child: CompanionListView(
                 children: <Widget>[
                   if (level.description != null && level.description.isNotEmpty)
-                    CompanionInfoCard(title: 'Description', text: level.description),
+                    CompanionInfoCard(title: AppStrings.description, text: level.description),
                   if (level.instruction != null && level.instruction.isNotEmpty)
-                    CompanionInfoCard(title: 'Instructions', text: level.instruction),
+                    CompanionInfoCard(title: AppStrings.masteryInstructions, text: level.instruction),
                   CompanionInfoCard(
-                    title: 'Instructions',
+                    title: AppStrings.masteryDetails,
                     child: Column(
                       children: [
                         CompanionInfoRow(
-                          header: 'Region',
-                          text: mastery.region
+                          header: AppStrings.region,
+                          text: GuildWarsUtil.masteryName(mastery.region)
                         ),
                         CompanionInfoRow(
-                          header: 'Mastery points',
+                          header: AppStrings.masteryPoints,
                           text: level.pointCost.toString()
                         ),
                         CompanionInfoRow(
-                          header: 'Experience',
+                          header: AppStrings.experience,
                           text: GuildWarsUtil.intToString(level.expCost)
                         )
                       ],

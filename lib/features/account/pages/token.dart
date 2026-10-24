@@ -12,6 +12,7 @@ import 'package:guildwars2_companion/features/tabs/bloc/tab_bloc.dart';
 import 'package:guildwars2_companion/features/tabs/pages/tab.dart';
 import 'package:guildwars2_companion/features/account/pages/how_to.dart';
 import 'package:guildwars2_companion/features/account/pages/qr_code.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class TokenPage extends StatelessWidget {
   @override
@@ -91,7 +92,7 @@ class TokenPage extends StatelessWidget {
                     size: 18.0,
                   ),
                   backgroundColor: backgroundColor,
-                  labelWidget: _SpeedDailLabel(label: 'Enter Api Key by Qr Code'),
+                  labelWidget: _SpeedDailLabel(label: AppStrings.enterApiKeyByQrCode),
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => QrCodePage()
                   )),
@@ -103,7 +104,7 @@ class TokenPage extends StatelessWidget {
                     size: 18.0,
                   ),
                   backgroundColor: backgroundColor,
-                  labelWidget: _SpeedDailLabel(label: 'Enter Api Key by text'),
+                  labelWidget: _SpeedDailLabel(label: AppStrings.enterApiKeyByText),
                   onTap: () => _addTokenByText(context),
                 ),
                 SpeedDialChild(
@@ -113,7 +114,7 @@ class TokenPage extends StatelessWidget {
                     size: 18.0,
                   ),
                   backgroundColor: backgroundColorAccent,
-                  labelWidget: _SpeedDailLabel(label: 'How do I get an Api Key?'),
+                  labelWidget: _SpeedDailLabel(label: AppStrings.howToGetApiKey),
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => HowToTokenPage()
                   )),
@@ -125,7 +126,7 @@ class TokenPage extends StatelessWidget {
                     size: 18.0,
                   ),
                   backgroundColor: backgroundColorAccent,
-                  labelWidget: _SpeedDailLabel(label: 'Settings'),
+                  labelWidget: _SpeedDailLabel(label: AppStrings.settings),
                   onTap: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => ConfigurationPage()
                   )),
@@ -147,17 +148,17 @@ class TokenPage extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Add your Guild Wars 2 Api Key'),
+          title: Text(AppStrings.addYourApiKey),
           content: TextField(
             controller: tokenFieldController,
             decoration: InputDecoration(
-              hintText: 'Api Key',
+              hintText: AppStrings.apiKey,
             ),
           ),
           actions: <Widget>[
             TextButton(
               child: Text(
-                'Cancel',
+                AppStrings.cancel,
                 style: TextStyle(
                   fontSize: 18.0
                 ),
@@ -168,7 +169,7 @@ class TokenPage extends StatelessWidget {
             ),
             TextButton(
               child: Text(
-                'Add',
+                AppStrings.add,
                 style: TextStyle(
                   fontSize: 18.0
                 ),
@@ -197,14 +198,14 @@ class _NoTokenWarning extends StatelessWidget {
           Column(
             children: <Widget>[
               Text(
-                'No Api Keys found',
+                AppStrings.noApiKeysFound,
                 style: TextStyle(
                   fontSize: 24.0,
                   fontWeight: FontWeight.w500
                 ),
               ),
               Text(
-                'Add one using the button in the bottom right corner.',
+                AppStrings.addOneUsingButton,
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w300

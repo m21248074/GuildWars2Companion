@@ -122,4 +122,91 @@ class AppStrings {
     'Are you sure that you want to remove this scheduled notification?',
     '確定要移除這個排程通知嗎？'
   );
+
+  // Account: Api keys
+  static String get apiKeys => _t('Api Keys', 'API 金鑰');
+  static String get apiKey => _t('Api Key', 'API 金鑰');
+  static String get noApiKeysFound => _t('No Api Keys found', '找不到任何 API 金鑰');
+  static String get addOneUsingButton => _t('Add one using the button in the bottom right corner.', '請使用右下角的按鈕新增。');
+  static String addedOn(String date) => _t('Added: $date', '新增日期：$date');
+  static String get deleteApiKey => _t('Delete Api Key', '刪除 API 金鑰');
+  static String get enterApiKeyByQrCode => _t('Enter Api Key by Qr Code', '以 QR Code 輸入 API 金鑰');
+  static String get enterApiKeyByText => _t('Enter Api Key by text', '以文字輸入 API 金鑰');
+  static String get howToGetApiKey => _t('How do I get an Api Key?', '如何取得 API 金鑰？');
+  static String get settings => _t('Settings', '設定');
+  static String get addYourApiKey => _t('Add your Guild Wars 2 Api Key', '新增 Guild Wars 2 的 API 金鑰');
+  static String get add => _t('Add', '新增');
+  static String get scanQrCode => _t('Scan your Qr Code', '掃描 QR Code');
+  static String get qrTakingTooLong => _t(
+    'Taking too long? The app might not have permission to use the camera.',
+    '等太久了嗎？ App 可能沒有使用相機的權限。'
+  );
+  static String get checkingApiKey => _t('Checking Api Key...', '正在檢查 API 金鑰…');
+
+  // Account: how to get an Api key
+  static String get howToIntro => _t(
+    'To use the Guild Wars 2 Companion app, you need to generate a personal Api Key on the Arenanet website:',
+    '使用 Guild Wars 2 Companion 需要先在 ArenaNet 網站產生個人的 API 金鑰：'
+  );
+  static String get howToInstructions => _t('Instructions', '步驟');
+  static String get howToStep1 => _t(
+    "After navigating to the above mentioned website, click on the 'New Key' button to generate a new key.",
+    '前往上述網站後，點選「New Key」按鈕以產生新的金鑰。'
+  );
+  static String get howToStep2 => _t(
+    'On the next page, enter a name for the key and select which elements you want to app to have access to.',
+    '在下一頁輸入金鑰的名稱，並選擇要讓 App 存取哪些項目。'
+  );
+  static String get howToStep3 => _t(
+    'We recommend to select all the options to get the optimal experience.',
+    '建議勾選所有選項，以獲得最完整的體驗。'
+  );
+  static String get howToStep4 => _t(
+    "Keep in mind, the app can only retrieve the selected information. The app cannot make any changes to your account, and the retrieved information will stay on your phone and won't be shared.",
+    '請注意，App 只能讀取已選取的資訊，無法對帳號做任何變更，取得的資訊只會留在手機上，不會被分享。'
+  );
+  static String get howToStep5 => _t(
+    'After creating a new api key, copy and paste the key in the app, or scan the qr code.',
+    '建立新的 API 金鑰後，將金鑰複製貼上到 App，或掃描 QR Code。'
+  );
+
+  // Account: messages
+  static String apiError(String message) => _t('Api error: $message', 'API 錯誤：$message');
+  static String get networkError => _t('Network error', '網路錯誤');
+  static String get apiKeyAdded => _t('Api Key added', '已新增 API 金鑰');
+  static String get apiKeyRemoved => _t('Api Key removed', '已移除 API 金鑰');
+
+  // Error screen subjects
+  static String get theAchievements => _t('the achievements', '成就');
+  static String get theAchievement => _t('the achievement', '這個成就');
+  static String get theProgression => _t('the progression', '進度');
+  static String get theMasteries => _t('the masteries', '專精');
+
+  // Progression and achievements
+  static String get progression => _t('Progression', '進度');
+  static String get favoriteAchievements => _t('Favorite achievements', '我的最愛成就');
+  static String get masteries => _t('Masteries', '專精');
+  static String get description => _t('Description', '描述');
+  static String get lockedDescription => _t('Locked description', '未解鎖的描述');
+  static String get requirement => _t('Requirement', '條件');
+  static String get rewards => _t('Rewards', '獎勵');
+  static String masteryPoint(String region) => _t('$region Mastery point', '$region專精點數');
+  static String get prerequisites => _t('Prerequisites', '前置成就');
+  static String get objectives => _t('Objectives', '目標');
+  static String get collection => _t('Collection', '收藏');
+  static String get unknownItem => _t('Unknown item', '未知物品');
+
+  // Masteries
+  static String get completed => _t('Completed', '已完成');
+  static String get masteryInstructions => _t('Instructions', '操作說明');
+  // The card with region, points and experience is titled 'Instructions' in English too
+  static String get masteryDetails => _t('Instructions', '詳細資料');
+  static String get region => _t('Region', '地區');
+  static String get masteryPoints => _t('Mastery points', '專精點數');
+  static String get experience => _t('Experience', '經驗值');
+  static String get tyria => _t('Tyria', '泰瑞亞');
+  static String get heartOfThorns => _t('Heart of Thorns', '決戰邁古瑪');
+  static String get pathOfFire => _t('Path of Fire', '火焰之路');
+  static String get icebroodSaga => _t('Icebrood Saga', '冰巢傳說');
+  static String get endOfDragons => _t('End of Dragons', '巨龍絕境');
 }

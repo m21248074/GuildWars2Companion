@@ -10,6 +10,7 @@ import 'package:guildwars2_companion/features/achievement/bloc/achievement_bloc.
 import 'package:guildwars2_companion/features/achievement/models/achievement_category.dart';
 import 'package:guildwars2_companion/features/achievement/models/achievement_group.dart';
 import 'package:guildwars2_companion/features/achievement/widgets/achievement_category_button.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class AchievementCategoriesPage extends StatelessWidget {
   @override
@@ -18,7 +19,7 @@ class AchievementCategoriesPage extends StatelessWidget {
       lightColor: Colors.orange,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Achievements',
+          title: AppStrings.achievements,
           color: Colors.orange,
         ),
         body: BlocBuilder<AchievementBloc, AchievementState>(
@@ -26,7 +27,7 @@ class AchievementCategoriesPage extends StatelessWidget {
             if (state is ErrorAchievementsState) {
               return Center(
                 child: CompanionError(
-                  title: 'the achievements',
+                  title: AppStrings.theAchievements,
                   onTryAgain: () =>
                     BlocProvider.of<AchievementBloc>(context).add(LoadAchievementsEvent(
                       includeProgress: state.includesProgress

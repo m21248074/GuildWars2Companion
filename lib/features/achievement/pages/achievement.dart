@@ -13,6 +13,7 @@ import 'package:guildwars2_companion/features/achievement/models/achievement.dar
 import 'package:guildwars2_companion/features/achievement/widgets/bits_card.dart';
 import 'package:guildwars2_companion/features/achievement/widgets/prerequisites_card.dart';
 import 'package:guildwars2_companion/features/achievement/widgets/rewards_card.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class AchievementPage extends StatelessWidget {
   final Achievement achievement;
@@ -39,7 +40,7 @@ class AchievementPage extends StatelessWidget {
                 hero: hero,
                 child: Center(
                   child: CompanionError(
-                    title: 'the achievement',
+                    title: AppStrings.theAchievement,
                     onTryAgain: () =>
                       BlocProvider.of<AchievementBloc>(context).add(LoadAchievementsEvent(
                         includeProgress: state.includesProgress
@@ -56,7 +57,7 @@ class AchievementPage extends StatelessWidget {
                 hero: hero,
                 child: Center(
                   child: CompanionError(
-                    title: 'the achievement',
+                    title: AppStrings.theAchievement,
                     onTryAgain: () =>
                       BlocProvider.of<AchievementBloc>(context).add(LoadAchievementDetailsEvent(
                       achievementId: achievement.id,
@@ -76,7 +77,7 @@ class AchievementPage extends StatelessWidget {
                   hero: hero,
                   child: Center(
                     child: CompanionError(
-                      title: 'the achievement',
+                      title: AppStrings.theAchievement,
                       onTryAgain: () =>
                         BlocProvider.of<AchievementBloc>(context).add(LoadAchievementsEvent(
                           includeProgress: state.includesProgress
@@ -282,11 +283,11 @@ class _AchievementPageContent extends StatelessWidget {
     return CompanionListView(
       children: <Widget>[
         if (achievement.description != null && achievement.description.isNotEmpty)
-          CompanionInfoCard(title: 'Description', text: GuildWarsUtil.removeOnlyHtml(achievement.description)),
+          CompanionInfoCard(title: AppStrings.description, text: GuildWarsUtil.removeOnlyHtml(achievement.description)),
         if (achievement.lockedText != null && achievement.lockedText.isNotEmpty)
-          CompanionInfoCard(title: 'Locked description', text: GuildWarsUtil.removeOnlyHtml(achievement.lockedText)),
+          CompanionInfoCard(title: AppStrings.lockedDescription, text: GuildWarsUtil.removeOnlyHtml(achievement.lockedText)),
         if (achievement.requirement != null && achievement.requirement.isNotEmpty)
-          CompanionInfoCard(title: 'Requirement', text: GuildWarsUtil.removeOnlyHtml(achievement.requirement)),
+          CompanionInfoCard(title: AppStrings.requirement, text: GuildWarsUtil.removeOnlyHtml(achievement.requirement)),
         if (achievement.rewards != null && achievement.rewards.isNotEmpty)
           AchievementRewardsCard(achievement: achievement),
         if (achievement.prerequisitesInfo != null && achievement.prerequisitesInfo.isNotEmpty)

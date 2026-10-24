@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guildwars2_companion/core/widgets/appbar.dart';
 import 'package:guildwars2_companion/features/account/bloc/account_bloc.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class QrCodePage extends StatefulWidget {
   @override
@@ -21,7 +22,7 @@ class _QrCodePageState extends State<QrCodePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CompanionAppBar(
-        title: 'Scan your Qr Code',
+        title: AppStrings.scanQrCode,
         color: Colors.red,
       ),
       body: BlocListener<AccountBloc, AccountState>(
@@ -53,7 +54,7 @@ class _QrCodePageState extends State<QrCodePage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'Taking too long? The app might not have permission to use the camera.',
+                    AppStrings.qrTakingTooLong,
                     style: Theme.of(context).textTheme.headline2,
                     textAlign: TextAlign.center,
                   ),
@@ -94,7 +95,7 @@ class _QrCodePageState extends State<QrCodePage> {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            'Checking Api Key...',
+                            AppStrings.checkingApiKey,
                             style: Theme.of(context).textTheme.headline2.copyWith(
                               color: Colors.white
                             ),

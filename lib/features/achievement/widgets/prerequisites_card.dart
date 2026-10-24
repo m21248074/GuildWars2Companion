@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:guildwars2_companion/core/widgets/card.dart';
 import 'package:guildwars2_companion/features/achievement/models/achievement.dart';
 import 'package:guildwars2_companion/features/achievement/widgets/achievement_button.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class AchievementPrerequisitesCard extends StatelessWidget {
   final Achievement achievement;
@@ -21,7 +22,7 @@ class AchievementPrerequisitesCard extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
             child: Text(
-              'Prerequisites',
+              AppStrings.prerequisites,
               style: Theme.of(context).textTheme.headline2,
             ),
           ),
