@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:guildwars2_companion/core/utils/chinese_converter.dart';
 import 'package:guildwars2_companion/core/utils/dio.dart';
 import 'package:guildwars2_companion/core/utils/stats_cache.dart';
 import 'package:guildwars2_companion/features/account/bloc/account_bloc.dart';
@@ -84,6 +85,11 @@ class CompanionFactory {
     configurationService = ConfigurationService();
     await configurationService.loadConfiguration();
     await StatsCache.load();
+
+    if (configurationService.convertToTraditional) {
+      // Parse the dictionaries while the rest of the app starts up
+      ChineseConverter.ensureLoaded().catchError((_) {});
+    }
 
     changelogService = ChangelogService();
     await changelogService.loadChangelogData();

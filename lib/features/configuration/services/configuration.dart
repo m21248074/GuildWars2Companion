@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ConfigurationService {
+  // The Guild Wars 2 api has no Traditional Chinese. It is requested as 'zh'
+  // (Simplified) and converted when it arrives.
+  static const String traditionalChinese = 'zh-tw';
+
   ThemeMode themeMode = ThemeMode.light;
   String language = 'en';
   bool timeNotation24Hours = true;
+
+  String get apiLanguage => language == traditionalChinese ? 'zh' : language;
+  bool get convertToTraditional => language == traditionalChinese;
 
   Future<void> changeTheme(ThemeMode theme) async {
     themeMode = theme;

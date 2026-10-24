@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:guildwars2_companion/core/utils/chinese_converter.dart';
 import 'package:guildwars2_companion/core/utils/urls.dart';
 import 'package:guildwars2_companion/features/configuration/services/configuration.dart';
 import 'package:guildwars2_companion/features/account/services/token.dart';
@@ -27,11 +28,19 @@ class DioUtil {
 
     dio.interceptors.add(InterceptorsWrapper(
       onRequest: (RequestOptions options) {
-        if (configurationService.language != 'en') {
-          options.headers.addAll({'Accept-Language': configurationService.language});
+        if (configurationService.apiLanguage != 'en') {
+          options.headers.addAll({'Accept-Language': configurationService.apiLanguage});
         }
 
         return options;
+      },
+      onResponse: (Response response) async {
+        if (configurationService.convertToTraditional) {
+          await ChineseConverter.ensureLoaded();
+          response.data = ChineseConverter.convertJson(response.data);
+        }
+
+        return response;
       }
     ));
 

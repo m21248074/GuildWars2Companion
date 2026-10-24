@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guildwars2_companion/core/widgets/accent.dart';
 import 'package:guildwars2_companion/features/configuration/bloc/configuration_bloc.dart';
+import 'package:guildwars2_companion/features/configuration/services/configuration.dart';
 import 'package:guildwars2_companion/features/achievement/repositories/achievement.dart';
 import 'package:guildwars2_companion/features/build/repositories/build.dart';
 import 'package:guildwars2_companion/features/item/repositories/item.dart';
@@ -25,6 +26,7 @@ class LanguageConfigurationPage extends StatelessWidget {
               _Language('German', 'de'),
               _Language('French', 'fr'),
               _Language('Chinese', 'zh'),
+              _Language('Chinese (Traditional)', ConfigurationService.traditionalChinese),
             ];
 
             return ListView(

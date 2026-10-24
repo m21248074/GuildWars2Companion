@@ -46,6 +46,7 @@ flutter:
     - assets/
     - assets/data/
     - assets/data/event_timers/
+    - assets/data/opencc/
     - assets/images/
     - assets/images/app/
     - assets/images/button_headers/
