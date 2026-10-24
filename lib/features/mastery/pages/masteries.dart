@@ -14,6 +14,26 @@ import 'mastery_levels.dart';
 import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class MasteriesPage extends StatelessWidget {
+  /// The masteries are sorted per region, every region gets a header with the
+  /// name of its expansion.
+  List<Widget> _getChildren(List<Mastery> masteries) {
+    final List<Widget> children = [];
+    String previousExpansion;
+
+    for (final mastery in masteries) {
+      final String expansion = GuildWarsUtil.masteryName(mastery.region);
+
+      if (expansion != previousExpansion) {
+        children.add(_RegionHeader(region: mastery.region));
+        previousExpansion = expansion;
+      }
+
+      children.add(_MasteryButton(mastery: mastery));
+    }
+
+    return children;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,9 +66,7 @@ class MasteriesPage extends StatelessWidget {
                 await Future.delayed(Duration(milliseconds: 200), () {});
               },
               child: CompanionListView(
-                children: state.masteries
-                  .map((mastery) => _MasteryButton(mastery: mastery))
-                  .toList(),
+                children: _getChildren(state.masteries),
               ),
             );
           }
@@ -115,6 +133,35 @@ class _MasteryButton extends StatelessWidget {
       onTap: () => Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => MasteryLevelsPage(mastery),
       )),
+    );
+  }
+}
+
+class _RegionHeader extends StatelessWidget {
+  final String region;
+
+  _RegionHeader({@required this.region});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 4.0),
+      child: Row(
+        children: <Widget>[
+          Image.asset(
+            Assets.getMasteryAsset(region),
+            height: 24.0,
+            width: 24.0,
+          ),
+          Container(width: 8.0),
+          Expanded(
+            child: Text(
+              GuildWarsUtil.masteryName(region),
+              style: Theme.of(context).textTheme.headline2,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
