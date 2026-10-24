@@ -67,6 +67,10 @@ android {
             // Lets the debug build live next to the Play Store version
             applicationIdSuffix ".dev"
         }
+        profile {
+            // Same for profile builds, which are used for performance testing
+            applicationIdSuffix ".dev"
+        }
         release {
             // Fall back to debug signing when key.properties is not available
             signingConfig keystorePropertiesFile.exists() ? signingConfigs.release : signingConfigs.debug

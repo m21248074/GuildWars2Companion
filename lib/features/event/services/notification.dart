@@ -144,7 +144,7 @@ class NotificationService {
     final List<Map<String, dynamic>> notifications = await notificationDatabase.query('notifications');
     _scheduledNotifications = List.generate(notifications.length, (i) => ScheduledNotification.fromDb(notifications[i]));
 
-    notificationDatabase.close();
+    await notificationDatabase.close();
 
     return;
   }

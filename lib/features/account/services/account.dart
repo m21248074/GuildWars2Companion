@@ -32,7 +32,7 @@ class AccountService {
     final List<Map<String, dynamic>> tokens = await database.query('tokens');
     _tokenEntries = List.generate(tokens.length, (i) => TokenEntry.fromDb(tokens[i]));
 
-    database.close();
+    await database.close();
 
     return;
   }
@@ -56,7 +56,7 @@ class AccountService {
 
     token.id = await database.insert('tokens', token.toDb(), conflictAlgorithm: ConflictAlgorithm.ignore);
 
-    database.close();
+    await database.close();
 
     return;
   }
@@ -76,7 +76,7 @@ class AccountService {
       whereArgs: [tokenId],
     );
 
-    database.close();
+    await database.close();
 
     return;
   }
