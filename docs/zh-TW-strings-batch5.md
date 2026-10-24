@@ -13,7 +13,7 @@
 | No specialization chosen | 尚未選擇特長 | |
 | Description | 描述 | |
 | Stats | 屬性 | 技能與特性的事實列表 |
-| Effects | 效果 | 增益、狀態那一張卡 |
+| Effects | 效果 | 增益、症狀那一張卡 |
 | Minor trait | 次要特性 |  也可用「小型特性」 |
 | Major trait | 主要特性 |  也可用「大型特性」 |
 
@@ -21,23 +21,23 @@
 
 | 英文 | 繁體中文 | 備註 |
 |---|---|---|
-| Power | 力量 | |
+| Power | 威力 | |
 | Precision | 精準 | |
-| Toughness | 強韌 | |
-| Vitality | 活力 | |
-| ConditionDamage | 狀態傷害 | |
-| ConditionDuration | 狀態持續時間 | |
+| Toughness | 堅韌 | |
+| Vitality | 體力 | |
+| ConditionDamage | 症狀傷害 | 遊戲資料稱 Condition 為「症狀」 |
+| ConditionDuration | 症狀持續時間 | |
 | BoonDuration | 增益持續時間 | |
 | CritDamage | 暴擊傷害 | |
 | Healing | 治療 | |
-| Range | 射程 | 範圍 |
+| Range | 範圍 | 遊戲內驗證 |
 | Recharge | 冷卻時間 | |
-| Combo Field | 組合場 | 組合技區域 |
+| Combo Field | 組合技區域 | 遊戲內驗證 |
 | Combo Finisher | 組合終結技 | |
-| Unblockable | 無法格擋 | ? |
-| StunBreak | 解除控制 | 解除昏迷 |
-| Dark / Ethereal / Fire / Ice / Light / Lightning / Poison / Smoke / Water | 黑暗 / 虛幻 / 火焰 / 冰霜 / 光明 / 閃電 / 毒 / 煙霧 / 水 | ? 組合場種類。API 沒有這些名稱,只有「黑暗」有佐證(技能描述的「黑暗光環」),其他是我譯的 |
-| Blast / Leap / Projectile / Whirl | 爆炸 / 跳躍 / 投射物 / 旋風 | 組合終結技種類。爆炸、跳躍、旋風在遊戲資料的技能描述裡有出現(「爆炸終結技」等),投射物沒有找到 |
+| Unblockable | 無法格擋 | ? 還沒驗證 |
+| StunBreak | 解除昏迷 | 遊戲內驗證 |
+| Dark / Ethereal / Fire / Ice / Light / Lightning / Poison / Smoke / Water | 黑暗 / 幻光 / 火焰 / 寒冰 / 光明 / 閃電 / 毒素 / 煙霧 / 流水 | 組合場種類,幻光、寒冰、毒素、流水是遊戲內驗證的 |
+| Blast / Leap / Projectile / Whirl | 爆炸 / 跳躍 / 物理投射物 / 旋風 | 組合終結技種類。爆炸、跳躍、旋風在遊戲資料的技能描述裡有出現(「爆炸終結技」等),投射物沒有找到 |
 | Bundle / Elite / Heal / Monster / Pet / Profession / Toolbelt / Utility / Weapon | 持握物 / 精英 / 治療 / 怪物 / 寵物 / 職業 / 工具腰帶 / 實用 / 武器 | ? 技能類型,顯示在技能名稱下方 |
 | 30s | 30 秒 | 持續時間與冷卻的單位 |
 
@@ -69,17 +69,17 @@
 | 分類 | 代號 | 目前的譯名 | 範例技能 | 英文名 | chat code | 遊戲裡的叫法 |
 |---|---|---|---|---|---|---|
 | 組合場種類 | Dark | 黑暗 | 腐臭領域(技能) | Fetid Ground | `[&Bj8pAAA=]` | |
-| 組合場種類 | Ethereal | 虛幻 | 渦流陷阱(技能) | Vortex | `[&Bg8oAAA=]` | |
+| 組合場種類 | Ethereal | 幻光 | 渦流陷阱(技能) | Vortex | `[&Bg8oAAA=]` | |
 | 組合場種類 | Fire | 火焰 | 熔岩噴泉(技能) | Lava Font | `[&BqwVAAA=]` | |
-| 組合場種類 | Ice | 冰霜 | 冰封爆裂(技能) | Frozen Burst | `[&Bm8VAAA=]` | |
+| 組合場種類 | Ice | 寒冰 | 冰封爆裂(技能) | Frozen Burst | `[&Bm8VAAA=]` | |
 | 組合場種類 | Light | 光明 | 投擲R型試劑(技能) | Toss Elixir R | `[&BusWAAA=]` | |
 | 組合場種類 | Lightning | 閃電 | 閃電牢籠(技能) | Lightning Cage | `[&BhIWAAA=]` | |
-| 組合場種類 | Poison | 毒 | 化學力場(技能) | Chemical Field | `[&Bkd2AAA=]` | |
+| 組合場種類 | Poison | 毒素 | 化學力場(技能) | Chemical Field | `[&Bkd2AAA=]` | |
 | 組合場種類 | Smoke | 煙霧 | 黑暗水霧(技能) | Dark Water | `[&Bm2jAAA=]` | |
-| 組合場種類 | Water | 水 | 間歇溫泉(技能) | Geyser | `[&BjEWAAA=]` | |
+| 組合場種類 | Water | 流水 | 間歇溫泉(技能) | Geyser | `[&BjEWAAA=]` | |
 | 組合終結技種類 | Blast | 爆炸 | 引爆步槍炮臺(技能) | Detonate Rifle Turret | `[&BkUXAAA=]` | |
 | 組合終結技種類 | Leap | 跳躍 | 空中敏捷(技能) | Aerial Agility | `[&BnQYAQA=]` | |
-| 組合終結技種類 | Projectile | 投射物 | 倒鉤拉拽(技能) | Barbed Pull | `[&BnA4AAA=]` | |
+| 組合終結技種類 | Projectile | 物理投射物 | 倒鉤拉拽(技能) | Barbed Pull | `[&BnA4AAA=]` | |
 | 組合終結技種類 | Whirl | 旋風 | 炫目光輝(技能) | Brilliance | `[&BucjAAA=]` | |
 | 技能類型 | Bundle | 持握物 | 齒盾(技能) | Gear Shield | `[&Bm4XAAA=]` | |
 | 技能類型 | Elite | 精英 | 暗影融合(技能) | Shadow Meld | `[&BsSxAAA=]` | |
@@ -89,18 +89,18 @@
 | 技能類型 | Toolbelt | 工具腰帶 | 手雷彈幕(技能) | Grenade Barrage | `[&BrIWAAA=]` | |
 | 技能類型 | Utility | 實用 | 收起手雷包(技能) | Stow Grenade Kit | `[&Bt4XAAA=]` | |
 | 技能類型 | Weapon | 武器 | 關閉異世連結(技能) | Deactivate Otherworldly Bond | `[&BrIYAQA=]` | |
-| 屬性(特性裡的加成) | Power | 力量 | 靈魂抓攫(技能) | Soul Grasp | `[&BgrXAAA=]` | |
+| 屬性(特性裡的加成) | Power | 威力 | 靈魂抓攫(技能) | Soul Grasp | `[&BgrXAAA=]` | |
 | 屬性(特性裡的加成) | Precision | 精準 | 巫妖形態(技能) | Lich Form | `[&BjYpAAA=]` | |
-| 屬性(特性裡的加成) | Toughness | 強韌 | (找不到合適的例子) | | | |
-| 屬性(特性裡的加成) | Vitality | 活力 | (找不到合適的例子) | | | |
-| 屬性(特性裡的加成) | ConditionDamage | 狀態傷害 | (找不到合適的例子) | | | |
-| 屬性(特性裡的加成) | ConditionDuration | 狀態持續時間 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | Toughness | 堅韌 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | Vitality | 體力 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | ConditionDamage | 症狀傷害 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | ConditionDuration | 症狀持續時間 | (找不到合適的例子) | | | |
 | 屬性(特性裡的加成) | BoonDuration | 增益持續時間 | (找不到合適的例子) | | | |
 | 屬性(特性裡的加成) | CritDamage | 暴擊傷害 | (找不到合適的例子) | | | |
 | 屬性(特性裡的加成) | Healing | 治療 | 刺擊(技能) | Stab | `[&BjgzAAA=]` | |
 | 事實列表的標題 | Unblockable | 無法格擋 | 磁鐵(技能) | Magnet | `[&BmwXAAA=]` | |
-| 事實列表的標題 | StunBreak | 解除控制 | 閃光傳送(技能) | Blink | `[&BtgnAAA=]` | |
-| 事實列表的標題 | Range | 射程 | 飛踢(技能) | Kick | `[&BjSiAAA=]` | |
+| 事實列表的標題 | StunBreak | 解除昏迷 | 閃光傳送(技能) | Blink | `[&BtgnAAA=]` | |
+| 事實列表的標題 | Range | 範圍 | 飛踢(技能) | Kick | `[&BjSiAAA=]` | |
 | 事實列表的標題 | Recharge | 冷卻時間 | 能量結合(技能) | Energy Meld | `[&BiX1AAA=]` | |
 
 沒有例子的項目(寵物技能類型、強韌、活力、狀態傷害、狀態持續時間、增益持續時間、暴擊傷害)
