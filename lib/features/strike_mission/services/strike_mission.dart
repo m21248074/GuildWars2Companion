@@ -42,7 +42,9 @@ class StrikeMissionService {
     try {
       final response = await dio.get('${Urls.achievementProgressByIdsUrl}${ids.join(',')}');
 
-      if (response.statusCode == 200) {
+      // The API answers 206 (partial content) when some of the achievements
+      // are not on the account
+      if (response.statusCode == 200 || response.statusCode == 206) {
         List progress = response.data;
         return Map<int, Map<String, dynamic>>.fromEntries(progress.map((p) =>
           MapEntry<int, Map<String, dynamic>>(p['id'] as int, Map<String, dynamic>.from(p))
