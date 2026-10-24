@@ -184,7 +184,7 @@ class AppStrings {
 
   // Progression and achievements
   static String get progression => _t('Progression', '進度');
-  static String get favoriteAchievements => _t('Favorite achievements', '我的最愛成就');
+  static String get favoriteAchievements => _t('Favorite achievements', '收藏成就');
   static String get masteries => _t('Masteries', '專精');
   static String get description => _t('Description', '描述');
   static String get lockedDescription => _t('Locked description', '未解鎖的描述');

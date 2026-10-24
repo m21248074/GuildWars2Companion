@@ -77,7 +77,7 @@
 |---|---|---|---|
 | Progression | 進度 | achievement/pages/progression.dart:22 | |
 | Achievements | 成就 | progression.dart:73、achievement_categories.dart:21 | |
-| Favorite achievements | 我的最愛成就 | progression.dart:85、favorite_achievements.dart:17 | |
+| Favorite achievements | 收藏成就 | progression.dart:85、favorite_achievements.dart:17 | |
 | Dailies | 每日任務 | progression.dart:97、daily_categories.dart:20 | |
 | Masteries | 專精 | progression.dart:109、mastery/pages/masteries.dart:20 | |
 

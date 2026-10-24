@@ -29,7 +29,7 @@
 | 英文 | 繁體中文 | 備註 |
 |---|---|---|
 | Achievements | 成就 | |
-| Favorite achievements | 我的最愛成就 | |
+| Favorite achievements | 收藏成就 | |
 | Dailies | 每日任務 | |
 | Masteries | 專精 | |
 | Mastery level | 專精等級 | |
