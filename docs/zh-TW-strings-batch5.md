@@ -14,8 +14,8 @@
 | Description | 描述 | |
 | Stats | 屬性 | 技能與特性的事實列表 |
 | Effects | 效果 | 增益、狀態那一張卡 |
-| Minor trait | 次要特性 | ? 也可用「小型特性」 |
-| Major trait | 主要特性 | ? 也可用「大型特性」 |
+| Minor trait | 次要特性 |  也可用「小型特性」 |
+| Major trait | 主要特性 |  也可用「大型特性」 |
 
 ## 事實列表裡的代號(API 直接給英文代號)
 
@@ -30,14 +30,14 @@
 | BoonDuration | 增益持續時間 | |
 | CritDamage | 暴擊傷害 | |
 | Healing | 治療 | |
-| Range | 射程 | ? |
+| Range | 射程 | 範圍 |
 | Recharge | 冷卻時間 | |
-| Combo Field | 組合場 | ? |
+| Combo Field | 組合場 | 組合技區域 |
 | Combo Finisher | 組合終結技 | |
 | Unblockable | 無法格擋 | ? |
-| StunBreak | 解除控制 | ? |
-| Dark / Ethereal / Fire / Ice / Light / Lightning / Poison / Smoke / Water | 暗黑 / 虛幻 / 火焰 / 冰霜 / 光明 / 閃電 / 毒 / 煙霧 / 水 | ? 組合場種類,Ethereal 我不確定 |
-| Blast / Leap / Projectile / Whirl | 爆破 / 躍擊 / 投射物 / 旋風 | ? 組合終結技種類 |
+| StunBreak | 解除控制 | 解除昏迷 |
+| Dark / Ethereal / Fire / Ice / Light / Lightning / Poison / Smoke / Water | 黑暗 / 虛幻 / 火焰 / 冰霜 / 光明 / 閃電 / 毒 / 煙霧 / 水 | ? 組合場種類。API 沒有這些名稱,只有「黑暗」有佐證(技能描述的「黑暗光環」),其他是我譯的 |
+| Blast / Leap / Projectile / Whirl | 爆炸 / 跳躍 / 投射物 / 旋風 | 組合終結技種類。爆炸、跳躍、旋風在遊戲資料的技能描述裡有出現(「爆炸終結技」等),投射物沒有找到 |
 | Bundle / Elite / Heal / Monster / Pet / Profession / Toolbelt / Utility / Weapon | 持握物 / 精英 / 治療 / 怪物 / 寵物 / 職業 / 工具腰帶 / 實用 / 武器 | ? 技能類型,顯示在技能名稱下方 |
 | 30s | 30 秒 | 持續時間與冷卻的單位 |
 
