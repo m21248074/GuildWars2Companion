@@ -39,7 +39,7 @@ class CacheService<T> {
     final List<Map<String, dynamic>> data = await database.query(databaseConfiguration.tableName);
     _data = List.generate(data.length, (i) => fromMap(data[i]));
 
-    database.close();
+    await database.close();
 
     return;
   }
@@ -53,8 +53,8 @@ class CacheService<T> {
 
     _data?.clear();
 
-    database.close();
-    
+    await database.close();
+
     return;
   }
 
@@ -66,7 +66,7 @@ class CacheService<T> {
         'SELECT COUNT (*) from ${databaseConfiguration.tableName}',
       );
 
-      database.close();
+      await database.close();
 
       return Sqflite.firstIntValue(count);
     }
@@ -145,7 +145,7 @@ class CacheService<T> {
 
     await batch.commit(noResult: true);
 
-    database.close();
+    await database.close();
 
     _data.addAll(data);
 

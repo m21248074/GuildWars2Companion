@@ -21,7 +21,7 @@ dependencies:
   meta: ^1.2.4
   package_info: ^0.4.0+17
   path: ^1.6.4
-  qr_code_scanner: ^0.0.12
+  qr_code_scanner: ^0.7.0
   shared_preferences: ^0.5.7
   sqflite: ^1.2.1
   sqflite_migration:
@@ -32,7 +32,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^4.1.1
+  mockito: ^5.1.0
+
+# Temporary: newer path_provider_android cannot be compiled with JDK 8.
+# Remove once the Gradle / JDK toolchain has been upgraded.
+dependency_overrides:
+  path_provider: 1.6.28
 
 flutter:
   uses-material-design: true

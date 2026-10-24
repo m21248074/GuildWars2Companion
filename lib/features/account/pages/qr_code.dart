@@ -69,11 +69,13 @@ class _QrCodePageState extends State<QrCodePage> {
                     return;
                   }
 
-                  if (scanData != lastQrScanned) {
-                    BlocProvider.of<AccountBloc>(context).add(AddTokenEvent(scanData));
+                  String code = scanData.code;
+
+                  if (code != lastQrScanned) {
+                    BlocProvider.of<AccountBloc>(context).add(AddTokenEvent(code));
                   }
 
-                  lastQrScanned = scanData;
+                  lastQrScanned = code;
                 });
               },
             ),
