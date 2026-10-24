@@ -55,7 +55,7 @@
 
 | 英文 | 繁體中文 | 位置 | 備註 |
 |---|---|---|---|
-| Transmuted | 已變換 | item/pages/item.dart:45 | ? 遊戲內的「變換」(Transmutation) |
+| Transmuted | 已變換 | item/pages/item.dart:45 | 遊戲內的「變換」(Transmutation) |
 | Description | 描述 | item.dart:47 | |
 | Effect description | 效果描述 | item.dart:50 | |
 | Upgrades | 升級 | item.dart:52 | ? 指鑲嵌的符文、符印等 |
@@ -63,7 +63,7 @@
 | Stats | 屬性 | item/widgets/details_card.dart:20、29 | |
 | Rarity | 稀有度 | details_card.dart:22 | |
 | Value | 價值 | item/widgets/value_card.dart:21 | |
-| Vendor | 商人賣價 | value_card.dart:25 | ? |
+| Vendor | 商人賣價 | value_card.dart:25 |  |
 | Trading Post Buy | 交易所買價 | value_card.dart:29 | |
 | Trading Post Sell | 交易所賣價 | value_card.dart:34 | |
 | Type | 類型 | item/services/item.dart:88 等 | |
@@ -122,24 +122,27 @@
 | Crafting Material | 製作材料 | |
 | Upgrade Component | 升級組件 | |
 
-物品內頁還會顯示這些沒有被處理過的代號,我建議一併補上對照,請看有沒有要改:
+物品內頁「類型」只會顯示頂層類型(程式裡 `item.type`),護甲類別只有四種,所以只補這些:
 
 | 英文 | 繁體中文 | 備註 |
 |---|---|---|
-| Armor / Weapon / Back / Bag / Container | 護甲 / 武器 / 背部 / 背包 / 容器 | |
-| Consumable / Gathering / Gizmo / Key | 消耗品 / 採集工具 / 小玩意 / 鑰匙 | |
-| Trinket / Trophy / Tool / MiniPet | 飾品 / 戰利品 / 工具 / 迷你寵物 | |
-| Heavy / Medium / Light / Clothing | 重型 / 中型 / 輕型 / 衣物 | 護甲類別 |
-| Helm / Shoulders / Coat / Gloves / Leggings / Boots | 頭盔 / 護肩 / 外套 / 手套 / 護腿 / 靴子 | |
-| Accessory / Amulet / Ring | 飾品 / 護身符 / 戒指 | |
-| Gem / Rune / Sigil | 寶石 / 符文 / 符印 | |
-| Axe / Dagger / Mace / Pistol / Scepter / Sword | 斧 / 匕首 / 釘錘 / 手槍 / 權杖 / 劍 | 武器 |
-| Focus / Shield / Torch / Warhorn | 法器 / 盾牌 / 火炬 / 戰角 | |
-| Greatsword / Hammer / Longbow / Rifle / Shortbow / Staff | 大劍 / 錘 / 長弓 / 長槍 / 短弓 / 法杖 | |
-| Harpoon / Speargun / Trident | 魚叉 / 魚槍 / 三叉戟 | |
-| Food / Utility / Booze / Currency / Generic | 食物 / 實用物品 / 酒 / 貨幣 / 一般 | 消耗品 |
-
-這些遊戲內的武器、護甲名稱我只憑印象,請你特別審。
+| Armor | 護甲 | |
+| Weapon | 武器 | |
+| Back | 背部 | |
+| Bag | 背包 | |
+| Consumable | 消耗品 | |
+| Container | 容器 | |
+| Gathering | 採集工具 | |
+| Gizmo | 小玩意 | |
+| Key | 鑰匙 | |
+| MiniPet | 迷你寵物 | |
+| Tool | 工具 | |
+| Trinket | 飾品 | |
+| Trophy | 戰利品 | |
+| Heavy | 重型 | 護甲類別 |
+| Medium | 中型 | |
+| Light | 輕型 | |
+| Clothing | 衣物 | |
 
 ## 錯誤畫面的名詞(接在「載入{title}時發生問題」裡)
 

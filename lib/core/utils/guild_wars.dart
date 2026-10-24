@@ -107,7 +107,9 @@ class GuildWarsUtil {
     ];
   }
 
-  static String itemFlagToName(String flag) {
+  static String itemFlagToName(String flag) => AppStrings.itemText(_itemFlagEnglish(flag));
+
+  static String _itemFlagEnglish(String flag) {
     switch (flag) {
       case 'AccountBindOnUse':
         return 'Account bound on use';
@@ -143,7 +145,9 @@ class GuildWarsUtil {
     }
   }
 
-  static String itemTypeToName(String type) {
+  static String itemTypeToName(String type) => AppStrings.itemText(_itemTypeEnglish(type));
+
+  static String _itemTypeEnglish(String type) {
     switch (type) {
       case 'HelmAquatic':
         return 'Helm Aquatic';

@@ -10,6 +10,7 @@ import 'package:guildwars2_companion/features/item/widgets/list_card.dart';
 import 'package:guildwars2_companion/core/widgets/header.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/item/widgets/value_card.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ItemPage extends StatelessWidget {
   final Item item;
@@ -42,16 +43,16 @@ class ItemPage extends StatelessWidget {
             child: CompanionListView(
               children: <Widget>[
                 if (skin != null)
-                  ItemListCard(title: 'Transmuted', items: [item], disabled: true),
+                  ItemListCard(title: AppStrings.transmuted, items: [item], disabled: true),
                 if (item.description != null && item.description.isNotEmpty)
-                  CompanionInfoCard(title: 'Description', text: GuildWarsUtil.removeOnlyHtml(item.description)),
+                  CompanionInfoCard(title: AppStrings.description, text: GuildWarsUtil.removeOnlyHtml(item.description)),
                 ItemDetailsCard(item: item, section: section),
                 if (item.type == 'Consumable' && item.details != null && item.details.description != null && item.details.description.isNotEmpty)
-                  CompanionInfoCard(title: 'Effect description', text: GuildWarsUtil.removeFullHtml(item.details.description)),
+                  CompanionInfoCard(title: AppStrings.effectDescription, text: GuildWarsUtil.removeFullHtml(item.details.description)),
                 if (upgradesInfo != null && upgradesInfo.where((up) => up != null).toList().isNotEmpty)
-                  ItemListCard(title: 'Upgrades', items: upgradesInfo),
+                  ItemListCard(title: AppStrings.upgrades, items: upgradesInfo),
                 if (infusionsInfo != null && infusionsInfo.where((inf) => inf != null).toList().isNotEmpty)
-                  ItemListCard(title: 'Infusions', items: infusionsInfo),
+                  ItemListCard(title: AppStrings.infusions, items: infusionsInfo),
                 ItemValueCard(item: item)
               ],
             ),

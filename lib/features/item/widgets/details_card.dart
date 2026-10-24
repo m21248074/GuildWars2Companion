@@ -6,6 +6,7 @@ import 'package:guildwars2_companion/features/item/enums/item_section.dart';
 import 'package:guildwars2_companion/features/item/models/item.dart';
 import 'package:guildwars2_companion/features/item/repositories/item.dart';
 import 'package:guildwars2_companion/features/item/widgets/flags.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ItemDetailsCard extends StatelessWidget {
   final Item item;
@@ -17,23 +18,23 @@ class ItemDetailsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     if (item.details == null) {
       return CompanionInfoCard(
-        title: 'Stats',
+        title: AppStrings.stats,
         child: CompanionInfoRow(
-          header: 'Rarity',
-          text: item.rarity
+          header: AppStrings.itemText('Rarity'),
+          text: AppStrings.itemText(item.rarity)
         ),
       );
     }
 
     return CompanionInfoCard(
-      title: 'Stats',
+      title: AppStrings.stats,
       child: Column(
         children: [
           ...RepositoryProvider
             .of<ItemRepository>(context)
             .getItemDetails(item)
             .map((detail) => CompanionInfoRow(
-              header: detail.title,
+              header: AppStrings.itemText(detail.title),
               text: detail.value,
             ))
             .toList(),

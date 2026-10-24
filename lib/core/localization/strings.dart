@@ -268,4 +268,83 @@ class AppStrings {
   static String get deliveryFunds => _t('Funds: ', '款項：');
   static String get theTradingPost => _t('the trading post', '交易所');
   static String get theListings => _t('the listings', '掛單');
+
+  // Item page
+  static String get transmuted => _t('Transmuted', '已變換');
+  static String get effectDescription => _t('Effect description', '效果描述');
+  static String get upgrades => _t('Upgrades', '升級');
+  static String get infusions => _t('Infusions', '灌注');
+  static String get stats => _t('Stats', '屬性');
+  static String get value => _t('Value', '價值');
+  static String get vendor => _t('Vendor', '商人賣價');
+  static String get tradingPostBuy => _t('Trading Post Buy', '交易所買價');
+  static String get tradingPostSell => _t('Trading Post Sell', '交易所賣價');
+
+  // Labels, rarities, types and flags that come from the game data as English
+  // codes. Anything that is not listed is shown as it is.
+  static String itemText(String english) {
+    if (!_traditionalChinese) return english;
+    return _itemTexts[english] ?? english;
+  }
+
+  static const Map<String, String> _itemTexts = {
+    'Rarity': '稀有度',
+    'Type': '類型',
+    'Weight Class': '護甲類別',
+    'Defense': '防禦',
+    'Weapon Strength': '武器強度',
+    'Size': '大小',
+    'Effect Type': '效果類型',
+    'Duration': '持續時間',
+    'Charges': '使用次數',
+    'Junk': '垃圾',
+    'Basic': '基本',
+    'Fine': '優質',
+    'Masterwork': '精製',
+    'Rare': '稀有',
+    'Exotic': '異域',
+    'Ascended': '昇華',
+    'Legendary': '傳奇',
+    'Armor': '護甲',
+    'Weapon': '武器',
+    'Back': '背部',
+    'Bag': '背包',
+    'Consumable': '消耗品',
+    'Container': '容器',
+    'Gathering': '採集工具',
+    'Gizmo': '小玩意',
+    'Key': '鑰匙',
+    'MiniPet': '迷你寵物',
+    'Tool': '工具',
+    'Trinket': '飾品',
+    'Trophy': '戰利品',
+    'Heavy': '重型',
+    'Medium': '中型',
+    'Light': '輕型',
+    'Clothing': '衣物',
+    'Helm Aquatic': '水下頭盔',
+    'Appearance Change': '外觀變更',
+    'Npc Contract': 'NPC 契約',
+    'Random Mount Unlock': '隨機坐騎解鎖',
+    'Random Unlock': '隨機解鎖',
+    'Upgrade Removal': '升級拆除',
+    'Teleport To Friend': '傳送至好友',
+    'Crafting Material': '製作材料',
+    'Upgrade Component': '升級組件',
+    'Account bound on use': '使用後帳號綁定',
+    'Account bound': '帳號綁定',
+    'Attuned': '已調和',
+    'Bulk consumable': '可批次使用',
+    'Warning on delete': '刪除時警告',
+    'Suffix hidden': '隱藏後綴',
+    'Infused': '已灌注',
+    'Monster only item': '怪物專用物品',
+    'Cannot be used in the Mystic Forge': '無法用於神秘熔爐',
+    'Cannot be salvaged': '無法拆解',
+    'Cannot be sold': '無法出售',
+    'Not upgradeable': '無法升級',
+    'Cannot be used underwater': '無法在水中使用',
+    'Soul bound on acquire': '獲得後靈魂綁定',
+    'Soul bound on use': '使用後靈魂綁定',
+  };
 }

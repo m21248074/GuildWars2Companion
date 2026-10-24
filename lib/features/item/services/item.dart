@@ -11,6 +11,7 @@ import 'package:guildwars2_companion/features/item/models/item.dart';
 import 'package:guildwars2_companion/features/item/models/item_details.dart';
 import 'package:guildwars2_companion/features/item/models/mini.dart';
 import 'package:guildwars2_companion/features/item/models/skin.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ItemService {
   final Dio dio;
@@ -79,7 +80,7 @@ class ItemService {
 
   List<ItemDetail> getItemDetails(Item item) {
     List<ItemDetail> details = [
-      ItemDetail('Rarity', item.rarity)
+      ItemDetail('Rarity', AppStrings.itemText(item.rarity))
     ];
 
     switch (item.type) {

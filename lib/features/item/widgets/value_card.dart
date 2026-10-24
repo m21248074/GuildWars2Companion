@@ -6,6 +6,7 @@ import 'package:guildwars2_companion/core/widgets/info_row.dart';
 import 'package:guildwars2_companion/features/item/models/item.dart';
 import 'package:guildwars2_companion/features/trading_post/models/price.dart';
 import 'package:guildwars2_companion/features/trading_post/repositories/trading_post.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ItemValueCard extends StatelessWidget {
   final Item item;
@@ -18,20 +19,20 @@ class ItemValueCard extends StatelessWidget {
       future: RepositoryProvider.of<TradingPostRepository>(context).getItemPrice(item.id),
       builder: (context, snapshot) {
         return CompanionInfoCard(
-          title: 'Value',
+          title: AppStrings.value,
           child: Column(
             children: [
               CompanionInfoRow(
-                header: 'Vendor',
+                header: AppStrings.vendor,
                 widget: CompanionCoin(item.vendorValue)
               ),
               CompanionInfoRow(
-                header: 'Trading Post Buy',
+                header: AppStrings.tradingPostBuy,
                 text: snapshot.hasError ? '-' : null,
                 widget: snapshot.hasError ? null : snapshot.hasData ? CompanionCoin(snapshot.data.buys.unitPrice) : _LoadingValue()
               ),
               CompanionInfoRow(
-                header: 'Trading Post Sell',
+                header: AppStrings.tradingPostSell,
                 text: snapshot.hasError ? '-' : null,
                 widget: snapshot.hasError ? null : snapshot.hasData ? CompanionCoin(snapshot.data.sells.unitPrice) : _LoadingValue()
               ),
