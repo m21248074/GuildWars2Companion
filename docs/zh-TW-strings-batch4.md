@@ -265,6 +265,11 @@
 | The Oil Floes | 浮油冰原 | 自擬 |
 | Hard World Bosses | 困難世界王 | 自擬 |
 | World Bosses | 世界王 | 自擬 |
+| Mount Balrior | 巴里爾山 | 資料 |
+| Camp | 營地 | 自擬 |
+| Greer, the Blightbringer | 瘟疫使者格里爾 | 社群 |
+| Decima, the Stormsinger | 風暴歌手迪西瑪 | 社群 |
+| Ura | 厄拉 | 社群 |
 
 ## 名稱:地下城路線
 

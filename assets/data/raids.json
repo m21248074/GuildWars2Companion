@@ -151,5 +151,28 @@
                 "name": "Qadim the Peerless"
             }
         ]
+    },
+    {
+        "id": "mount_balrior",
+        "name": "Mount Balrior",
+        "region": "Wild",
+        "checkpoints": [
+            {
+                "id": "camp",
+                "name": "Camp"
+            },
+            {
+                "id": "greer",
+                "name": "Greer, the Blightbringer"
+            },
+            {
+                "id": "decima",
+                "name": "Decima, the Stormsinger"
+            },
+            {
+                "id": "ura",
+                "name": "Ura"
+            }
+        ]
     }
 ]

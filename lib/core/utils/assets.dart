@@ -90,6 +90,7 @@ class Assets {
   static final String raidsSpiritVale = '$images/raids/spirit_vale.jpg';
   static final String raidsStrongholdOfTheFaithful = '$images/raids/stronghold_of_the_faithful.jpg';
   static final String raidsTheKeyOfAhdashim = '$images/raids/the_key_of_ahdashim.jpg';
+  static final String raidsMountBalrior = '$images/raids/mount_balrior.jpg';
 
   static final String raidsSquareBastionOfThePenitent = '$images/raids_square/bastion_of_the_penitent.jpg';
   static final String raidsSquareHallOfChains = '$images/raids_square/hall_of_chains.jpg';
@@ -98,6 +99,7 @@ class Assets {
   static final String raidsSquareSpiritVale = '$images/raids_square/spirit_vale.jpg';
   static final String raidsSquareStrongholdOfTheFaithful = '$images/raids_square/stronghold_of_the_faithful.jpg';
   static final String raidsSquareTheKeyOfAhdashim = '$images/raids_square/the_key_of_ahdashim.jpg';
+  static final String raidsSquareMountBalrior = '$images/raids_square/mount_balrior.jpg';
 
   static final String specializationPlaceholder = '$images/specialization/specialization_placeholder.png';
 
@@ -210,6 +212,7 @@ class Assets {
       case 'spirit_vale': return square ? raidsSquareSpiritVale : raidsSpiritVale;
       case 'stronghold_of_the_faithful': return square ? raidsSquareStrongholdOfTheFaithful : raidsStrongholdOfTheFaithful;
       case 'the_key_of_ahdashim': return square ? raidsSquareTheKeyOfAhdashim : raidsTheKeyOfAhdashim;
+      case 'mount_balrior': return square ? raidsSquareMountBalrior : raidsMountBalrior;
       default: return square ? raidsSquareBastionOfThePenitent : raidsBastionOfThePenitent;
     }
   }
