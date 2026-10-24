@@ -192,6 +192,7 @@ class _MetaCard extends StatelessWidget {
               child: LinearProgressIndicator(
                 value: _progress(group.metaProgressCurrent, group.metaProgressComplete),
                 minHeight: 8.0,
+                backgroundColor: Theme.of(context).brightness == Brightness.light ? Colors.black12 : Colors.white24,
               ),
             ),
           ),
@@ -247,6 +248,7 @@ class _ObjectiveCard extends StatelessWidget {
                 child: LinearProgressIndicator(
                   value: _progress(objective.progressCurrent, objective.progressComplete),
                   minHeight: 8.0,
+                  backgroundColor: Theme.of(context).brightness == Brightness.light ? Colors.black12 : Colors.white24,
                 ),
               ),
             ),

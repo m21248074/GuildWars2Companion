@@ -115,6 +115,7 @@ class _WeeklyCard extends StatelessWidget {
               child: LinearProgressIndicator(
                 value: max > 0 ? (current / max).clamp(0.0, 1.0).toDouble() : 0.0,
                 minHeight: 8.0,
+                backgroundColor: Theme.of(context).brightness == Brightness.light ? Colors.black12 : Colors.white24,
               ),
             ),
           ),
