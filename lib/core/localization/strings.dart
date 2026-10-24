@@ -578,7 +578,7 @@ class AppStrings {
   // Strike missions
   static String get strikeMissions => _t('Strike Missions', '進攻任務');
   static String get theStrikeMissions => _t('the strike missions', '進攻任務');
-  static String get strikeWeeklyProgress => _t('Completed this week', '本週已完成');
+  static String get strikeWeeklyProgress => _t('Weekly achievement completed', '本週成就已完成');
   static String get strikeThisWeek => _t('This week', '本週');
   static String get strikeCompleted => _t('Completed', '通關過');
   static String get strikeChallengeMode => _t('Challenge mode', '挑戰模式');
