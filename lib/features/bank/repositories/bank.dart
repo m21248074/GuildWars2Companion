@@ -67,8 +67,9 @@ class BankRepository {
       }
     });
 
-    itemIds = itemIds.toSet().toList();
-    skinIds = skinIds.toSet().toList();      
+    // -1 marks an empty slot (see InventoryItem.fromJson); it is not a real item
+    itemIds = itemIds.where((id) => id != null && id != -1).toSet().toList();
+    skinIds = skinIds.toSet().toList();
 
     List<Item> items = await itemService.getItems(itemIds);
     List<Skin> skins = await itemService.getSkins(skinIds);

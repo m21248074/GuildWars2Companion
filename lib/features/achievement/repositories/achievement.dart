@@ -34,7 +34,10 @@ class AchievementRepository {
       achievementService.getAchievementGroups(),
       achievementService.getAchievementCategories(),
       _getDailiesOrEmpty(),
-      _getDailiesOrEmpty(tomorrow: true)
+      _getDailiesOrEmpty(tomorrow: true),
+      // The account progress does not depend on the other requests
+      if (includeProgress)
+        achievementService.getAchievementProgress()
     ]);
 
     List<AchievementGroup> achievementGroups = networkResults[0];
@@ -57,10 +60,7 @@ class AchievementRepository {
 
     int achievementPoints = 0;
 
-    List<AchievementProgress> progress;
-    if (includeProgress) {
-      progress = await achievementService.getAchievementProgress();
-    }
+    List<AchievementProgress> progress = includeProgress ? networkResults[4] : null;
 
     achievements.forEach((a) {
       a.progress = includeProgress ? progress.firstWhere((p) => p.id == a.id, orElse: () => null) : null;

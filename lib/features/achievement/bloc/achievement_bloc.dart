@@ -43,8 +43,14 @@ class AchievementBloc extends Bloc<AchievementEvent, AchievementState> {
     try {
       yield LoadingAchievementsState();
 
-      _achievementData = await achievementRepository.getAchievements(includeProgress);
-      _masteryData = await achievementRepository.getMasteries(includeProgress);
+      // Achievements and masteries are independent, so load them side by side
+      List results = await Future.wait([
+        achievementRepository.getAchievements(includeProgress),
+        achievementRepository.getMasteries(includeProgress),
+      ]);
+
+      _achievementData = results[0];
+      _masteryData = results[1];
       _includeProgress = includeProgress;
 
       yield _getLoadedAchievementsState();
