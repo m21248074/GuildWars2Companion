@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ConfigurationService {
   // The Guild Wars 2 api has no Traditional Chinese. It is requested as 'zh'
@@ -22,6 +23,7 @@ class ConfigurationService {
 
   Future<void> changeLanguage(String lang) async {
     language = lang;
+    AppStrings.setTraditionalChinese(convertToTraditional);
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString("configuration_lang", lang);
     return;
@@ -38,6 +40,7 @@ class ConfigurationService {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     themeMode = ThemeMode.values[prefs.getInt("configuration_theme") ?? 1];
     language = prefs.getString('configuration_lang') ?? 'en';
+    AppStrings.setTraditionalChinese(convertToTraditional);
     timeNotation24Hours = prefs.getBool('configuration_time24') ?? true;
   }
 }

@@ -17,6 +17,7 @@ import 'package:guildwars2_companion/features/error/widgets/error.dart';
 import 'package:guildwars2_companion/core/widgets/header.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/world_boss/widgets/button.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -33,7 +34,7 @@ class HomePage extends StatelessWidget {
               elevation: 0.0,
               title: RichText(
                 text: TextSpan(
-                  text: 'Welcome ',
+                  text: AppStrings.welcome,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
@@ -117,7 +118,7 @@ class HomePage extends StatelessWidget {
         return Scaffold(
           body: Center(
             child: CompanionError(
-              title: 'the account',
+              title: AppStrings.theAccount,
               onTryAgain: () async =>
                 BlocProvider.of<AccountBloc>(context).add(SetupAccountEvent()),
             ),

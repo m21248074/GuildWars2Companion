@@ -7,6 +7,7 @@ import 'package:guildwars2_companion/features/character/pages/characters.dart';
 import 'package:guildwars2_companion/features/home/pages/home.dart';
 import 'package:guildwars2_companion/features/tabs/models/tab.dart';
 import 'package:guildwars2_companion/features/trading_post/pages/trading_post.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class TabService {
   List<TabEntry> getTabs(List<String> permissions) {
@@ -26,9 +27,9 @@ class TabService {
     ];
   }
 
-  TabEntry _getHomeTab() => TabEntry(HomePage(), "Home", FontAwesomeIcons.home, 20.0, Colors.red);
-  TabEntry _getCharactersTab() => TabEntry(CharactersPage(), "Characters", GuildWarsIcons.hero, 24.0, Colors.blue);
-  TabEntry _getBankTab() => TabEntry(BankPage(), "Bank", GuildWarsIcons.inventory, 24.0, Colors.indigo);
-  TabEntry _getTradingTab() => TabEntry(TradingPostPage(), "Trading", FontAwesomeIcons.balanceScaleLeft, 20.0, Colors.green);
-  TabEntry _getProgressionTab() => TabEntry(ProgressionPage(), "Progression", GuildWarsIcons.achievement, 24.0, Colors.orange);
+  TabEntry _getHomeTab() => TabEntry(HomePage(), AppStrings.tabHome, FontAwesomeIcons.home, 20.0, Colors.red);
+  TabEntry _getCharactersTab() => TabEntry(CharactersPage(), AppStrings.tabCharacters, GuildWarsIcons.hero, 24.0, Colors.blue);
+  TabEntry _getBankTab() => TabEntry(BankPage(), AppStrings.tabBank, GuildWarsIcons.inventory, 24.0, Colors.indigo);
+  TabEntry _getTradingTab() => TabEntry(TradingPostPage(), AppStrings.tabTrading, FontAwesomeIcons.balanceScaleLeft, 20.0, Colors.green);
+  TabEntry _getProgressionTab() => TabEntry(ProgressionPage(), AppStrings.tabProgression, GuildWarsIcons.achievement, 24.0, Colors.orange);
 }

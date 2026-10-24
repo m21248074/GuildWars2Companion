@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guildwars2_companion/core/widgets/accent.dart';
 import 'package:guildwars2_companion/core/widgets/appbar.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class FaqPage extends StatelessWidget {
   @override
@@ -9,22 +10,18 @@ class FaqPage extends StatelessWidget {
       lightColor: Colors.blue,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Frequently asked questions',
+          title: AppStrings.faq,
           color: Colors.blue,
         ),
         body: ListView(
           padding: EdgeInsets.all(8.0),
           children: <Widget>[
             Text(
-              'Why are my achievement points or mastery level incorrect?',
+              AppStrings.faqQuestion,
               style: Theme.of(context).textTheme.headline2,
             ),
             Text(
-              '''
-All data in the GW2 Companion app is retrieved from the official Guild Wars 2 Api.
-Some Achievements and Masteries are currently missing from the Api, causing the total points to be off from the in-game number.
-Once ArenaNet updates the Api to include the missing Achievements and Masteries, these should automatically appear in the app.
-              ''',
+              AppStrings.faqAnswer,
               style: Theme.of(context).textTheme.bodyText1,
             ),
           ],

@@ -4,13 +4,14 @@ import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/widgets/button.dart';
 import 'package:guildwars2_companion/features/meta_event/bloc/event_bloc.dart';
 import 'package:guildwars2_companion/features/meta_event/pages/meta_events.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class MetaEventButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CompanionButton(
       color: Colors.green,
-      title: 'Meta Events',
+      title: AppStrings.metaEvents,
       onTap: () {
         BlocProvider.of<MetaEventBloc>(context).add(LoadMetaEventsEvent());
         Navigator.of(context).push(MaterialPageRoute(

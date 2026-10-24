@@ -6,6 +6,7 @@ import 'package:guildwars2_companion/core/themes/light.dart';
 import 'package:guildwars2_companion/core/widgets/accent.dart';
 import 'package:guildwars2_companion/features/configuration/bloc/configuration_bloc.dart';
 import 'package:guildwars2_companion/core/widgets/appbar.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ThemeConfigurationPage extends StatelessWidget {
   @override
@@ -14,15 +15,15 @@ class ThemeConfigurationPage extends StatelessWidget {
       lightColor: Colors.blue,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Theme',
+          title: AppStrings.theme,
           color: Colors.blue,
         ),
         body: BlocBuilder<ConfigurationBloc, ConfigurationState>(
           builder: (context, state) {
             List<_Theme> themes = [
-              _Theme('Light', ThemeMode.light),
-              _Theme('Dark', ThemeMode.dark),
-              _Theme('Use system theme', ThemeMode.system),
+              _Theme(AppStrings.light, ThemeMode.light),
+              _Theme(AppStrings.dark, ThemeMode.dark),
+              _Theme(AppStrings.useSystemTheme, ThemeMode.system),
             ];
 
             return ListView(

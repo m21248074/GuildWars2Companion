@@ -5,6 +5,7 @@ import 'package:guildwars2_companion/core/widgets/button.dart';
 import 'package:guildwars2_companion/core/widgets/cached_image.dart';
 import 'package:guildwars2_companion/features/wallet/bloc/bloc.dart';
 import 'package:guildwars2_companion/features/wallet/pages/wallet.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class WalletButton extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class WalletButton extends StatelessWidget {
         if (state is LoadedWalletState) {
           return CompanionButton(
             color: Colors.orange,
-            title: 'Wallet',
+            title: AppStrings.wallet,
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => WalletPage())
             ),
@@ -88,7 +89,7 @@ class WalletButton extends StatelessWidget {
         if (state is ErrorWalletState) {
           return CompanionButton(
             color: Colors.orange,
-            title: 'Wallet',
+            title: AppStrings.wallet,
             onTap: () => Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => WalletPage())
             ),
@@ -102,7 +103,7 @@ class WalletButton extends StatelessWidget {
 
         return CompanionButton(
           color: Colors.orange,
-          title: 'Wallet',
+          title: AppStrings.wallet,
           onTap: null,
           loading: true,
         );

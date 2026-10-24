@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guildwars2_companion/core/widgets/accent.dart';
 import 'package:guildwars2_companion/features/configuration/bloc/configuration_bloc.dart';
 import 'package:guildwars2_companion/core/widgets/appbar.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class TimeConfigurationPage extends StatelessWidget {
   @override
@@ -11,14 +12,14 @@ class TimeConfigurationPage extends StatelessWidget {
       lightColor: Colors.blue,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Time notation',
+          title: AppStrings.timeNotation,
           color: Colors.blue,
         ),
         body: BlocBuilder<ConfigurationBloc, ConfigurationState>(
           builder: (context, state) {
             List<_TimeNotation> notations = [
-              _TimeNotation('24 hours', true),
-              _TimeNotation('12 hours', false)
+              _TimeNotation(AppStrings.hours24, true),
+              _TimeNotation(AppStrings.hours12, false)
             ];
 
             return ListView(

@@ -4,13 +4,14 @@ import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/widgets/button.dart';
 import 'package:guildwars2_companion/features/pvp/bloc/pvp_bloc.dart';
 import 'package:guildwars2_companion/features/pvp/pages/pvp.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class PvpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CompanionButton(
       color: Color(0xFF678A9E),
-      title: 'PvP',
+      title: AppStrings.pvp,
       onTap: () {
         if (!(BlocProvider.of<PvpBloc>(context).state is LoadedPvpState)) {
           BlocProvider.of<PvpBloc>(context).add(LoadPvpEvent());

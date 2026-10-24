@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:guildwars2_companion/core/widgets/info_card.dart';
 import 'package:guildwars2_companion/features/event/widgets/notification_list.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class EventNotificationListCard extends StatelessWidget {
   final String eventId;
@@ -12,7 +13,7 @@ class EventNotificationListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CompanionInfoCard(
-      title: 'Scheduled notifications',
+      title: AppStrings.scheduledNotifications,
       childPadding: EdgeInsets.zero,
       child: ClipRRect(
         borderRadius: BorderRadius.only(

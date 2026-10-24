@@ -61,6 +61,7 @@
 | Time notation | 時間格式 | configuration.dart:108 | |
 | Caching | 快取 | configuration.dart:120 | |
 | Frequently asked questions | 常見問題 | configuration.dart:132 | |
+| Changelog | 更新日誌 | configuration/pages/configuration.dart:144 | settings menu item and the page title (changelog/pages/changelog.dart:14) |
 | View the project on Github | 在 GitHub 上查看專案 | configuration.dart:156 | |
 | Enjoying the app? | 喜歡這個 App 嗎? | configuration.dart:167 | |
 | Review the app on the {platform}! | 到 {platform} 評價這個 App! | configuration.dart:172 | |
@@ -132,6 +133,7 @@
 | When spawning at | 出現時 | notification_list.dart:120 | ? 後面會接時間,要看畫面上下文才能確定語句通不通順 |
 | Remove scheduled notification | 移除排程通知 | notification_list.dart:130 | |
 | Are you sure that you want to remove this scheduled notification? | 確定要移除這個排程通知嗎? | notification_list.dart:132 | |
+| Remove | 移除 | notification_list.dart:146 | dialog button |
 | Tomorrow | 明天 | (之後的批次) | 詞表已有 |
 
 ## 這批我還沒處理的
@@ -139,3 +141,10 @@
 - 帳號頁(輸入 API 金鑰、QR code、教學)屬於下一批。
 - 日期與時間的格式(例如 `yyyy-MM-dd`、12/24 小時顯示)沿用 App 現有邏輯,不翻譯。
 - 其他畫面用到的 `{title}`(其他名詞)之後各自處理。
+
+
+## Added after the first review
+
+| English | zh-TW | Location | Note |
+|---|---|---|---|
+| Version {version} (changelog headings) | 版本 {version} | changelog/pages/changelog.dart:29 | the change notes themselves stay in English |

@@ -8,6 +8,7 @@ import 'package:guildwars2_companion/core/widgets/simple_button.dart';
 import 'package:guildwars2_companion/features/achievement/repositories/achievement.dart';
 import 'package:guildwars2_companion/features/build/repositories/build.dart';
 import 'package:guildwars2_companion/features/item/repositories/item.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class CachingConfigurationPage extends StatefulWidget {
   @override
@@ -50,7 +51,7 @@ class _CachingConfigurationPageState extends State<CachingConfigurationPage> {
       lightColor: Colors.blue,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Caching',
+          title: AppStrings.caching,
           color: Colors.blue,
         ),
         body: ListView(
@@ -58,30 +59,30 @@ class _CachingConfigurationPageState extends State<CachingConfigurationPage> {
           children: <Widget>[
             _CachedDisplay(
               future: _cachedAchievementsFuture,
-              header: 'achievements'
+              header: AppStrings.cacheAchievements
             ),
             _CachedDisplay(
               future: _cachedItemsFuture,
-              header: 'items'
+              header: AppStrings.cacheItems
             ),
             _CachedDisplay(
               future: _cachedSkinsFuture,
-              header: 'skins'
+              header: AppStrings.cacheSkins
             ),
             _CachedDisplay(
               future: _cachedMinisFuture,
-              header: 'minis'
+              header: AppStrings.cacheMinis
             ),
             _CachedDisplay(
               future: _cachedSkillsFuture,
-              header: 'skills'
+              header: AppStrings.cacheSkills
             ),
             _CachedDisplay(
               future: _cachedTraitsFuture,
-              header: 'traits'
+              header: AppStrings.cacheTraits
             ),
             CompanionSimpleButton(
-              text: allowClearCache ? 'Clear cache' : 'Clearing cache...',
+              text: allowClearCache ? AppStrings.clearCache : AppStrings.clearingCache,
               onPressed: allowClearCache ? () => _clearCacheDialog(
                 context: context,
                 achievementRepository: _achievementRepository,
@@ -90,11 +91,7 @@ class _CachingConfigurationPageState extends State<CachingConfigurationPage> {
               ) : null,
             ),
             Text(
-              '''
-Caching allows GW2 Companion to load quicker while saving bandwidth and reducing the possibility for connection failures.
-Only mostly static data such as Achievements and Items are cached. Progression isn't cached.
-Experiencing issues with cached data, such as outdated information? Try clearing the cache.
-              ''',
+              AppStrings.cachingExplanation,
               style: Theme.of(context).textTheme.bodyText1,
               textAlign: TextAlign.left,
             )
@@ -115,14 +112,14 @@ Experiencing issues with cached data, such as outdated information? Try clearing
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Clear cache'),
+          title: Text(AppStrings.clearCache),
           content: Text(
-            'Are you sure that you want to clear the cache?'
+            AppStrings.confirmClearCache
           ),
           actions: <Widget>[
             TextButton(
               child: Text(
-                'Cancel',
+                AppStrings.cancel,
                 style: TextStyle(
                   fontSize: 18.0
                 ),
@@ -131,7 +128,7 @@ Experiencing issues with cached data, such as outdated information? Try clearing
             ),
             TextButton(
               child: Text(
-                'Clear cache',
+                AppStrings.clearCache,
                 style: TextStyle(
                   fontSize: 18.0
                 ),
@@ -182,21 +179,21 @@ class _CachedDisplay extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return CompanionInfoRow(
-            header: 'Cached $header',
-            text: 'Error',
+            header: AppStrings.cached(header),
+            text: AppStrings.error,
           );
         }
 
         if (snapshot.hasData) {
           return CompanionInfoRow(
-            header: 'Cached $header',
+            header: AppStrings.cached(header),
             text: GuildWarsUtil.intToString(snapshot.data),
           );
         }
 
         return CompanionInfoRow(
-          header: 'Cached $header',
-          text: 'Loading...',
+          header: AppStrings.cached(header),
+          text: AppStrings.loading,
         );
       },
     );

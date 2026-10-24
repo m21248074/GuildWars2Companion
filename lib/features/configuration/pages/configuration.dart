@@ -15,6 +15,7 @@ import 'caching.dart';
 import 'faq.dart';
 import 'language.dart';
 import 'notifications.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ConfigurationPage extends StatelessWidget {
   @override
@@ -42,7 +43,7 @@ class ConfigurationPage extends StatelessWidget {
                   )
                 ),
                 Text(
-                  'By Daniël Scholte / Revolt.2860',
+                  AppStrings.aboutAuthor,
                   style: Theme.of(context).textTheme.bodyText1
                 ),
                 _AppVersion()
@@ -56,7 +57,7 @@ class ConfigurationPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 4.0),
                   child: Text(
-                    'Thanks to the Guild Wars 2 Wiki and GW2.Ninja for the event timers.',
+                    AppStrings.thanksForEventTimers,
                     style: Theme.of(context).textTheme.bodyText1
                   ),
                 ),
@@ -69,7 +70,7 @@ class ConfigurationPage extends StatelessWidget {
                 ),
                 Container(height: 4.0,),
                 CompanionButton(
-                  title: 'Theme',
+                  title: AppStrings.theme,
                   color: Colors.blue,
                   leading: Icon(
                     FontAwesomeIcons.palette,
@@ -81,7 +82,7 @@ class ConfigurationPage extends StatelessWidget {
                   )),
                 ),
                 CompanionButton(
-                  title: 'Scheduled notifications',
+                  title: AppStrings.scheduledNotifications,
                   color: Colors.blue,
                   leading: Icon(
                     FontAwesomeIcons.solidBell,
@@ -93,7 +94,7 @@ class ConfigurationPage extends StatelessWidget {
                   )),
                 ),
                 CompanionButton(
-                  title: 'Api and Wiki Language',
+                  title: AppStrings.apiAndWikiLanguage,
                   color: Colors.blue,
                   leading: Icon(
                     FontAwesomeIcons.globeEurope,
@@ -105,7 +106,7 @@ class ConfigurationPage extends StatelessWidget {
                   )),
                 ),
                 CompanionButton(
-                  title: 'Time notation',
+                  title: AppStrings.timeNotation,
                   color: Colors.blue,
                   leading: Icon(
                     FontAwesomeIcons.clock,
@@ -117,7 +118,7 @@ class ConfigurationPage extends StatelessWidget {
                   )),
                 ),
                 CompanionButton(
-                  title: 'Caching',
+                  title: AppStrings.caching,
                   color: Colors.blue,
                   leading: Icon(
                     FontAwesomeIcons.hourglassHalf,
@@ -129,7 +130,7 @@ class ConfigurationPage extends StatelessWidget {
                   )),
                 ),
                 CompanionButton(
-                  title: 'Frequently asked questions',
+                  title: AppStrings.faq,
                   color: Colors.blue,
                   leading: Icon(
                     FontAwesomeIcons.question,
@@ -141,7 +142,7 @@ class ConfigurationPage extends StatelessWidget {
                   )),
                 ),
                 CompanionButton(
-                  title: 'Changelog',
+                  title: AppStrings.changelog,
                   color: Colors.blue,
                   leading: Icon(
                     FontAwesomeIcons.listOl,
@@ -153,7 +154,7 @@ class ConfigurationPage extends StatelessWidget {
                   )),
                 ),
                 CompanionButton(
-                  title: 'View the project on Github',
+                  title: AppStrings.viewProjectOnGithub,
                   color: Colors.blue,
                   leading: Icon(
                     FontAwesomeIcons.github,
@@ -164,12 +165,12 @@ class ConfigurationPage extends StatelessWidget {
                 ),
                 Container(height: 8.0,),
                 Text(
-                  'Enjoying the app?',
+                  AppStrings.enjoyingTheApp,
                   style: Theme.of(context).textTheme.headline2,
                   textAlign: TextAlign.center,
                 ),
                 Text(
-                  'Review the app on the ${_getPlatformName()}!',
+                  AppStrings.reviewTheAppOn(_getPlatformName()),
                   style: Theme.of(context).textTheme.bodyText1,
                   textAlign: TextAlign.center,
                 ),
@@ -191,7 +192,7 @@ class ConfigurationPage extends StatelessWidget {
                           ),
                           Container(width: 8.0,),
                           Text(
-                            'Review the app',
+                            AppStrings.reviewTheApp,
                             style: Theme.of(context).textTheme.headline2,
                           )
                         ],
@@ -239,7 +240,7 @@ class _AppVersion extends StatelessWidget {
         }
 
         return Text(
-          'Version ${snapshot.data.version} - Build ${snapshot.data.buildNumber}',
+          AppStrings.version(snapshot.data.version, snapshot.data.buildNumber),
           style: Theme.of(context).textTheme.bodyText1.copyWith(
             color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black
           )

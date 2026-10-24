@@ -4,6 +4,7 @@ import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/widgets/button.dart';
 import 'package:guildwars2_companion/features/dungeon/bloc/dungeon_bloc.dart';
 import 'package:guildwars2_companion/features/dungeon/pages/dungeons.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class DungeonButton extends StatelessWidget {
   final bool hasPermission;
@@ -14,7 +15,7 @@ class DungeonButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CompanionButton(
       color: Colors.deepOrange,
-      title: 'Dungeons',
+      title: AppStrings.dungeons,
       onTap: () {
         BlocProvider.of<DungeonBloc>(context).add(LoadDungeonsEvent(hasPermission));
         Navigator.of(context).push(MaterialPageRoute(

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:guildwars2_companion/core/utils/guild_wars.dart';
 import 'package:guildwars2_companion/core/widgets/info_box.dart';
 import 'package:guildwars2_companion/features/account/bloc/account_bloc.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class HomePlaytimeInfoBox extends StatelessWidget {
   @override
@@ -11,14 +12,14 @@ class HomePlaytimeInfoBox extends StatelessWidget {
       builder: (context, state) {
         if (state is AuthenticatedState) {
           return CompanionInfoBox(
-            header: 'Playtime',
+            header: AppStrings.playtime,
             text: GuildWarsUtil.calculatePlayTime(state.account.age).toString() + 'h',
             loading: false,
           );
         }
 
         return CompanionInfoBox(
-          header: 'Playtime',
+          header: AppStrings.playtime,
         );
       },
     );

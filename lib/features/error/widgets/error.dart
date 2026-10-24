@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:guildwars2_companion/core/widgets/simple_button.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class CompanionError extends StatelessWidget {
   final String title;
@@ -20,7 +21,7 @@ class CompanionError extends StatelessWidget {
         Padding(
           padding: EdgeInsets.all(8),
           child: Text(
-            "Something went wrong while loading $title",
+            AppStrings.somethingWentWrongWhileLoading(title),
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.headline2,
           ),
@@ -28,7 +29,7 @@ class CompanionError extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 8.0),
           child: Text(
-            "Please check your internet connection",
+            AppStrings.checkInternetConnection,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyText1,
           ),
@@ -36,7 +37,7 @@ class CompanionError extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 8.0),
           child: CompanionSimpleButton(
-            text: 'Click here to try again',
+            text: AppStrings.tryAgain,
             onPressed: () => onTryAgain(),
           ),
         )

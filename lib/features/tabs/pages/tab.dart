@@ -12,6 +12,7 @@ import 'package:guildwars2_companion/features/account/widgets/layout.dart';
 import 'package:guildwars2_companion/features/changelog/widgets/changelog.dart';
 import 'package:guildwars2_companion/features/tabs/bloc/tab_bloc.dart';
 import 'package:guildwars2_companion/features/tabs/models/tab.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class TabPage extends StatelessWidget {
   @override
@@ -68,7 +69,7 @@ class TabPage extends StatelessWidget {
               body: TokenLayout(
                 child: Center(
                   child: CompanionError(
-                    title: 'the account',
+                    title: AppStrings.theAccount,
                     onTryAgain: () async =>
                       BlocProvider.of<AccountBloc>(context).add(SetupAccountEvent()),
                   ),
@@ -109,7 +110,7 @@ class TabPage extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            'Loading account information',
+                            AppStrings.loadingAccountInformation,
                             style: Theme.of(context).textTheme.headline2,
                           ),
                         )

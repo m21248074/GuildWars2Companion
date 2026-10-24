@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 import 'package:guildwars2_companion/core/widgets/appbar.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/changelog/bloc/changelog_bloc.dart';
@@ -11,7 +12,7 @@ class ChangelogPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CompanionAppBar(
-        title: 'Changelog',
+        title: AppStrings.changelog,
         color: Colors.blue,
       ),
       body: BlocBuilder<ChangelogBloc, ChangelogState>(
@@ -26,7 +27,7 @@ class ChangelogPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      'Version ${c.version}',
+                      AppStrings.changelogVersion(c.version),
                       style: Theme.of(context).textTheme.headline2,
                     ),
                     Column(

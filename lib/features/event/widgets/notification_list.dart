@@ -7,6 +7,7 @@ import 'package:guildwars2_companion/features/configuration/bloc/configuration_b
 import 'package:guildwars2_companion/features/event/bloc/notification_bloc.dart';
 import 'package:guildwars2_companion/features/event/models/notification.dart';
 import 'package:intl/intl.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class EventNotificationList extends StatefulWidget {
   final String eventId;
@@ -57,7 +58,7 @@ class _EventNotificationListState extends State<EventNotificationList> {
                 return Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
                   child: Text(
-                    'No notifications scheduled for this event',
+                    AppStrings.noNotificationsForEvent,
                     style: Theme.of(context).textTheme.bodyText1,
                     textAlign: TextAlign.center,
                   ),
@@ -74,7 +75,7 @@ class _EventNotificationListState extends State<EventNotificationList> {
                         size: 28,
                       ),
                       Text(
-                        'No notifications scheduled',
+                        AppStrings.noNotificationsScheduled,
                         style: Theme.of(context).textTheme.headline2,
                         textAlign: TextAlign.center,
                       ),
@@ -117,7 +118,7 @@ class _NotificationRow extends StatelessWidget {
   Widget build(BuildContext context) {
     String date = DateFormat('yyyy-MM-dd').format(notification.spawnDateTime);
 
-    String leading = notification.offset.inMinutes > 0 ? '${notification.offset.inMinutes} minutes before' : 'When spawning at';
+    String leading = notification.offset.inMinutes > 0 ? AppStrings.minutesBefore(notification.offset.inMinutes) : AppStrings.whenSpawningAt;
 
     return Material(
       color: Colors.transparent,
@@ -127,14 +128,14 @@ class _NotificationRow extends StatelessWidget {
           barrierDismissible: false,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Remove scheduled notification'),
+              title: Text(AppStrings.removeScheduledNotification),
               content: Text(
-                'Are you sure that you want to remove this scheduled notification?'
+                AppStrings.confirmRemoveNotification
               ),
               actions: <Widget>[
                 TextButton(
                   child: Text(
-                    'Cancel',
+                    AppStrings.cancel,
                     style: TextStyle(
                       fontSize: 18.0
                     ),
@@ -143,7 +144,7 @@ class _NotificationRow extends StatelessWidget {
                 ),
                 TextButton(
                   child: Text(
-                    'Remove',
+                    AppStrings.remove,
                     style: TextStyle(
                       fontSize: 18.0
                     ),

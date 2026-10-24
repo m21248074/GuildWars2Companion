@@ -4,6 +4,7 @@ import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/widgets/button.dart';
 import 'package:guildwars2_companion/features/raid/bloc/raid_bloc.dart';
 import 'package:guildwars2_companion/features/raid/pages/raids.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class RaidButton extends StatelessWidget {
   final bool hasPermission;
@@ -14,7 +15,7 @@ class RaidButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CompanionButton(
       color: Colors.blue,
-      title: 'Raids',
+      title: AppStrings.raids,
       onTap: () {
         BlocProvider.of<RaidBloc>(context).add(LoadRaidsEvent(hasPermission));
         Navigator.of(context).push(MaterialPageRoute(

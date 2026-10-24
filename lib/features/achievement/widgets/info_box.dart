@@ -5,6 +5,7 @@ import 'package:guildwars2_companion/core/utils/stats_cache.dart';
 import 'package:guildwars2_companion/core/widgets/info_box.dart';
 import 'package:guildwars2_companion/features/account/models/account.dart';
 import 'package:guildwars2_companion/features/achievement/bloc/achievement_bloc.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class AchievementInfoBox extends StatelessWidget {
   // To get the daily and monthy achievement points
@@ -21,7 +22,7 @@ class AchievementInfoBox extends StatelessWidget {
           StatsCache.saveAchievementPoints(points);
 
           return CompanionInfoBox(
-            header: 'Achievements',
+            header: AppStrings.achievements,
             text: GuildWarsUtil.intToString(points),
             loading: false,
           );
@@ -30,7 +31,7 @@ class AchievementInfoBox extends StatelessWidget {
         // Show the last known value while loading, or if it could not be refreshed
         if (StatsCache.achievementPoints != null) {
           return CompanionInfoBox(
-            header: 'Achievements',
+            header: AppStrings.achievements,
             text: GuildWarsUtil.intToString(StatsCache.achievementPoints),
             loading: false,
           );
@@ -38,13 +39,13 @@ class AchievementInfoBox extends StatelessWidget {
 
         if (state is ErrorAchievementsState) {
           return CompanionInfoBox(
-            header: 'Achievements',
+            header: AppStrings.achievements,
             loading: false,
           );
         }
 
         return CompanionInfoBox(
-          header: 'Achievements',
+          header: AppStrings.achievements,
         );
       },
     );

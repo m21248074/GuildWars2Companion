@@ -7,6 +7,7 @@ import 'package:guildwars2_companion/features/achievement/repositories/achieveme
 import 'package:guildwars2_companion/features/build/repositories/build.dart';
 import 'package:guildwars2_companion/features/item/repositories/item.dart';
 import 'package:guildwars2_companion/core/widgets/appbar.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class LanguageConfigurationPage extends StatelessWidget {
   @override
@@ -15,18 +16,18 @@ class LanguageConfigurationPage extends StatelessWidget {
       lightColor: Colors.blue,
       child: Scaffold(
         appBar: CompanionAppBar(
-          title: 'Api and Wiki Language',
+          title: AppStrings.apiAndWikiLanguage,
           color: Colors.blue,
         ),
         body: BlocBuilder<ConfigurationBloc, ConfigurationState>(
           builder: (context, state) {
             List<_Language> languages = [
               _Language('English', 'en'),
-              _Language('Spanish', 'es'),
-              _Language('German', 'de'),
-              _Language('French', 'fr'),
-              _Language('Chinese', 'zh'),
-              _Language('Chinese (Traditional)', ConfigurationService.traditionalChinese),
+              _Language('Español', 'es'),
+              _Language('Deutsch', 'de'),
+              _Language('Français', 'fr'),
+              _Language('簡體中文', 'zh'),
+              _Language('繁體中文', ConfigurationService.traditionalChinese),
             ];
 
             return ListView(
@@ -66,15 +67,14 @@ class LanguageConfigurationPage extends StatelessWidget {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Change language'),
+          title: Text(AppStrings.changeLanguage),
           content: Text(
-'''Are you sure that you want to change the language?
-This will also clear your cache and require you to restart the app.'''
+AppStrings.changeLanguageConfirmation
           ),
           actions: <Widget>[
             TextButton(
               child: Text(
-                'Cancel',
+                AppStrings.cancel,
                 style: TextStyle(
                   fontSize: 18.0
                 ),
@@ -83,7 +83,7 @@ This will also clear your cache and require you to restart the app.'''
             ),
             TextButton(
               child: Text(
-                'Change language',
+                AppStrings.changeLanguage,
                 style: TextStyle(
                   fontSize: 18.0
                 ),
