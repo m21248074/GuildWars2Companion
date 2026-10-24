@@ -34,7 +34,7 @@ class Account {
     age = json['age'];
     world = json['world'];
     guilds = json['guilds'].cast<String>();
-    if (json.containsKey('guild_leader')) {
+    if (json['guild_leader'] != null) {
       guildLeader = json['guild_leader'].cast<String>();
     }
     created = json['created'];

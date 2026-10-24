@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:guildwars2_companion/core/utils/account_cache.dart';
 import 'package:guildwars2_companion/core/utils/stats_cache.dart';
 import 'package:guildwars2_companion/features/account/exceptions/api.dart';
 import 'package:guildwars2_companion/features/account/models/account.dart';
@@ -32,7 +33,17 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
     } else if (event is SetupAccountEvent) {
       yield LoadingAccountState();
       if (await accountRepository.tokenPresent()) {
-        yield* _authenticate(await accountRepository.getCurrentToken());
+        String token = await accountRepository.getCurrentToken();
+        CachedAccount cached = await AccountCache.load(token);
+
+        if (cached != null) {
+          // Open right away with what was known last time, refresh in the background
+          yield AuthenticatedState(cached.account, cached.tokenInfo);
+          yield* _refresh(token);
+          return;
+        }
+
+        yield* _authenticate(token);
         return;
       }
       yield await _getUnauthenticated(null);
@@ -44,6 +55,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
       yield* _removeToken(event.tokenId);
     } else if (event is UnauthenticateEvent) {
       await StatsCache.clear();
+      await AccountCache.clear();
       await accountRepository.removeCurrentToken();
       yield await _getUnauthenticated(null);
     }
@@ -52,11 +64,11 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
   Stream<AccountState> _authenticate(String token) async* {
     try {
       TokenInfo tokenInfo = await accountRepository.getTokenInfo(token);
+      Account account = await accountRepository.getAccount(token);
 
-      yield AuthenticatedState(
-        await accountRepository.getAccount(token),
-        tokenInfo
-      );
+      AccountCache.save(token, account, tokenInfo);
+
+      yield AuthenticatedState(account, tokenInfo);
     } catch (exception) {
       switch (exception.runtimeType) {
         case ApiException:
@@ -65,6 +77,26 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
         default:
           yield await _getUnauthenticated("Network error");
       }
+    }
+  }
+
+  // Replaces an account that was shown from the cache with fresh data
+  Stream<AccountState> _refresh(String token) async* {
+    try {
+      TokenInfo tokenInfo = await accountRepository.getTokenInfo(token);
+      Account account = await accountRepository.getAccount(token);
+
+      AccountCache.save(token, account, tokenInfo);
+
+      yield AuthenticatedState(account, tokenInfo);
+    } catch (exception) {
+      if (exception is ApiException) {
+        // The api key was rejected, the cached account is no longer valid
+        await AccountCache.clear();
+        yield await _getUnauthenticated("Api error: " + exception.apiMessage);
+      }
+
+      // On a network error keep showing the cached account
     }
   }
 

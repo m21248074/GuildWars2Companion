@@ -1,4 +1,5 @@
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -27,7 +28,22 @@ class TabPage extends StatelessWidget {
         return true;
       },
       child: BlocConsumer<AccountBloc, AccountState>(
-        listenWhen: (previous, current) => current is UnauthenticatedState || current is AuthenticatedState,
+        listenWhen: (previous, current) {
+          if (current is UnauthenticatedState) {
+            return true;
+          }
+
+          if (current is! AuthenticatedState) {
+            return false;
+          }
+
+          AuthenticatedState authenticated = current as AuthenticatedState;
+
+          // Refreshing an account that was shown from the cache must not
+          // load every feature a second time
+          return !(previous is AuthenticatedState
+            && listEquals(previous.tokenInfo.permissions, authenticated.tokenInfo.permissions));
+        },
         listener: (BuildContext context, state) async {
           if (state is AuthenticatedState) {
             // Load Bloc data
