@@ -344,23 +344,43 @@ class AchievementRepository {
     return ((progress.current / progress.max) * 100).round();
   }
 
+  /// Masteries are sorted per region, in the order of the expansions, and
+  /// by the order of the game inside a region.
   int _getMasteryRate(Mastery mastery) {
-    int region = 0;
+    int region;
 
     switch (mastery.region) {
-      case 'Desert':
-        region = 20;
+      case 'Tyria':
+        region = 0;
         break;
       case 'Maguuma':
-        region = 10;
+        region = 1;
         break;
-      case 'Tyria':
+      case 'Desert':
+        region = 2;
+        break;
+      case 'Tundra':
+      case 'Icebrood':
+        region = 3;
+        break;
+      case 'Jade':
+      case 'Unknown':
+        region = 4;
+        break;
+      case 'Sky':
+        region = 5;
+        break;
+      case 'Wild':
+        region = 6;
+        break;
+      case 'Magic':
+        region = 7;
         break;
       default:
-        region = 30;
+        region = 8;
         break;
     }
 
-    return region + mastery.order;
+    return region * 100 + mastery.order;
   }
 }
