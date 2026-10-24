@@ -60,6 +60,52 @@
 |---|---|
 | 1 hour 5 minutes 30 seconds | 1 小時 5 分鐘 30 秒 |
 
+## 在遊戲裡驗證用的 chat code
+
+把 code 貼進遊戲聊天框送出,點開連結看技能說明,對照遊戲怎麼稱呼。技能名稱是 App 現在顯示的繁體名稱。
+「遊戲裡的叫法」留空,驗證後填入或直接告訴我。有些技能要特定職業才看得到(手雷、醫療包、工具腰帶是工程師,虹吸是死靈),
+但連結貼在聊天框,沒學到也能點開看說明。
+
+| 分類 | 代號 | 目前的譯名 | 範例技能 | 英文名 | chat code | 遊戲裡的叫法 |
+|---|---|---|---|---|---|---|
+| 組合場種類 | Dark | 黑暗 | 腐臭領域(技能) | Fetid Ground | `[&Bj8pAAA=]` | |
+| 組合場種類 | Ethereal | 虛幻 | 渦流陷阱(技能) | Vortex | `[&Bg8oAAA=]` | |
+| 組合場種類 | Fire | 火焰 | 熔岩噴泉(技能) | Lava Font | `[&BqwVAAA=]` | |
+| 組合場種類 | Ice | 冰霜 | 冰封爆裂(技能) | Frozen Burst | `[&Bm8VAAA=]` | |
+| 組合場種類 | Light | 光明 | 投擲R型試劑(技能) | Toss Elixir R | `[&BusWAAA=]` | |
+| 組合場種類 | Lightning | 閃電 | 閃電牢籠(技能) | Lightning Cage | `[&BhIWAAA=]` | |
+| 組合場種類 | Poison | 毒 | 化學力場(技能) | Chemical Field | `[&Bkd2AAA=]` | |
+| 組合場種類 | Smoke | 煙霧 | 黑暗水霧(技能) | Dark Water | `[&Bm2jAAA=]` | |
+| 組合場種類 | Water | 水 | 間歇溫泉(技能) | Geyser | `[&BjEWAAA=]` | |
+| 組合終結技種類 | Blast | 爆炸 | 引爆步槍炮臺(技能) | Detonate Rifle Turret | `[&BkUXAAA=]` | |
+| 組合終結技種類 | Leap | 跳躍 | 空中敏捷(技能) | Aerial Agility | `[&BnQYAQA=]` | |
+| 組合終結技種類 | Projectile | 投射物 | 倒鉤拉拽(技能) | Barbed Pull | `[&BnA4AAA=]` | |
+| 組合終結技種類 | Whirl | 旋風 | 炫目光輝(技能) | Brilliance | `[&BucjAAA=]` | |
+| 技能類型 | Bundle | 持握物 | 齒盾(技能) | Gear Shield | `[&Bm4XAAA=]` | |
+| 技能類型 | Elite | 精英 | 暗影融合(技能) | Shadow Meld | `[&BsSxAAA=]` | |
+| 技能類型 | Heal | 治療 | 收起醫療包(技能) | Stow Med Kit | `[&Bt0XAAA=]` | |
+| 技能類型 | Pet | 寵物 | (找不到合適的例子) | | | |
+| 技能類型 | Profession | 職業 | 虹吸(技能) | Siphon | `[&Blv2AAA=]` | |
+| 技能類型 | Toolbelt | 工具腰帶 | 手雷彈幕(技能) | Grenade Barrage | `[&BrIWAAA=]` | |
+| 技能類型 | Utility | 實用 | 收起手雷包(技能) | Stow Grenade Kit | `[&Bt4XAAA=]` | |
+| 技能類型 | Weapon | 武器 | 關閉異世連結(技能) | Deactivate Otherworldly Bond | `[&BrIYAQA=]` | |
+| 屬性(特性裡的加成) | Power | 力量 | 靈魂抓攫(技能) | Soul Grasp | `[&BgrXAAA=]` | |
+| 屬性(特性裡的加成) | Precision | 精準 | 巫妖形態(技能) | Lich Form | `[&BjYpAAA=]` | |
+| 屬性(特性裡的加成) | Toughness | 強韌 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | Vitality | 活力 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | ConditionDamage | 狀態傷害 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | ConditionDuration | 狀態持續時間 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | BoonDuration | 增益持續時間 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | CritDamage | 暴擊傷害 | (找不到合適的例子) | | | |
+| 屬性(特性裡的加成) | Healing | 治療 | 刺擊(技能) | Stab | `[&BjgzAAA=]` | |
+| 事實列表的標題 | Unblockable | 無法格擋 | 磁鐵(技能) | Magnet | `[&BmwXAAA=]` | |
+| 事實列表的標題 | StunBreak | 解除控制 | 閃光傳送(技能) | Blink | `[&BtgnAAA=]` | |
+| 事實列表的標題 | Range | 射程 | 飛踢(技能) | Kick | `[&BjSiAAA=]` | |
+| 事實列表的標題 | Recharge | 冷卻時間 | 能量結合(技能) | Energy Meld | `[&BiX1AAA=]` | |
+
+沒有例子的項目(寵物技能類型、強韌、活力、狀態傷害、狀態持續時間、增益持續時間、暴擊傷害)
+在玩家看得到的技能裡我找不到,請憑遊戲裡的印象確認。
+
 ## 這批沒有翻譯的
 
 法律聲明與商店名稱(Play Store)、語言清單的各語言自稱、信件主旨。
