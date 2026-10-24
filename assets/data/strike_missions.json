@@ -4,7 +4,7 @@
         "name": "Shiverpeaks Pass",
         "region": "Icebrood",
         "weeklyBit": 0,
-        "achievementId": 4979,
+        "achievementId": null,
         "challengeAchievementId": null,
         "legendaryAchievementId": null
     },
@@ -23,7 +23,7 @@
         "region": "Icebrood",
         "weeklyBit": 2,
         "achievementId": null,
-        "challengeAchievementId": 5023,
+        "challengeAchievementId": null,
         "legendaryAchievementId": null
     },
     {
@@ -31,8 +31,8 @@
         "name": "Whisper of Jormag",
         "region": "Icebrood",
         "weeklyBit": 3,
-        "achievementId": 5879,
-        "challengeAchievementId": 5118,
+        "achievementId": null,
+        "challengeAchievementId": null,
         "legendaryAchievementId": null
     },
     {
@@ -41,7 +41,7 @@
         "region": "Icebrood",
         "weeklyBit": 4,
         "achievementId": null,
-        "challengeAchievementId": 5040,
+        "challengeAchievementId": null,
         "legendaryAchievementId": null
     },
     {
@@ -49,7 +49,7 @@
         "name": "Cold War",
         "region": "Icebrood",
         "weeklyBit": 5,
-        "achievementId": 5925,
+        "achievementId": null,
         "challengeAchievementId": null,
         "legendaryAchievementId": null
     },
