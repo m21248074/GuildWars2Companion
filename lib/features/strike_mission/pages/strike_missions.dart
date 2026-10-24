@@ -177,11 +177,13 @@ class _StrikeMissionCard extends StatelessWidget {
               spacing: 8.0,
               runSpacing: 4.0,
               children: <Widget>[
-                _StatusChip(
-                  label: AppStrings.strikeThisWeek,
-                  done: mission.completedThisWeek,
-                  color: GuildWarsUtil.regionColor(mission.region),
-                ),
+                // The weekly list of the game does not have every strike mission
+                if (mission.weeklyBit != null)
+                  _StatusChip(
+                    label: AppStrings.strikeThisWeek,
+                    done: mission.completedThisWeek,
+                    color: GuildWarsUtil.regionColor(mission.region),
+                  ),
                 // Not every strike mission has an achievement of the game
                 if (mission.achievementId != null)
                   _StatusChip(
@@ -193,6 +195,12 @@ class _StrikeMissionCard extends StatelessWidget {
                   _StatusChip(
                     label: AppStrings.strikeChallengeMode,
                     done: mission.challengeCompleted,
+                    color: GuildWarsUtil.regionColor(mission.region),
+                  ),
+                if (mission.legendaryAchievementId != null)
+                  _StatusChip(
+                    label: AppStrings.strikeLegendaryMode,
+                    done: mission.legendaryCompleted,
                     color: GuildWarsUtil.regionColor(mission.region),
                   ),
               ],

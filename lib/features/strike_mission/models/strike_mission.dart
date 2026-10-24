@@ -4,7 +4,7 @@ class StrikeMission {
   String region;
 
   /// The position in the weekly list of the game (the bits of the achievement
-  /// 'Weekly Raid Encounters').
+  /// 'Weekly Raid Encounters'), null for the strike missions that are not in it.
   int weeklyBit;
 
   /// The achievements of the game for completing the strike mission and for
@@ -12,9 +12,14 @@ class StrikeMission {
   int achievementId;
   int challengeAchievementId;
 
+  /// A few strike missions have a legendary challenge on top of the challenge
+  /// mode.
+  int legendaryAchievementId;
+
   bool completedThisWeek = false;
   bool completed = false;
   bool challengeCompleted = false;
+  bool legendaryCompleted = false;
 
   StrikeMission({
     this.id,
@@ -23,6 +28,7 @@ class StrikeMission {
     this.weeklyBit,
     this.achievementId,
     this.challengeAchievementId,
+    this.legendaryAchievementId,
   });
 
   StrikeMission.fromJson(Map<String, dynamic> json) {
@@ -32,6 +38,7 @@ class StrikeMission {
     weeklyBit = json['weeklyBit'];
     achievementId = json['achievementId'];
     challengeAchievementId = json['challengeAchievementId'];
+    legendaryAchievementId = json['legendaryAchievementId'];
   }
 }
 

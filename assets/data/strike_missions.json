@@ -5,7 +5,8 @@
         "region": "Icebrood",
         "weeklyBit": 0,
         "achievementId": 4979,
-        "challengeAchievementId": null
+        "challengeAchievementId": null,
+        "legendaryAchievementId": null
     },
     {
         "id": "fraenir_of_jormag",
@@ -13,7 +14,8 @@
         "region": "Icebrood",
         "weeklyBit": 1,
         "achievementId": null,
-        "challengeAchievementId": null
+        "challengeAchievementId": null,
+        "legendaryAchievementId": null
     },
     {
         "id": "voice_and_claw_of_the_fallen",
@@ -21,7 +23,8 @@
         "region": "Icebrood",
         "weeklyBit": 2,
         "achievementId": null,
-        "challengeAchievementId": 5023
+        "challengeAchievementId": 5023,
+        "legendaryAchievementId": null
     },
     {
         "id": "whisper_of_jormag",
@@ -29,7 +32,8 @@
         "region": "Icebrood",
         "weeklyBit": 3,
         "achievementId": 5879,
-        "challengeAchievementId": 5118
+        "challengeAchievementId": 5118,
+        "legendaryAchievementId": null
     },
     {
         "id": "boneskinner",
@@ -37,7 +41,8 @@
         "region": "Icebrood",
         "weeklyBit": 4,
         "achievementId": null,
-        "challengeAchievementId": 5040
+        "challengeAchievementId": 5040,
+        "legendaryAchievementId": null
     },
     {
         "id": "cold_war",
@@ -45,7 +50,8 @@
         "region": "Icebrood",
         "weeklyBit": 5,
         "achievementId": 5925,
-        "challengeAchievementId": null
+        "challengeAchievementId": null,
+        "legendaryAchievementId": null
     },
     {
         "id": "aetherblade_hideout",
@@ -53,7 +59,8 @@
         "region": "Jade",
         "weeklyBit": 6,
         "achievementId": 6354,
-        "challengeAchievementId": 6433
+        "challengeAchievementId": 6433,
+        "legendaryAchievementId": null
     },
     {
         "id": "xunlai_jade_junkyard",
@@ -61,7 +68,8 @@
         "region": "Jade",
         "weeklyBit": 7,
         "achievementId": 6084,
-        "challengeAchievementId": 6411
+        "challengeAchievementId": 6411,
+        "legendaryAchievementId": null
     },
     {
         "id": "kaineng_overlook",
@@ -69,7 +77,8 @@
         "region": "Jade",
         "weeklyBit": 8,
         "achievementId": 6243,
-        "challengeAchievementId": 6431
+        "challengeAchievementId": 6431,
+        "legendaryAchievementId": null
     },
     {
         "id": "harvest_temple",
@@ -77,7 +86,8 @@
         "region": "Jade",
         "weeklyBit": 9,
         "achievementId": 6513,
-        "challengeAchievementId": 6115
+        "challengeAchievementId": 6115,
+        "legendaryAchievementId": null
     },
     {
         "id": "old_lions_court",
@@ -85,7 +95,8 @@
         "region": "Jade",
         "weeklyBit": 12,
         "achievementId": 6797,
-        "challengeAchievementId": 6804
+        "challengeAchievementId": 6804,
+        "legendaryAchievementId": null
     },
     {
         "id": "cosmic_observatory",
@@ -93,7 +104,8 @@
         "region": "Sky",
         "weeklyBit": 10,
         "achievementId": 7163,
-        "challengeAchievementId": 7678
+        "challengeAchievementId": 7678,
+        "legendaryAchievementId": null
     },
     {
         "id": "temple_of_febe",
@@ -101,7 +113,8 @@
         "region": "Sky",
         "weeklyBit": 11,
         "achievementId": 7116,
-        "challengeAchievementId": 7790
+        "challengeAchievementId": 7790,
+        "legendaryAchievementId": 7873
     },
     {
         "id": "guardians_glade",
@@ -109,6 +122,16 @@
         "region": "Magic",
         "weeklyBit": 13,
         "achievementId": 9218,
-        "challengeAchievementId": null
+        "challengeAchievementId": 9227,
+        "legendaryAchievementId": null
+    },
+    {
+        "id": "nexus_of_eternity",
+        "name": "Nexus of Eternity",
+        "region": "Magic",
+        "weeklyBit": null,
+        "achievementId": 9387,
+        "challengeAchievementId": 9472,
+        "legendaryAchievementId": null
     }
 ]

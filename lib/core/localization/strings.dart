@@ -582,4 +582,5 @@ class AppStrings {
   static String get strikeThisWeek => _t('This week', '本週');
   static String get strikeCompleted => _t('Completed', '通關過');
   static String get strikeChallengeMode => _t('Challenge mode', '挑戰模式');
+  static String get strikeLegendaryMode => _t('Legendary challenge', '傳奇模式');
 }

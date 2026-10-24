@@ -107,6 +107,7 @@ const Map<String, String> gameNamesTraditionalChinese = {
   'Mythwright Gambit': '秘法對決',
   'New Kaineng City': '新凱寧城',
   'New Loamhurst': '新沃土之森',
+  'Nexus of Eternity': '永恆樞紐',
   'Night': '夜晚',
   'Night Bosses': '夜晚首領',
   'Noran\'s Homestead': '諾蘭山莊',

@@ -16,6 +16,7 @@ class StrikeMissionRepository {
       StrikeMissionService.weeklyAchievementId,
       ...missions.where((m) => m.achievementId != null).map((m) => m.achievementId),
       ...missions.where((m) => m.challengeAchievementId != null).map((m) => m.challengeAchievementId),
+      ...missions.where((m) => m.legendaryAchievementId != null).map((m) => m.legendaryAchievementId),
     ];
 
     Map<int, Map<String, dynamic>> progress = await strikeMissionService.getAchievementProgress(achievementIds);
@@ -29,6 +30,7 @@ class StrikeMissionRepository {
       m.completedThisWeek = weeklyBits.contains(m.weeklyBit);
       m.completed = _isDone(progress[m.achievementId]);
       m.challengeCompleted = _isDone(progress[m.challengeAchievementId]);
+      m.legendaryCompleted = _isDone(progress[m.legendaryAchievementId]);
     });
 
     return StrikeMissionData(

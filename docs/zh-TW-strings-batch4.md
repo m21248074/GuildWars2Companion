@@ -284,6 +284,7 @@
 | Temple of Febe | 菲勃神殿 | 資料 |
 | Old Lion's Court | 舊雄獅廣場 | 資料 |
 | Guardian's Glade | 守護者林地 | 資料 |
+| Nexus of Eternity | 永恆樞紐 | 社群 |
 
 ## 名稱:地下城路線
 

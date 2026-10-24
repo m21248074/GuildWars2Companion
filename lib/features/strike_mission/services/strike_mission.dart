@@ -32,6 +32,7 @@ class StrikeMissionService {
         weeklyBit: s.weeklyBit,
         achievementId: s.achievementId,
         challengeAchievementId: s.challengeAchievementId,
+        legendaryAchievementId: s.legendaryAchievementId,
       ))
       .toList();
   }
