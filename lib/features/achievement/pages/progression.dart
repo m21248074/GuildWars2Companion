@@ -8,9 +8,10 @@ import 'package:guildwars2_companion/core/widgets/button.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/achievement/bloc/achievement_bloc.dart';
 import 'package:guildwars2_companion/features/achievement/pages/achievement_categories.dart';
-import 'package:guildwars2_companion/features/achievement/pages/daily_categories.dart';
 import 'package:guildwars2_companion/features/achievement/pages/favorite_achievements.dart';
 import 'package:guildwars2_companion/features/mastery/pages/masteries.dart';
+import 'package:guildwars2_companion/features/wizards_vault/bloc/bloc.dart';
+import 'package:guildwars2_companion/features/wizards_vault/pages/wizards_vault.dart';
 import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ProgressionPage extends StatelessWidget {
@@ -92,10 +93,14 @@ class _ProgressionButtonList extends StatelessWidget {
         ),
         CompanionButton(
           color: Colors.indigo,
-          onTap: () => Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => DailyCategoriesPage()
-          )),
-          title: 'Dailies',
+          onTap: () {
+            BlocProvider.of<WizardsVaultBloc>(context).add(LoadWizardsVaultEvent());
+
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => WizardsVaultPage()
+            ));
+          },
+          title: AppStrings.wizardsVault,
           leading: Icon(
             GuildWarsIcons.daily,
             size: 42.0,

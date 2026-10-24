@@ -552,4 +552,23 @@ class AppStrings {
   static String get secretsOfTheObscure => _t('Secrets of the Obscure', '天界之謎');
   static String get janthirWilds => _t('Janthir Wilds', '珍瑟荒野');
   static String get visionsOfEternity => _t('Visions of Eternity', '永恆願景');
+
+  // Wizard's Vault
+  static String get wizardsVault => _t("Wizard's Vault", '巫師寶庫');
+  static String get theWizardsVault => _t("the Wizard's Vault", '巫師寶庫');
+  static String get vaultDaily => _t('Daily', '每日');
+  static String get vaultWeekly => _t('Weekly', '每週');
+  static String get vaultSpecial => _t('Special', '特別');
+  static String get vaultShop => _t('Shop', '商店');
+  static String vaultSeasonEnds(String date) => _t('Season ends: $date', '賽季結束：$date');
+  static String get vaultCompleteAll => _t('Complete all objectives', '完成全部目標');
+  static String vaultAcclaim(int amount, {bool claimed = false}) => _t(
+    '+$amount Astral Acclaim${claimed ? ' (claimed)' : ''}',
+    '+$amount 星界讚譽${claimed ? '（已領取）' : ''}'
+  );
+  static String get vaultFeatured => _t('Featured', '精選');
+  static String get vaultNormal => _t('Rewards', '一般');
+  static String get vaultLegacy => _t('Legacy', '傳承');
+  static String vaultPurchased(int count) => _t('Bought $count times', '已購買 $count 次');
+  static String vaultCost(int cost) => _t('$cost Astral Acclaim', '$cost 星界讚譽');
 }

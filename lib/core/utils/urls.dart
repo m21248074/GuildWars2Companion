@@ -54,6 +54,11 @@ class Urls {
   static final String dailiesUrl = '/achievements/daily';
   static final String dailiesTomorrowUrl = '/achievements/daily/tomorrow';
 
+  static final String wizardsVaultUrl = '/wizardsvault';
+  static final String wizardsVaultListingsUrl = '/wizardsvault/listings?ids=all';
+  static final String accountWizardsVaultUrl = '/account/wizardsvault';
+  static final String accountWizardsVaultListingsUrl = '/account/wizardsvault/listings';
+
   static final String masteriesUrl = '/masteries?ids=all';
   static final String masteryProgressUrl = '/account/masteries';
 
