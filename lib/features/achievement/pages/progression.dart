@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/utils/guild_wars_icons.dart';
 import 'package:guildwars2_companion/core/widgets/accent.dart';
 import 'package:guildwars2_companion/core/widgets/appbar.dart';
@@ -8,6 +9,7 @@ import 'package:guildwars2_companion/core/widgets/button.dart';
 import 'package:guildwars2_companion/core/widgets/list_view.dart';
 import 'package:guildwars2_companion/features/achievement/bloc/achievement_bloc.dart';
 import 'package:guildwars2_companion/features/achievement/pages/achievement_categories.dart';
+import 'package:guildwars2_companion/features/achievement/pages/dailies.dart';
 import 'package:guildwars2_companion/features/achievement/pages/favorite_achievements.dart';
 import 'package:guildwars2_companion/features/mastery/pages/masteries.dart';
 import 'package:guildwars2_companion/features/wizards_vault/bloc/bloc.dart';
@@ -105,6 +107,17 @@ class _ProgressionButtonList extends StatelessWidget {
             GuildWarsIcons.daily,
             size: 42.0,
             color: Colors.white,
+          ),
+        ),
+        CompanionButton(
+          color: Colors.deepPurple,
+          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => DailyFractalsPage()
+          )),
+          title: AppStrings.dailyFractals,
+          leading: Image.asset(
+            Assets.buttonHeaderFractalAchievements,
+            height: 42.0,
           ),
         ),
         CompanionButton(

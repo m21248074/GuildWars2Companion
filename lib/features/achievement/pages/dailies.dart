@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:guildwars2_companion/core/localization/strings.dart';
 import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/widgets/accent.dart';
 import 'package:guildwars2_companion/core/widgets/appbar.dart';
@@ -9,34 +10,34 @@ import 'package:guildwars2_companion/features/achievement/bloc/achievement_bloc.
 import 'package:guildwars2_companion/features/achievement/models/daily.dart';
 import 'package:guildwars2_companion/features/achievement/widgets/achievement_button.dart';
 
-class DailiesPage extends StatelessWidget {
-  final String category;
-
-  DailiesPage(this.category);
+/// The daily fractals of today and tomorrow. The game has no daily PvE, PvP
+/// and WvW achievements anymore, the Wizard's Vault took their place.
+class DailyFractalsPage extends StatelessWidget {
+  static const Color _color = Colors.deepPurple;
 
   @override
   Widget build(BuildContext context) {
     return CompanionAccent(
-      lightColor: _getColor(),
+      lightColor: _color,
       child: DefaultTabController(
         length: 2,
         child: Scaffold(
           appBar: CompanionAppBar(
-            title: '$category Dailies',
-            color: _getColor(),
+            title: AppStrings.dailyFractals,
+            color: _color,
             elevation: 0.0,
           ),
           body: Column(
             children: <Widget>[
               Material(
-                color: Theme.of(context).brightness == Brightness.light ? _getColor() : Theme.of(context).cardColor,
+                color: Theme.of(context).brightness == Brightness.light ? _color : Theme.of(context).cardColor,
                 elevation: Theme.of(context).brightness == Brightness.light ? 4.0 : 0.0,
                 child: TabBar(
                   indicatorColor: Colors.white,
                   tabs: [
                     Tab(
                       child: Text(
-                        'Today',
+                        AppStrings.today,
                         style: TextStyle(
                           fontSize: 16.0
                         ),
@@ -44,7 +45,7 @@ class DailiesPage extends StatelessWidget {
                     ),
                     Tab(
                       child: Text(
-                        'Tomorrow',
+                        AppStrings.tomorrow,
                         style: TextStyle(
                           fontSize: 16.0
                         ),
@@ -59,7 +60,7 @@ class DailiesPage extends StatelessWidget {
                     if (state is ErrorAchievementsState) {
                       return Center(
                         child: CompanionError(
-                          title: 'the achievements',
+                          title: AppStrings.theAchievements,
                           onTryAgain: () =>
                             BlocProvider.of<AchievementBloc>(context).add(LoadAchievementsEvent(
                               includeProgress: state.includesProgress
@@ -72,14 +73,12 @@ class DailiesPage extends StatelessWidget {
                       return TabBarView(
                         children: <Widget>[
                           _DailyTab(
-                            category: category,
-                            dailies: _getDailies(state.dailies),
+                            dailies: state.dailies.fractals,
                             prefix: 'today',
                             includeProgression: state.includesProgress
                           ),
                           _DailyTab(
-                            category: category,
-                            dailies: _getDailies(state.dailiesTomorrow),
+                            dailies: state.dailiesTomorrow.fractals,
                             prefix: 'tomorrow',
                             includeProgression: state.includesProgress
                           ),
@@ -99,46 +98,14 @@ class DailiesPage extends StatelessWidget {
       ),
     );
   }
-
-  Color _getColor() {
-    switch (category) {
-      case 'PvE':
-        return Colors.green[600];
-      case 'PvP':
-        return Colors.blue;
-      case 'WvW':
-        return Colors.red[600];
-      case 'Fractals':
-        return Colors.deepPurple;
-      default:
-        return Colors.blueGrey;
-    }
-  }
-
-  List<Daily> _getDailies(DailyGroup group) {
-    switch (category) {
-      case 'PvE':
-        return group.pve;
-      case 'PvP':
-        return group.pvp;
-      case 'WvW':
-        return group.wvw;
-      case 'Fractals':
-        return group.fractals;
-      default:
-        return [];
-    }
-  }
 }
 
 class _DailyTab extends StatelessWidget {
-  final String category;
   final List<Daily> dailies;
   final String prefix;
   final bool includeProgression;
 
   _DailyTab({
-    @required this.category,
     @required this.dailies,
     @required this.prefix,
     @required this.includeProgression
@@ -156,31 +123,29 @@ class _DailyTab extends StatelessWidget {
         await Future.delayed(Duration(milliseconds: 200), () {});
       },
       child: CompanionListView(
-        children: dailies
-          .map((d) => AchievementButton(
-            achievement: d.achievementInfo,
-            hero: '$prefix ${d.id} ${dailies.indexOf(d)}',
-            includeProgression: includeProgression,
-            levels: d.level.min == 80 ? 'Level 80' : 'Level ${d.level.min} - ${d.level.max}',
-            categoryIcon: _getIcon(),
-          ))
-          .toList(),
+        children: dailies == null || dailies.isEmpty
+          ? [
+              Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Center(
+                  child: Text(
+                    AppStrings.noDailyFractals,
+                    style: Theme.of(context).textTheme.headline2,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ]
+          : dailies
+            .map((d) => AchievementButton(
+              achievement: d.achievementInfo,
+              hero: '$prefix ${d.id} ${dailies.indexOf(d)}',
+              includeProgression: includeProgression,
+              levels: AppStrings.dailyLevels(d.level.min, d.level.max),
+              categoryIcon: Assets.buttonHeaderFractalAchievements,
+            ))
+            .toList(),
       )
     );
-  }
-
-  String _getIcon() {
-    switch (category) {
-      case 'PvE':
-        return Assets.buttonHeaderPveAchievements;
-      case 'PvP':
-        return Assets.buttonHeaderPvpAchievements;
-      case 'WvW':
-        return Assets.buttonHeaderWvwAchievements;
-      case 'Fractals':
-        return Assets.buttonHeaderFractalAchievements;
-      default:
-        return Assets.buttonHeaderPveAchievements;
-    }
   }
 }

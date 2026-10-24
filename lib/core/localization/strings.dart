@@ -583,4 +583,12 @@ class AppStrings {
   static String get strikeCompleted => _t('Completed', '通關過');
   static String get strikeChallengeMode => _t('Challenge mode', '挑戰模式');
   static String get strikeLegendaryMode => _t('Legendary challenge', '傳奇模式');
+
+  // Daily fractals
+  static String get dailyFractals => _t('Daily Fractals', '每日迷霧碎層');
+  static String get noDailyFractals => _t('No daily fractals found', '找不到每日迷霧碎層');
+  static String get today => _t('Today', '今天');
+  static String get tomorrow => _t('Tomorrow', '明天');
+  static String dailyLevels(int min, int max) =>
+    min == 80 ? _t('Level 80', '80 級') : _t('Level $min - $max', '$min - $max 級');
 }
