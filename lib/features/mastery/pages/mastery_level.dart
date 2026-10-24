@@ -84,9 +84,9 @@ class MasteryLevelPage extends StatelessWidget {
               child: CompanionListView(
                 children: <Widget>[
                   if (level.description != null && level.description.isNotEmpty)
-                    CompanionInfoCard(title: AppStrings.description, text: level.description),
+                    CompanionInfoCard(title: AppStrings.description, text: GuildWarsUtil.removeFullHtml(level.description.replaceAll('<br>', '\n'))),
                   if (level.instruction != null && level.instruction.isNotEmpty)
-                    CompanionInfoCard(title: AppStrings.masteryInstructions, text: level.instruction),
+                    CompanionInfoCard(title: AppStrings.masteryInstructions, text: GuildWarsUtil.removeFullHtml(level.instruction.replaceAll('<br>', '\n'))),
                   CompanionInfoCard(
                     title: AppStrings.masteryDetails,
                     child: Column(

@@ -20,8 +20,15 @@ class GuildWarsUtil {
         return AppStrings.icebroodSaga;
       case 'Tyria':
         return AppStrings.tyria;
+      case 'Jade':
       case 'Unknown':
         return AppStrings.endOfDragons;
+      case 'Sky':
+        return AppStrings.secretsOfTheObscure;
+      case 'Wild':
+        return AppStrings.janthirWilds;
+      case 'Magic':
+        return AppStrings.visionsOfEternity;
       default:
         return mastery;
     }
@@ -38,6 +45,12 @@ class GuildWarsUtil {
       case 'Tundra':
       case 'Icebrood':
         return Colors.blueAccent;
+      case 'Sky':
+        return Colors.indigo;
+      case 'Wild':
+        return Colors.deepOrange;
+      case 'Magic':
+        return Colors.amber[800];
       default:
         return Color(0xFF118E8A);
     }

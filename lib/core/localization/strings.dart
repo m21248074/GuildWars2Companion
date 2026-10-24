@@ -546,4 +546,10 @@ class AppStrings {
 
   // Seconds of a fact, for example '30s'
   static String secondsShort(num seconds) => _t('${seconds}s', '$seconds 秒');
+
+  // Expansions of the newest mastery regions (Sky, Wild and Magic). The names
+  // follow the game data.
+  static String get secretsOfTheObscure => _t('Secrets of the Obscure', '天界之謎');
+  static String get janthirWilds => _t('Janthir Wilds', '珍瑟荒野');
+  static String get visionsOfEternity => _t('Visions of Eternity', '永恆願景');
 }

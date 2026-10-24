@@ -79,6 +79,9 @@ class Assets {
   static final String progressionMasteryTyria = '$images/progression/mastery_tyria.png';
   static final String progressionMasteryTundra = '$images/progression/mastery_tundra.png';
   static final String progressionMasteryUnknown = '$images/progression/mastery_unknown.png';
+  static final String progressionMasterySky = '$images/progression/mastery_sky.png';
+  static final String progressionMasteryWild = '$images/progression/mastery_wild.png';
+  static final String progressionMasteryMagic = '$images/progression/mastery_magic.png';
 
   static final String raidsBastionOfThePenitent = '$images/raids/bastion_of_the_penitent.jpg';
   static final String raidsHallOfChains = '$images/raids/hall_of_chains.jpg';
@@ -191,6 +194,9 @@ class Assets {
       case 'maguuma': return progressionMasteryMaguuma;
       case 'tyria': return progressionMasteryTyria;
       case 'tundra': return progressionMasteryTundra;
+      case 'sky': return progressionMasterySky;
+      case 'wild': return progressionMasteryWild;
+      case 'magic': return progressionMasteryMagic;
       default: return progressionMasteryUnknown;
     }
   }

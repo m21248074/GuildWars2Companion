@@ -34,7 +34,7 @@
 | Recharge | 冷卻時間 | |
 | Combo Field | 組合技區域 | 遊戲內驗證 |
 | Combo Finisher | 組合終結技 | |
-| Unblockable | 無法格擋 | ? 還沒驗證 |
+| Unblockable | 無法格擋 | 遊戲內驗證 |
 | StunBreak | 解除昏迷 | 遊戲內驗證 |
 | Dark / Ethereal / Fire / Ice / Light / Lightning / Poison / Smoke / Water | 黑暗 / 幻光 / 火焰 / 寒冰 / 光明 / 閃電 / 毒素 / 煙霧 / 流水 | 組合場種類,幻光、寒冰、毒素、流水是遊戲內驗證的 |
 | Blast / Leap / Projectile / Whirl | 爆炸 / 跳躍 / 物理投射物 / 旋風 | 組合終結技種類。爆炸、跳躍、旋風在遊戲資料的技能描述裡有出現(「爆炸終結技」等),投射物沒有找到 |
