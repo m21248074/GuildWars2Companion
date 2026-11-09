@@ -68,9 +68,6 @@ class AppStrings {
   static String get changelog => _t('Changelog', '更新日誌');
   static String changelogVersion(String version) => _t('Version $version', '版本 $version');
   static String get viewProjectOnGithub => _t('View the project on Github', '在 GitHub 上查看專案');
-  static String get enjoyingTheApp => _t('Enjoying the app?', '喜歡這個 App 嗎？');
-  static String reviewTheAppOn(String store) => _t('Review the app on the $store!', '到 $store 評價這個 App！');
-  static String get reviewTheApp => _t('Review the app', '評價 App');
 
   // Settings: theme and time notation
   static String get light => _t('Light', '淺色');
@@ -525,14 +522,9 @@ class AppStrings {
     '載入 GW2 Companion 時發生錯誤'
   );
   static String get errorSendLogHint => _t(
-    'You can send the error log to the developer to get the issue fixed.',
-    '可以把錯誤記錄寄給開發者，協助修正問題。'
+    'You can copy the error log and report the issue on the GitHub page of the project.',
+    '可以複製錯誤記錄，到 GitHub 回報問題。'
   );
-  static String get errorContactHint => _t(
-    'You will be contacted shortly afterwards with an estimation on when the issue will be fixed.',
-    '之後會盡快通知預計的修正時間。'
-  );
-  static String get sendErrorLogByMail => _t('Send error log by mail', '以電子郵件寄送錯誤記錄');
   static String get errorLogCopied => _t('Error log copied to clipboard', '錯誤記錄已複製到剪貼簿');
   static String get copyErrorLog => _t('Copy error log to clipboard', '複製錯誤記錄到剪貼簿');
 

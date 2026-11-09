@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:guildwars2_companion/core/utils/assets.dart';
@@ -163,61 +161,18 @@ class ConfigurationPage extends StatelessWidget {
                   height: 64.0,
                   onTap: () => Urls.launchUrl(Urls.repositoryUrl),
                 ),
-                Container(height: 8.0,),
-                Text(
-                  AppStrings.enjoyingTheApp,
-                  style: Theme.of(context).textTheme.headline2,
-                  textAlign: TextAlign.center,
-                ),
-                Text(
-                  AppStrings.reviewTheAppOn(_getPlatformName()),
-                  style: Theme.of(context).textTheme.bodyText1,
-                  textAlign: TextAlign.center,
-                ),
                 SafeArea(
                   top: false,
                   left: false,
                   right: false,
-                  child: InkWell(
-                    onTap: () => Urls.launchUrl(_getPlatformUrl()),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Icon(
-                            _getPlatformIcon()
-                          ),
-                          Container(width: 8.0,),
-                          Text(
-                            AppStrings.reviewTheApp,
-                            style: Theme.of(context).textTheme.headline2,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                )
+                  child: Container(height: 8.0),
+                ),
               ],
             ),
           ),
         ],
       ),
     );
-  }
-
-  String _getPlatformUrl() {
-    return Platform.isIOS ? 'https://apps.apple.com/us/app/gw2-companion/id1498072028' : 'https://play.google.com/store/apps/details?id=com.danielscholte.guildwars2_companion';
-  }
-
-  String _getPlatformName() {
-    return Platform.isIOS ? 'App Store' : 'Play Store';
-  }
-
-  IconData _getPlatformIcon() {
-    return Platform.isIOS ? FontAwesomeIcons.appStoreIos : FontAwesomeIcons.googlePlay;
   }
 }
 

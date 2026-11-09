@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:guildwars2_companion/core/utils/assets.dart';
-import 'package:guildwars2_companion/core/utils/urls.dart';
 import 'package:guildwars2_companion/core/localization/strings.dart';
 
 class ErrorPage extends StatelessWidget {
@@ -43,62 +42,10 @@ class ErrorPage extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     Container(height: 16),
-                    Text(
-                      AppStrings.errorContactHint,
-                      style: Theme.of(context).textTheme.headline2.copyWith(color: Colors.white),
-                      textAlign: TextAlign.center,
-                    ),
-                    Container(height: 16),
-                    _SendLogsButton(exception: exception),
-                    Container(height: 16),
                     _CopyLogsButton(exception: exception)
                   ]
                 ),
               ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _SendLogsButton extends StatelessWidget {
-  final String exception;
-
-  _SendLogsButton({@required this.exception});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        color: Colors.white
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          borderRadius: BorderRadius.circular(12),
-          onTap: () => Urls.launchUrl(Uri(
-            scheme: 'mailto',
-            path: Urls.emailUrl,
-            queryParameters: {
-              'subject': 'GW2 Companion error log',
-              'body': exception
-            }
-          ).toString()),
-          child: Container(
-            height: 48,
-            width: double.infinity,
-            alignment: Alignment.center,
-            child: Text(
-              AppStrings.sendErrorLogByMail,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Theme.of(context).primaryColor,
-                fontSize: 18.0,
-                fontWeight: FontWeight.w600,
-              )
             ),
           ),
         ),
