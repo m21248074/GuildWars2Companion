@@ -28,6 +28,7 @@ class Assets {
   static final String buttonHeaderPvpAchievements = '$images/button_headers/pvp_achievement.png';
   static final String buttonHeaderPvp = '$images/button_headers/pvp.jpg';
   static final String buttonHeaderRaids = '$images/button_headers/raids.jpg';
+  static final String buttonHeaderStrikeMissions = '$images/button_headers/strike_missions.jpg';
   static final String buttonHeaderWorldBosses = '$images/button_headers/world_bosses.jpg';
   static final String buttonHeaderWvwAchievements = '$images/button_headers/wvw_achievement.png';
 
