@@ -93,6 +93,24 @@ class _MetaEventsPageState extends State<MetaEventsPage> {
                       sequences: state.events,
                       onRequiresRefresh: () => refreshMetaEvents(),
                     ),
+                    _MasteryCategoryButton(
+                      name: AppStrings.secretsOfTheObscure,
+                      region: 'Sky',
+                      sequences: state.events,
+                      onRequiresRefresh: () => refreshMetaEvents(),
+                    ),
+                    _MasteryCategoryButton(
+                      name: AppStrings.janthirWilds,
+                      region: 'Wild',
+                      sequences: state.events,
+                      onRequiresRefresh: () => refreshMetaEvents(),
+                    ),
+                    _MasteryCategoryButton(
+                      name: AppStrings.visionsOfEternity,
+                      region: 'Magic',
+                      sequences: state.events,
+                      onRequiresRefresh: () => refreshMetaEvents(),
+                    ),
                   ],
                 ),
               );

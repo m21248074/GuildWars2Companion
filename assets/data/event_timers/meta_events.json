@@ -550,5 +550,187 @@
                 "durationInMinutes": 60
             }
         ]
+    },
+    {
+        "id": "skywatch",
+        "name": "Skywatch Archipelago",
+        "region": "Sky",
+        "offsetInMinutes": 60,
+        "segments": [
+            {
+                "id": "skywatch_unlocking_the_wizard_s_tower",
+                "name": "Unlocking the Wizard's Tower",
+                "durationInMinutes": 25
+            },
+            {
+                "durationInMinutes": 95
+            }
+        ]
+    },
+    {
+        "id": "wizards_tower",
+        "name": "Wizard's Tower",
+        "region": "Sky",
+        "offsetInMinutes": 60,
+        "segments": [
+            {
+                "id": "wizards_tower_target_practice",
+                "name": "Target Practice",
+                "durationInMinutes": 40
+            },
+            {
+                "id": "wizards_tower_target_practice_fly_by_night",
+                "name": "Target Practice & Fly by Night",
+                "durationInMinutes": 15
+            },
+            {
+                "id": "wizards_tower_fly_by_night",
+                "name": "Fly by Night",
+                "durationInMinutes": 25
+            },
+            {
+                "durationInMinutes": 40
+            }
+        ]
+    },
+    {
+        "id": "amnytas",
+        "name": "Amnytas",
+        "region": "Sky",
+        "offsetInMinutes": 0,
+        "segments": [
+            {
+                "id": "amnytas_defense_of_amnytas",
+                "name": "Defense of Amnytas",
+                "durationInMinutes": 25
+            },
+            {
+                "durationInMinutes": 95
+            }
+        ]
+    },
+    {
+        "id": "janthir_syntri",
+        "name": "Janthir Syntri",
+        "region": "Wild",
+        "offsetInMinutes": 90,
+        "segments": [
+            {
+                "id": "janthir_syntri_of_mists_and_monsters",
+                "name": "Of Mists and Monsters",
+                "durationInMinutes": 25
+            },
+            {
+                "durationInMinutes": 95
+            }
+        ]
+    },
+    {
+        "id": "bava_nisos",
+        "name": "Bava Nisos",
+        "region": "Wild",
+        "offsetInMinutes": 40,
+        "segments": [
+            {
+                "id": "bava_nisos_a_titanic_voyage",
+                "name": "A Titanic Voyage",
+                "durationInMinutes": 25
+            },
+            {
+                "durationInMinutes": 95
+            }
+        ]
+    },
+    {
+        "id": "castora_day_night",
+        "name": "Castora: Day and Night",
+        "region": "Magic",
+        "offsetInMinutes": 80,
+        "segments": [
+            {
+                "id": "castora_day_night_day",
+                "name": "Day",
+                "durationInMinutes": 55
+            },
+            {
+                "id": "castora_day_night_dusk",
+                "name": "Dusk",
+                "durationInMinutes": 5
+            },
+            {
+                "id": "castora_day_night_night",
+                "name": "Night",
+                "durationInMinutes": 55
+            },
+            {
+                "id": "castora_day_night_dawn",
+                "name": "Dawn",
+                "durationInMinutes": 5
+            }
+        ]
+    },
+    {
+        "id": "shipwreck_strand",
+        "name": "Shipwreck Strand",
+        "region": "Magic",
+        "offsetInMinutes": 80,
+        "segments": [
+            {
+                "id": "shipwreck_strand_hammerhart_rumble",
+                "name": "Hammerhart Rumble!",
+                "durationInMinutes": 20
+            },
+            {
+                "durationInMinutes": 100
+            }
+        ]
+    },
+    {
+        "id": "starlit_weald",
+        "name": "Starlit Weald",
+        "region": "Magic",
+        "offsetInMinutes": 20,
+        "segments": [
+            {
+                "id": "starlit_weald_secrets_of_the_weald",
+                "name": "Secrets of the Weald",
+                "durationInMinutes": 35
+            },
+            {
+                "durationInMinutes": 85
+            }
+        ]
+    },
+    {
+        "id": "eternitys_garden",
+        "name": "Eternity's Garden",
+        "region": "Magic",
+        "offsetInMinutes": 45,
+        "segments": [
+            {
+                "id": "eternitys_garden_shackles_of_the_ancients",
+                "name": "Shackles of the Ancients",
+                "durationInMinutes": 25
+            },
+            {
+                "durationInMinutes": 95
+            }
+        ]
+    },
+    {
+        "id": "leyspring_hollows",
+        "name": "Leyspring Hollows",
+        "region": "Magic",
+        "offsetInMinutes": 60,
+        "segments": [
+            {
+                "id": "leyspring_hollows_depths_of_cruelty",
+                "name": "Depths of Cruelty",
+                "durationInMinutes": 30
+            },
+            {
+                "durationInMinutes": 150
+            }
+        ]
     }
 ]
