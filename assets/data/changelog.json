@@ -1,5 +1,20 @@
 [
     {
+        "version": "1.7.0",
+        "build": 47,
+        "newFeatures": true,
+        "changes": [
+            "Added Traditional Chinese",
+            "Added the Wizard's Vault, which replaces the dailies",
+            "Added the Mount Balrior raid wing and the strike missions",
+            "Added the new mastery regions",
+            "Added the event timers of Secrets of the Obscure, Janthir Wilds and Visions of Eternity",
+            "Added the daily fractals again",
+            "Fixed the app not starting, slow loading and masteries and achievements showing a question mark",
+            "Fixed links that did not open on Android 11 and up"
+        ]
+    },
+    {
         "version": "1.6.1",
         "build": 46,
         "newFeatures": true,
