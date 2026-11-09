@@ -131,7 +131,7 @@
 |---|---|---|
 | Tyria | 泰瑞亞 | |
 | Heart of Thorns | 決戰邁古瑪 | ? 資料用詞;也可用「荊棘之心」 |
-| Path of Fire | 火焰之路 | 與資料一致 |
+| Path of Fire | 烈焰征途 | 遊戲內名稱 |
 | Icebrood Saga | 冰霜傳說 | 冰巢傳說 |
 | End of Dragons | 巨龍絕境 | 與資料一致 |
 

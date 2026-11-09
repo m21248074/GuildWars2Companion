@@ -206,9 +206,9 @@ class AppStrings {
   static String get region => _t('Region', '地區');
   static String get masteryPoints => _t('Mastery points', '專精點數');
   static String get experience => _t('Experience', '經驗值');
-  static String get tyria => _t('Tyria', '泰瑞亞');
+  static String get tyria => _t('Tyria', '泰瑞亞中心');
   static String get heartOfThorns => _t('Heart of Thorns', '決戰邁古瑪');
-  static String get pathOfFire => _t('Path of Fire', '火焰之路');
+  static String get pathOfFire => _t('Path of Fire', '烈焰征途');
   static String get icebroodSaga => _t('Icebrood Saga', '冰巢傳說');
   static String get endOfDragons => _t('End of Dragons', '巨龍絕境');
 
