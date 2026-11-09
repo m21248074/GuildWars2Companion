@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:guildwars2_companion/core/utils/assets.dart';
 import 'package:guildwars2_companion/core/utils/urls.dart';
 import 'package:guildwars2_companion/features/achievement/database_configurations/achievement.dart';
 import 'package:guildwars2_companion/core/services/cache.dart';
@@ -72,13 +73,61 @@ class AchievementService {
   }
 
   Future<DailyGroup> getDailies({bool tomorrow = false}) async {
-    final response = await dio.get(tomorrow ? Urls.dailiesTomorrowUrl : Urls.dailiesUrl);
+    try {
+      final response = await dio.get(tomorrow ? Urls.dailiesTomorrowUrl : Urls.dailiesUrl);
 
-    if (response.statusCode == 200) {
-      return DailyGroup.fromJson(response.data);
+      if (response.statusCode == 200) {
+        return DailyGroup.fromJson(response.data);
+      }
+    } catch (_) {
+      // The daily endpoint has been switched off, see below.
     }
 
-    throw Exception();
+    return DailyGroup(
+      pve: [],
+      pvp: [],
+      wvw: [],
+      special: [],
+      fractals: await _getDailyFractals(tomorrow: tomorrow),
+    );
+  }
+
+  /// The achievements/daily endpoint no longer answers, so the daily fractals
+  /// come from the 15-day rotation of the wiki (assets/data/daily_fractals.json).
+  /// The set is the day of the year (the same index for every year, so Feb 29
+  /// is skipped in a common year) modulo 15; the day changes at 00:00 UTC.
+  Future<List<Daily>> _getDailyFractals({bool tomorrow = false}) async {
+    final data = await Assets.loadDataAsset(Assets.dailyFractals);
+
+    DateTime day = DateTime.now().toUtc();
+    if (tomorrow) {
+      day = day.add(Duration(days: 1));
+    }
+
+    final isLeapYear = day.year % 4 == 0 && (day.year % 100 != 0 || day.year % 400 == 0);
+    int dayOfYear = DateTime.utc(day.year, day.month, day.day).difference(DateTime.utc(day.year, 1, 1)).inDays;
+    if (!isLeapYear && dayOfYear >= 59) {
+      dayOfYear++;
+    }
+
+    final rotation = (data['rotation'] as List)[dayOfYear % 15];
+    final List<int> ids = [];
+
+    (rotation['fractals'] as List).forEach((fractal) {
+      ids.addAll((data['tiers'][fractal] as List).cast<int>());
+    });
+
+    (rotation['recommended'] as List).forEach((scale) {
+      ids.add(data['recommended']['$scale'] as int);
+    });
+
+    return ids
+      .map((id) => Daily(
+        id: id,
+        level: Level(min: 80, max: 80),
+        requiredAccess: ['GuildWars2'],
+      ))
+      .toList();
   }
 
   Future<List<Mastery>> getMasteries() async {

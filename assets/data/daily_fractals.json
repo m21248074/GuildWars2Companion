@@ -1,0 +1,384 @@
+{
+  "_comment": "Daily fractal rotation from the wiki (Daily Fractals page, 15-day rotation; set = day of year index mod 15, see lib/features/achievement/services/achievement.dart). Ids are achievement ids.",
+  "rotation": [
+    {
+      "fractals": [
+        "Nightmare",
+        "Snowblind",
+        "Volcanic"
+      ],
+      "recommended": [
+        2,
+        37,
+        53
+      ]
+    },
+    {
+      "fractals": [
+        "Aetherblade",
+        "Thaumanova Reactor",
+        "Uncategorized"
+      ],
+      "recommended": [
+        6,
+        28,
+        61
+      ]
+    },
+    {
+      "fractals": [
+        "Chaos",
+        "Cliffside",
+        "Twilight Oasis"
+      ],
+      "recommended": [
+        10,
+        32,
+        65
+      ]
+    },
+    {
+      "fractals": [
+        "Captain Mai Trin Boss",
+        "Deepstone",
+        "Silent Surf"
+      ],
+      "recommended": [
+        14,
+        34,
+        74
+      ]
+    },
+    {
+      "fractals": [
+        "Nightmare",
+        "Solitary Throne",
+        "Solid Ocean"
+      ],
+      "recommended": [
+        1,
+        50,
+        70
+      ]
+    },
+    {
+      "fractals": [
+        "Chaos",
+        "Uncategorized",
+        "Urban Battleground"
+      ],
+      "recommended": [
+        15,
+        48,
+        60
+      ]
+    },
+    {
+      "fractals": [
+        "Deepstone",
+        "Molten Furnace",
+        "Siren's Reef"
+      ],
+      "recommended": [
+        24,
+        35,
+        66
+      ]
+    },
+    {
+      "fractals": [
+        "Molten Boss",
+        "Twilight Oasis",
+        "Underground Facility"
+      ],
+      "recommended": [
+        21,
+        36,
+        75
+      ]
+    },
+    {
+      "fractals": [
+        "Silent Surf",
+        "Swampland",
+        "Volcanic"
+      ],
+      "recommended": [
+        7,
+        40,
+        67
+      ]
+    },
+    {
+      "fractals": [
+        "Aquatic Ruins",
+        "Lonely Tower",
+        "Thaumanova Reactor"
+      ],
+      "recommended": [
+        8,
+        31,
+        54
+      ]
+    },
+    {
+      "fractals": [
+        "Sunqua Peak",
+        "Underground Facility",
+        "Urban Battleground"
+      ],
+      "recommended": [
+        11,
+        39,
+        59
+      ]
+    },
+    {
+      "fractals": [
+        "Aetherblade",
+        "Chaos",
+        "Nightmare"
+      ],
+      "recommended": [
+        18,
+        27,
+        64
+      ]
+    },
+    {
+      "fractals": [
+        "Cliffside",
+        "Lonely Tower",
+        "Kinfall"
+      ],
+      "recommended": [
+        4,
+        30,
+        58
+      ]
+    },
+    {
+      "fractals": [
+        "Deepstone",
+        "Solid Ocean",
+        "Swampland"
+      ],
+      "recommended": [
+        16,
+        42,
+        62
+      ]
+    },
+    {
+      "fractals": [
+        "Captain Mai Trin Boss",
+        "Molten Boss",
+        "Shattered Observatory"
+      ],
+      "recommended": [
+        5,
+        47,
+        68
+      ]
+    }
+  ],
+  "tiers": {
+    "Aetherblade": [
+      2927,
+      2909,
+      2928,
+      2948
+    ],
+    "Aquatic Ruins": [
+      2900,
+      2898,
+      2964,
+      2956
+    ],
+    "Captain Mai Trin Boss": [
+      2978,
+      2899,
+      2962,
+      2932
+    ],
+    "Chaos": [
+      3063,
+      3044,
+      3045,
+      3038
+    ],
+    "Cliffside": [
+      2977,
+      2958,
+      2926,
+      2930
+    ],
+    "Deepstone": [
+      4244,
+      4218,
+      4210,
+      4224
+    ],
+    "Kinfall": [
+      8784,
+      8736,
+      8729,
+      8739
+    ],
+    "Lonely Tower": [
+      8055,
+      7992,
+      8000,
+      7950
+    ],
+    "Molten Boss": [
+      2979,
+      2985,
+      2934,
+      2966
+    ],
+    "Molten Furnace": [
+      2976,
+      2955,
+      2944,
+      2903
+    ],
+    "Nightmare": [
+      3229,
+      3196,
+      3175,
+      3177
+    ],
+    "Shattered Observatory": [
+      3509,
+      3478,
+      3464,
+      3458
+    ],
+    "Silent Surf": [
+      6953,
+      6943,
+      6945,
+      6935
+    ],
+    "Siren's Reef": [
+      4551,
+      4496,
+      4526,
+      4494
+    ],
+    "Snowblind": [
+      2916,
+      2949,
+      2918,
+      2952
+    ],
+    "Solid Ocean": [
+      2954,
+      2971,
+      2986,
+      2923
+    ],
+    "Solitary Throne": [
+      9423,
+      9412,
+      9373,
+      9388
+    ],
+    "Sunqua Peak": [
+      5447,
+      5449,
+      5437,
+      5446
+    ],
+    "Swampland": [
+      2935,
+      2961,
+      2972,
+      2892
+    ],
+    "Thaumanova Reactor": [
+      2981,
+      2991,
+      2895,
+      2967
+    ],
+    "Twilight Oasis": [
+      4028,
+      4006,
+      4030,
+      3973
+    ],
+    "Uncategorized": [
+      2940,
+      2902,
+      2925,
+      2939
+    ],
+    "Underground Facility": [
+      2929,
+      2889,
+      2950,
+      2947
+    ],
+    "Urban Battleground": [
+      2896,
+      2907,
+      2897,
+      2941
+    ],
+    "Volcanic": [
+      2911,
+      2908,
+      2890,
+      2989
+    ]
+  },
+  "recommended": {
+    "1": 2362,
+    "2": 2477,
+    "4": 2405,
+    "5": 2316,
+    "6": 2229,
+    "7": 2329,
+    "8": 2422,
+    "10": 2560,
+    "11": 2153,
+    "14": 2327,
+    "15": 2238,
+    "16": 2308,
+    "18": 2467,
+    "21": 2189,
+    "24": 2245,
+    "27": 2239,
+    "28": 2297,
+    "30": 2330,
+    "31": 2533,
+    "32": 2363,
+    "34": 2592,
+    "35": 2266,
+    "36": 2309,
+    "37": 2377,
+    "39": 2591,
+    "40": 2171,
+    "42": 2394,
+    "47": 2463,
+    "48": 2337,
+    "50": 8037,
+    "53": 3237,
+    "54": 3185,
+    "58": 3192,
+    "59": 3228,
+    "60": 3172,
+    "61": 3198,
+    "62": 3213,
+    "64": 3215,
+    "65": 3189,
+    "66": 3184,
+    "67": 3201,
+    "68": 3187,
+    "70": 3203,
+    "74": 3204,
+    "75": 3238
+  }
+}

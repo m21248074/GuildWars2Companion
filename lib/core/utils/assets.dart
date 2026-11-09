@@ -9,6 +9,7 @@ class Assets {
   static final String data = '$base/data';
 
   static final String changelog = '$data/changelog.json';
+  static final String dailyFractals = '$data/daily_fractals.json';
   static final String dungeons = '$data/dungeons.json';
   static final String raids = '$data/raids.json';
   static final String strikeMissions = '$data/strike_missions.json';
